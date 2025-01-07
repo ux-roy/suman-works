@@ -120,23 +120,23 @@ $('[data-toggle="counter-up"]').counterUp({
   });
 
 // Porfolio Section Choose Filter Tab
-$(window).on('load', function () {
-  var portfolioIsotope = $('.portfolio-container').isotope({
-    itemSelector: '.portfolio-item',
-    layoutMode: 'fitRows',
-    filter: '.filter-web' // Default filter
-  });
-
-  $('#portfolio-flters li').on('click', function () {
-    $("#portfolio-flters li").removeClass('filter-active');
-    $(this).addClass('filter-active');
-
-    portfolioIsotope.isotope({
-      filter: $(this).data('filter')
+  $(window).on('load', function () {
+    var portfolioIsotope = $('.portfolio-container').isotope({
+      itemSelector: '.portfolio-item',
+      layoutMode: 'fitRows',
+      filter: '.filter-web' // Default filter
     });
-  });
 
-    // Initiate venobox (lightbox feature used in portofilo)
+    $('#portfolio-flters li').on('click', function () {
+      $("#portfolio-flters li").removeClass('filter-active');
+      $(this).addClass('filter-active');
+
+      portfolioIsotope.isotope({
+        filter: $(this).data('filter')
+      });
+    });
+
+// Initiate venobox (lightbox feature used in portofilo)
     $(document).ready(function () {
       $('.venobox').venobox();
     });
