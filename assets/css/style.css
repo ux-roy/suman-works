@@ -473,7 +473,7 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-/* ===================== Employment Experience ===================== */ 
+/* ===================== Employment History ===================== */ 
 
 .work_experience .employment {
   padding: 0 0 27px 0px;
@@ -530,7 +530,7 @@ section {
   position: absolute;
   width: 8px;
   height: 1px;
-  top: 23.5px;
+  top: 24px;
   left: 4px;
   background: #1379a8;
 }
@@ -547,7 +547,7 @@ margin-left: -20px;
   font-size: 14px;
 }
 
-/* ===================== Portfolio Preview ===================== */ 
+/* ===================== Portfolio Ideation ===================== */ 
 .hidden-smaller-icons {
   fill: #fff;
   width: 36px;
@@ -660,7 +660,7 @@ margin-left: -20px;
   }
 }
 
-/* ===================== Techinical-Proficiency ===================== */ 
+/* ===================== Tool-Proficiency ===================== */ 
 #tools-proficiency {
   padding: 0px 20px;
 }
@@ -698,7 +698,7 @@ margin-left: -20px;
   background-color: #1379a8;
 }
 
-/* ===================== UX-Design-Skills ===================== */ 
+/* ===================== Design Technique ===================== */ 
 .ux-skills .icon-box {
   margin-bottom: 20px;
 }
