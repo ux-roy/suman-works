@@ -476,13 +476,13 @@ section {
 /* ===================== Employment History ===================== */ 
 
 .work_experience .employment {
-  padding: 0 0 27px 0px;
+  padding: 0 0 38px 0px;
   border-left: 1px solid #1379a8;
   position: relative;
 }
 
 .work_experience .employment h5 {
-  font-size: 12px;
+  font-size: 14px;
   background: #e4edf9;
   display: inline-block;
   font-weight: 400;
@@ -499,6 +499,7 @@ section {
   padding: 0px 4px;
   margin: 6px;
   letter-spacing: 0.008rem;
+  margin-top: 12px;
 }
 
 .work_experience .employment h3 {
