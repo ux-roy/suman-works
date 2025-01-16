@@ -598,7 +598,6 @@ margin-left: -20px;
   position: relative;
   overflow: hidden;
   z-index: 2;
-  border-radius: 12px;
   border: solid .5px lightgray;
 }
 
