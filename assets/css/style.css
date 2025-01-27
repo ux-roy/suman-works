@@ -476,13 +476,13 @@ section {
 /* ===================== Employment Experience ===================== */ 
 
 .work_experience .employment {
-  padding: 0 0 27px 0px;
+  padding: 0 0 38px 0px;
   border-left: 1px solid #1379a8;
   position: relative;
 }
 
 .work_experience .employment h5 {
-  font-size: 12px;
+  font-size: 14px;
   background: #e4edf9;
   display: inline-block;
   font-weight: 400;
@@ -499,6 +499,7 @@ section {
   padding: 0px 4px;
   margin: 6px;
   letter-spacing: 0.008rem;
+  margin-top: 12px;
 }
 
 .work_experience .employment h3 {
@@ -530,7 +531,7 @@ section {
   position: absolute;
   width: 8px;
   height: 1px;
-  top: 23.5px;
+  top: 24px;
   left: 4px;
   background: #1379a8;
 }
@@ -551,25 +552,6 @@ margin-left: -20px;
 .hidden-smaller-icons {
   fill: #fff;
   width: 36px;
-}
-
-[data-title]:after {
-  content: attr(data-title);
-  background-color: #ffffff;
-  color: #1379a8;
-  font-size: 12px;
-  padding: 2px 10px;
-  white-space: nowrap;
-  border-radius: 10px;
-  z-index: 99999;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.2s ease 0.5s;
-}
-
-[data-title]:hover:after {
-  visibility: visible;
-  opacity: 1;
 }
 
 @media screen and (max-width: 600px) {
