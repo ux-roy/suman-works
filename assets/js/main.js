@@ -110,7 +110,7 @@ $('[data-toggle="counter-up"]').counterUp({
     return false;
   });
 
-// First Time Animated Progressive Bar
+// Animated Progressive Bar On First Time
   $('.skills-content').waypoint(function () {
     $('.progress .progress-bar').each(function () {
       $(this).css("width", $(this).attr("aria-valuenow") + '%');
@@ -119,12 +119,11 @@ $('[data-toggle="counter-up"]').counterUp({
     offset: '80%'
   });
 
-// Porfolio Section Choose Filter Tab
+// Porfolio Section Selection Filter Widget
   $(window).on('load', function () {
     var portfolioIsotope = $('.portfolio-container').isotope({
       itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows',
-      filter: '.filter-web' // Default filter
+      layoutMode: 'fitRows'
     });
 
     $('#portfolio-flters li').on('click', function () {
@@ -136,7 +135,7 @@ $('[data-toggle="counter-up"]').counterUp({
       });
     });
 
-// Initiate venobox (lightbox feature used in portofilo)
+    // Initiate venobox (lightbox feature used in portofilo)
     $(document).ready(function () {
       $('.venobox').venobox();
     });

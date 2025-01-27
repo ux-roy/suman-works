@@ -473,16 +473,16 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-/* ===================== Employment History ===================== */ 
+/* ===================== Employment Experience ===================== */ 
 
 .work_experience .employment {
-  padding: 0 0 38px 0px;
+  padding: 0 0 27px 0px;
   border-left: 1px solid #1379a8;
   position: relative;
 }
 
 .work_experience .employment h5 {
-  font-size: 14px;
+  font-size: 12px;
   background: #e4edf9;
   display: inline-block;
   font-weight: 400;
@@ -499,7 +499,6 @@ section {
   padding: 0px 4px;
   margin: 6px;
   letter-spacing: 0.008rem;
-  margin-top: 12px;
 }
 
 .work_experience .employment h3 {
@@ -531,7 +530,7 @@ section {
   position: absolute;
   width: 8px;
   height: 1px;
-  top: 24px;
+  top: 23.5px;
   left: 4px;
   background: #1379a8;
 }
@@ -548,17 +547,43 @@ margin-left: -20px;
   font-size: 14px;
 }
 
-/* ===================== Portfolio Ideation ===================== */ 
+/* ===================== Portfolio Preview ===================== */ 
 .hidden-smaller-icons {
   fill: #fff;
   width: 36px;
 }
 
- .portfolio-item {
+[data-title]:after {
+  content: attr(data-title);
+  background-color: #ffffff;
+  color: #1379a8;
+  font-size: 12px;
+  padding: 2px 10px;
+  white-space: nowrap;
+  border-radius: 10px;
+  z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease 0.5s;
+}
+
+[data-title]:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  [data-title] {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.portfolio_preview .portfolio-item {
   margin-bottom: 30px;
 }
 
- #portfolio-flters {
+.portfolio_preview #portfolio-flters {
   padding: 0;
   margin: 0 auto 35px auto;
   list-style: none;
@@ -567,7 +592,7 @@ margin-left: -20px;
   border-radius: 50px;
 }
 
- #portfolio-flters li {
+.portfolio_preview #portfolio-flters li {
   cursor: pointer;
   display: inline-block;
   padding: 10px 15px 8px 15px;
@@ -580,8 +605,8 @@ margin-left: -20px;
   transition: all 0.3s ease-in-out;
 }
 
- #portfolio-flters li:hover,
- #portfolio-flters li.filter-active {
+.portfolio_preview #portfolio-flters li:hover,
+.portfolio_preview #portfolio-flters li.filter-active {
   color: #082d58;
   background: rgba(20, 157, 221, 0.295);
   line-height: 1;
@@ -589,20 +614,22 @@ margin-left: -20px;
   border-radius: 50px;
 }
 
- #portfolio-flters li:last-child {
+.portfolio_preview #portfolio-flters li:last-child {
   margin-right: 0;
 }
 
- .portfolio-wrap {
+.portfolio_preview .portfolio-wrap {
   transition: 0.3s;
   position: relative;
   overflow: hidden;
   z-index: 2;
+  border-radius: 12px;
   border: solid .5px lightgray;
 }
 
- .portfolio-wrap::before {
+.portfolio_preview .portfolio-wrap::before {
   content: "";
+  background: rgba(255, 255, 255, 0.5);
   position: absolute;
   left: 0;
   right: 0;
@@ -613,7 +640,7 @@ margin-left: -20px;
   opacity: 0;
 }
 
- .portfolio-wrap .portfolio-links {
+.portfolio_preview .portfolio-wrap .portfolio-links {
   opacity: 1;
   left: 0;
   right: 0;
@@ -624,7 +651,7 @@ margin-left: -20px;
   display: flex;
 }
 
- .portfolio-wrap .portfolio-links a {
+.portfolio_preview .portfolio-wrap .portfolio-links a {
   color: #fff;
   font-size: 16px;
   text-align: center;
@@ -633,15 +660,15 @@ margin-left: -20px;
   width: 50%;
 }
 
- .portfolio-wrap .portfolio-links a:hover {
+.portfolio_preview .portfolio-wrap .portfolio-links a:hover {
   background: rgba(20, 157, 221, 0.80);
 }
 
- .portfolio-wrap .portfolio-links a + a {
+.portfolio_preview .portfolio-wrap .portfolio-links a + a {
   border-left: 1px solid #149ddd;
 }
 
- .portfolio-wrap:hover::before {
+.portfolio_preview .portfolio-wrap:hover::before {
   top: 0;
   left: 0;
   right: 0;
@@ -649,7 +676,7 @@ margin-left: -20px;
   opacity: 1;
 }
 
- .portfolio-wrap:hover .portfolio-links {
+.portfolio_preview .portfolio-wrap:hover .portfolio-links {
   opacity: 1;
   bottom: 0;
 }
@@ -660,7 +687,7 @@ margin-left: -20px;
   }
 }
 
-/* ===================== Tool-Proficiency ===================== */ 
+/* ===================== Techinical-Proficiency ===================== */ 
 #tools-proficiency {
   padding: 0px 20px;
 }
@@ -698,7 +725,7 @@ margin-left: -20px;
   background-color: #1379a8;
 }
 
-/* ===================== Design Technique ===================== */ 
+/* ===================== UX-Design-Skills ===================== */ 
 .ux-skills .icon-box {
   margin-bottom: 20px;
 }
@@ -741,6 +768,111 @@ margin-left: -20px;
   height: 80px;
   background: #ffffff;
   margin-top: 10px;
+}
+
+/* ===================== Received-Testimonials ===================== */ 
+#tagged-comments {
+  padding-left: 4px;
+}
+
+.testimonial_tags .testimonial-item {
+  box-sizing: content-box;
+  text-align: center;
+  min-height: 320px;
+  padding-top: 20px;
+}
+
+.testimonial_tags .testimonial-item .testimonial-img {
+  width: 120px;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: solid 1px rgb(222, 222, 222);
+}
+
+.testimonial_tags .testimonial-item h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: #111;
+}
+
+.testimonial_tags .testimonial-item h4 {
+  font-size: 16px;
+  color: #999;
+  margin: 0;
+}
+
+.testimonial_tags .testimonial-item h5 {
+  font-size: 14px;
+  color: rgb(114, 114, 114);
+  margin: 4px 0 5px 0;
+}
+
+.testimonial_tags .testimonial-item .quote-icon-left,
+.testimonial_tags .testimonial-item .quote-icon-right {
+  color: #c3e8fa;
+  font-size: 26px;
+}
+
+.testimonial_tags .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonial_tags .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+}
+
+.testimonial_tags .testimonial-item p {
+  font-size: 16px;
+  margin: 0 15px 15px 15px;
+  padding: 20px;
+  background: #fff;
+  position: relative;
+  margin-bottom: 35px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.234);
+  text-justify: distribute-all-lines;
+}
+
+#real-comment p {
+    text-align: left;
+    text-justify: distribute-all-lines;
+    font-size: 14px;
+}
+
+#demo-comment p {
+  text-align:left;
+  text-justify: distribute-all-lines;
+  font-size: 14px;
+  color: rgb(196, 196, 196);
+}
+
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #149ddd;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #149ddd;
+}
+
+@media (max-width: 767px) {
+  .testimonial_tags {
+    margin: 30px 10px;
+  }
 }
 
 /* ===================== Contact-Synopsis ===================== */ 
