@@ -110,7 +110,7 @@ $('[data-toggle="counter-up"]').counterUp({
     return false;
   });
 
-// Animated Progressive Bar On First Time
+// First Time Animated Progressive Bar
   $('.skills-content').waypoint(function () {
     $('.progress .progress-bar').each(function () {
       $(this).css("width", $(this).attr("aria-valuenow") + '%');
@@ -119,47 +119,44 @@ $('[data-toggle="counter-up"]').counterUp({
     offset: '80%'
   });
 
-// Porfolio Section Selection Filter Widget
-  $(window).on('load', function () {
+// Porfolio Section Choose Filter Tab
+$(window).on('load', function () {
     var portfolioIsotope = $('.portfolio-container').isotope({
       itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
+      layoutMode: 'fitRows',
+      filter: '.filter-web'
     });
 
-    $('#portfolio-flters li').on('click', function () {
+$('#portfolio-flters li').on('click', function () {
       $("#portfolio-flters li").removeClass('filter-active');
       $(this).addClass('filter-active');
 
-      portfolioIsotope.isotope({
+portfolioIsotope.isotope({
         filter: $(this).data('filter')
       });
     });
 
-    // Initiate venobox (lightbox feature used in portofilo)
-    $(document).ready(function () {
+// Initiate venobox (lightbox feature used in portofilo)
+$(document).ready(function () {
       $('.venobox').venobox();
     });
-  });
-
-//  Always Animated Carousel library Comment
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 2
-      },
-      900: {
-        items: 3
-      }
-    }
   });
 
 // On Click Hamburger Lines Transform Cross
   function myFunction(x) {
     x.classList.toggle("change");
   }
+
+// Move the overlay to the end of the body
+const showPreviewBtn = document.getElementById('showPreviewBtn');
+const overlay = document.getElementById('overlay');
+const closeBtn = document.getElementById('closeBtn');
+
+showPreviewBtn.addEventListener('click', () => {
+    document.body.appendChild(overlay);
+    overlay.style.display = 'flex';
+});
+
+closeBtn.addEventListener('click', () => {
+    overlay.style.display = 'none';
+});
