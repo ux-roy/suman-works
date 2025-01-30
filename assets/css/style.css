@@ -72,7 +72,7 @@ p {
   transition: all ease-in-out 0.5s;
   z-index: 9999;
   transition: all 0.5s;
-  padding: 0 15px;
+  padding: 0 10px;
   background: #091330;
   overflow-y: auto;
 }
@@ -276,7 +276,51 @@ p {
 /*--------------------------------------------------------------
 # Resume Download Button
 --------------------------------------------------------------*/
+#resume-button {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
 
+.download-button h6 {
+  font-size: 12px;
+  font-weight: 400;
+  border: #3c4261 solid 1px;
+  padding: 4px 12px;
+  border-radius: 5rem;
+  text-decoration: none;
+  color: #3c4261;
+}
+
+.download-button h6:hover {
+  color: #ffffff;
+  background: #666d8f;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#footer {
+  color: #f4f6fd;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #091330;
+  text-align: center;
+}
+
+#footer .footer-items p {
+  font-size: 12px;
+  color: #3c4261;
+  padding: 2px;
+}
+
+@media (max-width: 1199px) {
+  #footer {
+    position: static;
+    width: auto;
+  }
+}
 /*--------------------------------------------------------------
 # Hero Image Background
 --------------------------------------------------------------*/
@@ -335,28 +379,7 @@ p {
 
  
   /* ===================== Resume Download ===================== */ 
-  #resume-button {
-    margin-top: 4rem;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .download-button a {
-    font-size: 12px;
-    font-weight: 400;
-    border: #3c4261 solid 1px;
-    padding: 4px 12px;
-    border-radius: 5rem;
-    text-decoration: none;
-    color: #3c4261;
-  }
-  
-  .download-button a:hover {
-    color: #ffffff;
-    background: #666d8f;
-    transition: all .5s ease-in-out;
-    cursor: pointer;
-  }
+
   
   /* ===================== Hero Background ===================== */ 
   .hero-container {
