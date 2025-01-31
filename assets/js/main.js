@@ -119,44 +119,30 @@ $('[data-toggle="counter-up"]').counterUp({
     offset: '80%'
   });
 
-// Porfolio Section Choose Filter Tab
-$(window).on('load', function () {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows',
-      filter: '.filter-web'
-    });
-
-$('#portfolio-flters li').on('click', function () {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-
-portfolioIsotope.isotope({
-        filter: $(this).data('filter')
-      });
-    });
-
-// Initiate venobox (lightbox feature used in portofilo)
-$(document).ready(function () {
-      $('.venobox').venobox();
-    });
-  });
-
 // On Click Hamburger Lines Transform Cross
   function myFunction(x) {
     x.classList.toggle("change");
   }
 
-// Move the overlay to the end of the body
-const showPreviewBtn = document.getElementById('showPreviewBtn');
-const overlay = document.getElementById('overlay');
-const closeBtn = document.getElementById('closeBtn');
+// Portfolio Section Choose Filter Tab
+$(window).on('load', function () {
+  var portfolioIsotope = $('.portfolio-container').isotope({
+    itemSelector: '.portfolio-item',
+    layoutMode: 'fitRows',
+    filter: '.case-study' // Show only case-study items initially
+  });
 
-showPreviewBtn.addEventListener('click', () => {
-    document.body.appendChild(overlay);
-    overlay.style.display = 'flex';
-});
+  $('#portfolio-flters li').on('click', function () {
+    $("#portfolio-flters li").removeClass('filter-active');
+    $(this).addClass('filter-active');
 
-closeBtn.addEventListener('click', () => {
-    overlay.style.display = 'none';
+    portfolioIsotope.isotope({
+      filter: $(this).attr('data-filter')
+    });
+  });
+
+  // Initiate venobox (lightbox feature used in portfolio)
+  $(document).ready(function () {
+    $('.venobox').venobox();
+  });
 });
