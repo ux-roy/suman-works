@@ -129,7 +129,7 @@ $(window).on('load', function () {
   var portfolioIsotope = $('.portfolio-container').isotope({
     itemSelector: '.portfolio-item',
     layoutMode: 'fitRows',
-    filter: '.case-study' // Show only case-study items initially
+    filter: '.case-study'
   });
 
   $('#portfolio-flters li').on('click', function () {
@@ -139,10 +139,5 @@ $(window).on('load', function () {
     portfolioIsotope.isotope({
       filter: $(this).attr('data-filter')
     });
-  });
-
-  // Initiate venobox (lightbox feature used in portfolio)
-  $(document).ready(function () {
-    $('.venobox').venobox();
   });
 });
