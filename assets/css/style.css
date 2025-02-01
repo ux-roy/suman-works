@@ -319,11 +319,10 @@ section {
   background-color: #f5f8fd;
 }
 .section-subtitle {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   color: #006fa3;
   letter-spacing: 0.05rem;
-  margin-left: 10px;
 }
 /*--------------------------------------------------------------
 # (1) Profile Depiction 
@@ -346,18 +345,7 @@ section {
   margin-bottom: 0;
 }
 /*--------------------------------------------------------------
-# (2) Work Experience
---------------------------------------------------------------*/
-#work_experience {
-  font-size: 20px;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-top: 4px;
-  margin-bottom: -1px;
-}
-/*--------------------------------------------------------------
-# 2A: Animated Bigicons
+# 1A: Animated Bigicons
 --------------------------------------------------------------*/
 #Animated-Icons .count-box {
   width: 100%;
@@ -392,6 +380,17 @@ section {
   margin-left: 55px;
 }
 /*--------------------------------------------------------------
+# (2) Work Experience
+--------------------------------------------------------------*/
+#work_experience {
+  font-size: 20px;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 4px;
+  margin-bottom: -1px;
+}
+/*--------------------------------------------------------------
 # 2B: Academic Education
 --------------------------------------------------------------*/
 .work_experience h5 {
@@ -405,7 +404,7 @@ section {
 .work_experience .education h5 {
   padding-top: 2px;
   padding-left: 20px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .work_experience .education h4 {
   font-size: 14px;
@@ -418,7 +417,7 @@ section {
 # 2C: Certificate & Credential
 --------------------------------------------------------------*/
 .work_experience .certification h5 {
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 20px;
   letter-spacing: 0.008rem;
   margin-bottom: -2px;
@@ -465,7 +464,7 @@ section {
   margin-top: 10px;
 }
 .work_experience .employment h4 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   padding: 0px 4px;
   margin: 6px;
@@ -920,6 +919,7 @@ iframe {
   bottom: 0;
   z-index: 9999;
   background: #091330;
+  padding-top: 20px;
 }
 #footer .footer-items p {
   font-size: 12px;
