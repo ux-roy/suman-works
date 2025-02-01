@@ -223,45 +223,6 @@ p {
   transform: rotate(45deg) translateY(0px);
 }
 /*--------------------------------------------------------------
-# Download Copiright Footer
---------------------------------------------------------------*/
-.sidebar-buttom {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding-top: 15rem;
-}
-#resume-button {
-  display: flex;
-  justify-content: center;
-}
-#resume-button a {
-  font-size: 12px;
-  font-weight: 400;
-  border: #3c4261 solid 1px;
-  padding: 4px 12px;
-  border-radius: 5rem;
-  text-decoration: none;
-  color: #3c4261;
-}
-#resume-button a:hover {
-  color: #ffffff;
-  background: #666d8f;
-  transition: all .5s ease-in-out;
-  cursor: pointer;
-}
-.copyright {
-  display: flex;
-  justify-content: center;
-}
-.copyright p {
-  font-size: 12px;
-  padding: 4px 12px;
-  border-radius: 5rem;
-  text-decoration: none;
-  color: #3c4261;
-}
-/*--------------------------------------------------------------
 # Hero Image Background
 --------------------------------------------------------------*/
 .hero-container {
@@ -777,15 +738,15 @@ iframe {
   display: inline-block;
   padding: 10px 15px 8px 15px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   text-transform: capitalize;
   color: #1379a8;
   transition: all 0.3s ease-in-out;
 }
  #portfolio-flters li:hover, #portfolio-flters li.filter-active {
-  color: #1379a8;
-  background: rgba(20, 157, 221, 0.295);
+  color: #ffffff;
+  background: #1379a8;
   line-height: 1;
   transition: all 0.3s ease-in-out;
   border-radius: 50px;
@@ -970,6 +931,40 @@ iframe {
     position: static;
     width: auto;
   }
+}
+/*--------------------------------------------------------------
+# Download Copiright Footer
+--------------------------------------------------------------*/
+#resume-button {
+  display: flex;
+  justify-content: center;
+}
+#resume-button a {
+  font-size: 12px;
+  font-weight: 400;
+  border: #3c4261 solid 1px;
+  padding: 4px 12px;
+  border-radius: 5rem;
+  text-decoration: none;
+  color: #3c4261;
+}
+#resume-button a:hover {
+  color: #ffffff;
+  background: #666d8f;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+}
+.copyright {
+  display: flex;
+  justify-content: center;
+}
+.copyright p {
+  font-size: 12px;
+  border-radius: 5rem;
+  text-decoration: none;
+  color: #3c4261;
+  padding: 2px;
+  margin-top: 4px;
 }
 /*--------------------------------------------------------------
 # Scroll Back Top Button
