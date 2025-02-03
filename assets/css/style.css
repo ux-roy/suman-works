@@ -363,18 +363,27 @@ section {
 /*--------------------------------------------------------------
 # 2B: Academic Education
 --------------------------------------------------------------*/
-.work_experience h5 {
-  font-size: 20px;
-  padding: 5px 15px;
+.education h6 {
+  font-size: 18px;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 550;
   margin-top: 4px;
-  margin-bottom: -1px;
+  margin-bottom: -2px;
+  margin-left: 20px;
+  position: relative;
+}
+.education h6::before {
+  content: '■';
+  position: absolute;
+  left: -20px;
+  color: #1379a8;
 }
 .education h5 {
-  padding-top: 2px;
-  padding-left: 10px;
-  font-size: 16px;
+  font-size: 14px;
+  padding: 6px 15px;
+  font-weight: 600;
+  margin-bottom: -1px;
+  margin-left: 6px;
 }
 .education h4 {
   font-size: 14px;
@@ -383,32 +392,34 @@ section {
   letter-spacing: 0.008rem;
   color: #1379a8;
   margin-bottom: 4px;
+  margin-left: 12px;
 }
 /*--------------------------------------------------------------
-# 2C: Certificate & Credential
+# 2C: Credential Certificate
 --------------------------------------------------------------*/
-.work_experience .certification h5 {
+ .certification h5 {
   font-size: 16px;
   padding-left: 20px;
   letter-spacing: 0.008rem;
   margin-bottom: -2px;
   position: relative;
 }
-.work_experience .certification h5::before {
+ .certification h5::before {
   content: '⦿';
   position: absolute;
   left: 0px;
   color: #1379a8;
 }
-.work_experience .certification h6 {
+ .certification h6 {
   font-size: 14px;
   padding-left: 10px;
   letter-spacing: 0.008rem;
   color: #1379a8;
-  padding-top: 4px;
+  padding-top: 6px;
   margin-left: 12px;
+  
 }
-.work_experience .certification ul a {
+ .certification ul a {
   padding: 4px 10px;
   color: #1379a8;
   background-color: #e4edf9;
@@ -416,7 +427,7 @@ section {
   font-size: 12px;
   margin-left: -18px;
 }
-.work_experience .certification ul a:hover {
+ .certification ul a:hover {
   padding: 4px 10px;
   color: #fff;
   background-color: #1379a8;
@@ -428,14 +439,14 @@ section {
 # 2D: Employment History
 --------------------------------------------------------------*/
 #Employment-History {
-  padding-left: 10px;
+  padding-left: 8px;
 }
-.work_experience .employment {
-  padding: 0 0 38px 0px;
+.employment {
+  padding: 0 0 25px 0px;
   border-left: 1px solid #1379a8;
   position: relative;
 }
-.work_experience .employment h5 {
+.employment h5 {
   font-size: 14px;
   background: #e4edf9;
   display: inline-block;
@@ -445,38 +456,40 @@ section {
   margin-left: 12px;
   border: 1px solid #1379a8;
   margin-top: 10px;
+  padding: 5px 20px;
 }
-.work_experience .employment h4 {
+.employment h4 {
   font-size: 16px;
   font-weight: 600;
   padding: 0px 4px;
-  margin: 6px;
   letter-spacing: 0.008rem;
-  margin-top: 12px;
+  margin-top: 4px;
   color: #014b6e;
+  margin-left: 10px;
 }
-.work_experience .employment h3 {
+.employment h3 {
   font-size: 16px;
   font-weight: 500;
   color: #1379a8;
   padding: 0px 4px;
-  margin: 6.5px;
+  margin-top: 6px;
+  margin-left: 10px;
 }
-.work_experience .employment:last-child {
+.employment:last-child {
   padding-bottom: 0;
 }
-.work_experience .employment::before {
+.employment::before {
   content: "";
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 50px;
-  top: 19px;
+  top: 20px;
   left: -6px;
   background: #e4edf9;
   border: 1px solid #1379a8;
 }
-.work_experience .employment::after {
+.employment::after {
   content: "";
   position: absolute;
   width: 8px;
