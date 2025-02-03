@@ -364,18 +364,18 @@ section {
 # 2B: Academic Education
 --------------------------------------------------------------*/
 .education h6 {
-  font-size: 18px;
-  display: inline-block;
+  font-size: 16px;
   font-weight: 550;
+  display: inline-block;
   margin-top: 4px;
   margin-bottom: -2px;
   margin-left: 20px;
   position: relative;
 }
 .education h6::before {
-  content: '■';
+  content: '▪︎';
   position: absolute;
-  left: -20px;
+  left: -18px;
   color: #1379a8;
 }
 .education h5 {
@@ -398,11 +398,13 @@ section {
 # 2C: Credential Certificate
 --------------------------------------------------------------*/
  .certification h5 {
-  font-size: 16px;
   padding-left: 20px;
   letter-spacing: 0.008rem;
   margin-bottom: -2px;
   position: relative;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 550;
 }
  .certification h5::before {
   content: '⦿';
@@ -460,7 +462,7 @@ section {
 }
 .employment h4 {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 550;
   padding: 0px 4px;
   letter-spacing: 0.008rem;
   margin-top: 4px;
