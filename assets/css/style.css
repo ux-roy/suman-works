@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/ 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #091330;
+  color: #014b6e;
 }
 a {
   color: #3c4261;
@@ -371,14 +371,15 @@ section {
   margin-top: 4px;
   margin-bottom: -1px;
 }
-.work_experience .education h5 {
+.education h5 {
   padding-top: 2px;
   padding-left: 10px;
   font-size: 16px;
 }
-.work_experience .education h4 {
+.education h4 {
   font-size: 14px;
   padding-left: 10px;
+  padding-top: 2px;
   letter-spacing: 0.008rem;
   color: #1379a8;
   margin-bottom: 4px;
@@ -388,9 +389,16 @@ section {
 --------------------------------------------------------------*/
 .work_experience .certification h5 {
   font-size: 16px;
-  padding-left: 10px;
+  padding-left: 20px;
   letter-spacing: 0.008rem;
   margin-bottom: -2px;
+  position: relative;
+}
+.work_experience .certification h5::before {
+  content: '⦿';
+  position: absolute;
+  left: 0px;
+  color: #1379a8;
 }
 .work_experience .certification h6 {
   font-size: 14px;
@@ -445,6 +453,7 @@ section {
   margin: 6px;
   letter-spacing: 0.008rem;
   margin-top: 12px;
+  color: #014b6e;
 }
 .work_experience .employment h3 {
   font-size: 16px;
