@@ -20,36 +20,6 @@ p {
   letter-spacing: 0.005rem;
 }
 /*--------------------------------------------------------------
-# Global Color Scheme
---------------------------------------------------------------*/
-:root { 
-  --background-color: #ffffff; 
-  --default-color: #272829; 
-  --heading-color: #050d18; 
-  --accent-color: #149ddd; 
-  --surface-color: #ffffff; 
-  --contrast-color: #ffffff; 
-}
-:root {
-  --nav-color: #a8a9b4; 
-  --nav-hover-color: #ffffff; 
-  --nav-mobile-background-color: #040b14; 
-  --nav-dropdown-background-color: #040b14; 
-  --nav-dropdown-color: #a8a9b4; 
-  --nav-dropdown-hover-color: #ffffff; 
-}
-.light-background {
-  --background-color: #f4fafd;
-  --surface-color: #ffffff;
-}
-.dark-background {
-  --background-color: #040b14;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #151f2b;
-  --contrast-color: #ffffff;
-}
-/*--------------------------------------------------------------
 # Global Header Styling
 --------------------------------------------------------------*/ 
 #header {
@@ -683,14 +653,15 @@ iframe {
   margin-top: 10px;
 }
 #card-button {
-  border: 1px solid rgb(232, 232, 232);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background-color: white;
-  border-radius: 30px;
-  color: gray;
+  border-radius: 4px;
+  color: #3c4261;
   display: flex;
   align-items: center;
   padding: 4px 10px;
   line-height: 1;
+  transition: all 0.5s ease-in-out;
 }
 .image-intro h5 {
   font-size: 12px;
@@ -709,6 +680,7 @@ iframe {
 #card-button:hover {
   background-color: #3280a4;
   color: white;
+  border: 1px solid #3280a4;
 }
 #card-button:hover .popup-icon {
   fill: white;
@@ -943,7 +915,7 @@ iframe {
   display: flex;
   justify-content: center;
 }
-#resume-button a {
+#resume-button button {
   font-size: 12px;
   font-weight: 400;
   border: #3c4261 solid 1px;
@@ -951,12 +923,13 @@ iframe {
   border-radius: 5rem;
   text-decoration: none;
   color: #3c4261;
+  background: none;
+  cursor: pointer;
 }
-#resume-button a:hover {
+#resume-button button:hover {
   color: #ffffff;
   background: #666d8f;
-  transition: all .5s ease-in-out;
-  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 .copyright {
   display: flex;
@@ -973,19 +946,6 @@ iframe {
 /*--------------------------------------------------------------
 # Scroll Back Top Button
 --------------------------------------------------------------*/
-.back-to-top-icon {
-  cursor: pointer;
-  fill:#1379a8;
-  width: 50px;
-  margin-left: -10px;
-  margin-top: -10px;
-  padding: 10px;
-}
-.back-to-top-icon:hover {
-  cursor: pointer;
-  fill:#ffffff;
-  transition: all .5s ease-in-out;
-}
 .back-to-top {
   position: fixed;
   display: none;
@@ -999,8 +959,20 @@ iframe {
   transition: all .5s ease-in-out;
   cursor: pointer;
   text-align: center;
+  border: none;
+  padding: 0;
+}
+.back-to-top-icon {
+  fill: #1379a8;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
 }
 .back-to-top:hover {
   background: #1379a8;
   transition: background 0.5s ease-in-out;
+}
+.back-to-top-icon:hover {
+  fill: #ffffff;
+  transition: all 0.5s ease-in-out;
 }
