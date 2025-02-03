@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/ 
 body {
   font-family: "Open Sans", sans-serif;
-  color: #082d58;
+  color: #091330;
 }
 a {
   color: #3c4261;
@@ -285,7 +285,7 @@ section {
 .section-title p {
   margin-bottom: 0;
 }
-.section-bg {
+.section-background {
   background-color: #f5f8fd;
 }
 .section-subtitle {
@@ -398,6 +398,7 @@ section {
   letter-spacing: 0.008rem;
   color: #1379a8;
   padding-top: 4px;
+  margin-left: 12px;
 }
 .work_experience .certification ul a {
   padding: 4px 10px;
@@ -405,7 +406,7 @@ section {
   background-color: #e4edf9;
   border-radius: 40px 40px 40px 40px;
   font-size: 12px;
-  margin-left: -30px;
+  margin-left: -18px;
 }
 .work_experience .certification ul a:hover {
   padding: 4px 10px;
@@ -571,30 +572,19 @@ iframe {
   }
 }
 /*--------------------------------------------------------------
-# 3A: Technique & Methods
+# 3A: Methods & Technique
 --------------------------------------------------------------*/ 
-.ux-skills .icon-box {
+.methods-technique .icon-box {
   margin-bottom: 20px;
 }
-.ux-skills .icon {
-  float: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 54px;
-  height: 54px;
-  background: #dff3fc;
-  border-radius: 50%;
-  transition: 0.5s;
-}
-.ux-skills .title {
+.methods-technique .title {
   margin-left: 56px;
   font-weight: 600;
   margin-bottom: 4px;
   font-size: 18px;
   color: #1379a8;
 }
-.ux-skills .description {
+.methods-technique .description {
   margin-left: 56px;
   line-height: 20px;
   font-size: 14px;
@@ -608,15 +598,12 @@ iframe {
   border-radius: 100px;
   width: 40px;
   height: 80px;
-  background: #ffffff;
+  background: #f5f8fd;
   margin-top: 10px;
 }
 /*--------------------------------------------------------------
 # 3B: Tools & Technology
 --------------------------------------------------------------*/
-#tools-proficiency {
-  padding: 0px 20px;
-}
 .softskill-bar .progress {
   height: 50px;
   display: block;
@@ -646,7 +633,7 @@ iframe {
   background-color: #1379a8;
 }
 /*--------------------------------------------------------------
-# (4) Portfolio Ideation
+# (4) Portfolio Preview
 --------------------------------------------------------------*/
 .image-intro {
   justify-items: flex-end;
