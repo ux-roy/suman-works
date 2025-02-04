@@ -50,8 +50,8 @@ p {
 --------------------------------------------------------------*/
 #header .logo {
   fill: #fff;
-  width: 115px;
-  height: 115px;
+  width: 100px;
+  height: 100px;
   position: relative;
   margin: 50px auto auto;
   display: block;
@@ -66,15 +66,16 @@ p {
 /*--------------------------------------------------------------
 # Social Media Platforms
 --------------------------------------------------------------*/
-#header .social-icons {
-  width: 38px;
-  height: 38px;
-}
 #header .social-links a {
   display: inline-flex;
-  fill: #3c4261;
+  background: #3c426173;
+  fill: #091330;
   border-radius: 50%;
+  width: 38px;
+  height: 38px;
   transition: 0.9s;
+  margin-top: 30px;
+  justify-self: auto;
 }
 #header .social-links a:hover {
   fill: #fff;
