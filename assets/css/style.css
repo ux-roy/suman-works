@@ -66,6 +66,9 @@ p {
 /*--------------------------------------------------------------
 # Social Media Platforms
 --------------------------------------------------------------*/
+#header .social-icons {
+  width: 38px;
+}
 #header .social-links a {
   display: inline-flex;
   background: #3c426173;
