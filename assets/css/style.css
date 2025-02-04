@@ -317,37 +317,51 @@ section {
 /*--------------------------------------------------------------
 # 1A: Animated Bigicons
 --------------------------------------------------------------*/
-#Animated-Icons .count-box {
+#animated-icons .count-box {
   width: 100%;
-  padding: 20px;
-  margin-top: 10px;
+  margin-top: 40px;
 }
-#Animated-Icons .count-box span {
+#animated-icons .count-box span {
   font-size: 40px;
   display: block;
   font-weight: 600;
   color: #1379a8;
-  text-align:center;
+  text-align: center;
   margin-left: 60px;
   margin-top: 4px;
 }
-#Animated-Icons .count-box p {
+#animated-icons .count-box p {
   font-size: 18px;
   font-weight: 550;
   text-align: center;
   color: #014b6e;
   margin-top: 10px;
 }
-#Animated-Icons .big-icons {
+#animated-icons .big-icons {
   fill: #1379a8;
   width: 60px;
-}
-#Animated-Icons #big-icon-row {
-  margin: 10px;
 }
 .big-icon-box {
   margin-bottom: -60px;
   margin-left: 55px;
+}
+@media (max-width: 767px) {
+  #big-icon-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #big-icon-row .col-lg-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .count-box {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .big-icon-box {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 /*--------------------------------------------------------------
 # (2) Work Experience
@@ -505,7 +519,7 @@ section {
   background: #1379a8;
 }
 /*--------------------------------------------------------------
-# 2E: Award & Achievement
+# 2E: Notable Achievement
 --------------------------------------------------------------*/
 #Reward-Recognition {
   margin-left: -20px;
@@ -665,39 +679,54 @@ iframe {
 --------------------------------------------------------------*/
 .image-intro {
   margin-top: 10px;
-}
-#card-button {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: white;
-  border-radius: 20px;
-  color: #3c4261;
   display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+.title-icons {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 6px 10px 4px 10px;
-  line-height: 1;
-  transition: all 0.5s ease-in-out;
+  width: 100%;
+}
+.title-text {
+  flex: 1;
+}
+.title-text h6 {
+  font-size: 18px;
+  color: #1379a8;
+  margin-top: 1px;
+}
+.card-title {
+  display: flex;
+  gap: 5px;
 }
 .image-intro h5 {
   font-size: 12px;
-  padding: 0;
-  font-weight: 400;
-  display: inline-block;
   letter-spacing: 0.025rem;
   margin: 0;
 }
-.popup-icon {
-  fill: gray;
-  width: 20px;
-  height: 20px;
-  margin-left: 4px;
+.smaller-icons {
+  fill: #3280a4;
+  width: 30px;
+  height: 30px;
 }
+#card-button {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: #f5f8fd;
+  border-radius: 20px;
+  color: #3c4261;
+  padding: 4px 10px;
+  transition: all 0.5s ease-in-out;
+  align-self: flex-start;
+  margin-left: -15px;
+  margin-top: -10px;
+}
+
 #card-button:hover {
   background-color: #3280a4;
   color: white;
   border: 1px solid #3280a4;
-}
-#card-button:hover .popup-icon {
-  fill: white;
 }
 .iframe-dimension {
   width: 100%;
@@ -712,7 +741,7 @@ iframe {
   background-color: transparent;
 }
  .portfolio-item {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
  #portfolio-flters {
   padding: 0;
