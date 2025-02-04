@@ -441,7 +441,7 @@ section {
 # 2D: Employment History
 --------------------------------------------------------------*/
 .employment {
-  padding: 0 0 32px 0px;
+  padding: 0 0 28px 0px;
   position: relative;
 }
 .connector-line {
@@ -483,7 +483,6 @@ section {
 }
 .employment:last-child {
   padding-bottom: 0;
-  border: none;
 }
 .employment::before {
   content: "";
@@ -504,12 +503,6 @@ section {
   top: 30px;
   left: 4px;
   background: #1379a8;
-}
-.employment:last-child::after {
-  display: none;
-}
-.employment:not(:first-child):not(:last-child)::after {
-  display: block;
 }
 /*--------------------------------------------------------------
 # 2E: Award & Achievement
