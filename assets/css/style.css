@@ -633,6 +633,7 @@ iframe {
   margin-bottom: 4px;
   font-size: 18px;
   color: #1379a8;
+  letter-spacing: 0.05rem;
 }
 .methods-technique .description {
   margin-left: 56px;
