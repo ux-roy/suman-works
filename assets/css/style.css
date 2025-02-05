@@ -71,7 +71,7 @@ p {
 }
 #header .social-links a {
   display: inline-flex;
-  background: #3c426173;
+  background: #3c4261;
   fill: #091330;
   border-radius: 50%;
   width: 38px;
@@ -293,10 +293,11 @@ section {
   background-color: #f5f8fd;
 }
 .section-subtitle {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: #006fa3;
   letter-spacing: 0.05rem;
+  padding: 5px;
 }
 /*--------------------------------------------------------------
 # (1) Profile Depiction 
@@ -324,30 +325,35 @@ section {
 #animated-icons .count-box {
   width: 100%;
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#animated-icons .count-box-inner {
+  display: flex;
+  align-items: center;
+}
+#animated-icons .big-icon-box {
+  margin-right: 10px;
 }
 #animated-icons .count-box span {
   font-size: 40px;
-  display: block;
   font-weight: 600;
   color: #1379a8;
-  text-align: center;
-  margin-left: 60px;
-  margin-top: 4px;
+  text-align: right;
+  margin: 0;
 }
-#animated-icons .count-box p {
-  font-size: 18px;
-  font-weight: 550;
+.count-box h2 {
+  font-size: 20px;
+  font-weight: 600;
   text-align: center;
   color: #014b6e;
+  padding: 10px;
   margin-top: 10px;
 }
-#animated-icons .big-icons {
+.big-icons {
   fill: #1379a8;
   width: 60px;
-}
-.big-icon-box {
-  margin-bottom: -60px;
-  margin-left: 55px;
 }
 @media (max-width: 767px) {
   #big-icon-row {
@@ -525,14 +531,12 @@ section {
 /*--------------------------------------------------------------
 # 2E: Notable Achievement
 --------------------------------------------------------------*/
-#Reward-Recognition {
-  margin-left: -20px;
-  }
 #Reward-Recognition li {
   list-style-type: '★';
   padding: 6px 12px;
   color: #014b6e;
   font-size: 14px;
+  margin-left: -25px;
   }
 /*--------------------------------------------------------------
 # (3) Design Expertise
@@ -703,7 +707,7 @@ iframe {
 }
 .card-title {
   display: flex;
-  gap: 5px;
+  gap: 2px;
 }
 .image-intro h5 {
   font-size: 12px;
@@ -712,8 +716,8 @@ iframe {
 }
 .smaller-icons {
   fill: #3280a4;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 #card-button {
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -724,9 +728,8 @@ iframe {
   transition: all 0.5s ease-in-out;
   align-self: flex-start;
   margin-left: -15px;
-  margin-top: -10px;
+  margin-top: -5px;
 }
-
 #card-button:hover {
   background-color: #3280a4;
   color: white;
