@@ -541,6 +541,240 @@ section {
 /*--------------------------------------------------------------
 # (3) Design Expertise
 --------------------------------------------------------------*/
+#Design-Expertise .methods-technique {
+  margin-bottom: 30px;
+}
+#Design-Expertise .softskill-bar {
+  margin-top: 30px;
+}
+/*--------------------------------------------------------------
+# 3A: Technique & Skills
+--------------------------------------------------------------*/ 
+.methods-technique .title {
+  margin-left: 56px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 16px;
+  color: #1379a8;
+  letter-spacing: 0.015rem;
+}
+.methods-technique .description {
+  margin-left: 56px;
+  line-height: 20px;
+  font-size: 14px;
+}
+#oval-icon-title {
+ margin-top: -80px;
+}
+.oval-shaped-icons {
+  fill:#1379a8;
+  border: .2px solid #1379a858;
+  border-radius: 100px;
+  width: 40px;
+  height: 80px;
+  background: #f5f8fd;
+  margin-top: 10px;
+}
+/*--------------------------------------------------------------
+# 3B: Tools & Technology
+--------------------------------------------------------------*/
+.softskill-bar .progress {
+  height: 50px;
+  display: block;
+  background: none;
+}
+.softskill-bar .progress .skill {
+  padding: 0;
+  margin: 0 0 6px 0;
+  text-transform: none;
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: #050d18;
+}
+.softskill-bar .progress .skill .val {
+  float: right;
+  font-style: normal;
+}
+.softskill-bar .progress-bar-wrap {
+  background: #a6d1e7;
+}
+.softskill-bar .progress-bar {
+  width: 1px;
+  height: 8px;
+  transition: 0.9s;
+  background-color: #1379a8;
+}
+/*--------------------------------------------------------------
+# (4) Portfolio Preview
+--------------------------------------------------------------*/
+.portfolio-item {
+  margin-bottom: 50px;
+}
+/*--------------------------------------------------------------
+# 4A: Applied Filter Tab
+--------------------------------------------------------------*/
+#portfolio-flters {
+  padding: 0;
+  margin: 0 auto 35px auto;
+  list-style: none;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 50px;
+}
+ #portfolio-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 15px 8px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: capitalize;
+  color: #1379a8;
+  transition: all 0.3s ease-in-out;
+}
+ #portfolio-flters li:hover, #portfolio-flters li.filter-active {
+  color: #ffffff;
+  background: #1379a8;
+  line-height: 1;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50px;
+}
+ #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+/*--------------------------------------------------------------
+# 4B: Card Intro Buttom
+--------------------------------------------------------------*/
+.image-intro {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+.title-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.title-text {
+  flex: 1;
+}
+.title-text h6 {
+  font-size: 18px;
+  color: #1379a8;
+  margin-top: 1px;
+}
+.card-title {
+  display: flex;
+  gap: 2px;
+}
+.image-intro h5 {
+  font-size: 12px;
+  letter-spacing: 0.025rem;
+  margin: 0;
+}
+.smaller-icons {
+  fill: #3280a4;
+  width: 20px;
+  height: 20px;
+}
+#card-button {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: #f5f8fd;
+  border-radius: 4px;
+  color: #3c4261;
+  padding: 4px 10px;
+  transition: all 0.5s ease-in-out;
+  align-self: flex-start;
+  margin-left: -15px;
+  margin-top: -5px;
+}
+#card-button:hover {
+  background-color: #3280a4;
+  color: white;
+  border: 1px solid #3280a4;
+}
+
+.iframe-dimension {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  background-color: transparent;
+}
+/*--------------------------------------------------------------
+# 4C: Inside Card Info
+--------------------------------------------------------------*/
+ .portfolio-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  border: solid .5px lightgray;
+  border-radius: 4px;
+}
+ .portfolio-wrap::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+ .portfolio-wrap .portfolio-links {
+  opacity: 1;
+  left: 0;
+  right: 0;
+  bottom: -150px;
+  z-index: 2;
+  position: absolute;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+}
+ .portfolio-wrap .portfolio-links a {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  background: rgba(20, 157, 221, 0.5);
+  transition: 0.3s;
+  width: 50%;
+}
+ .portfolio-wrap .portfolio-links a:hover {
+  background: rgba(20, 157, 221, 0.80);
+}
+ .portfolio-wrap .portfolio-links a + a {
+  border-left: 1px solid #149ddd;
+}
+ .portfolio-wrap:hover::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+}
+ .portfolio-wrap:hover .portfolio-links {
+  opacity: 1;
+  bottom: 0;
+}
+@media (max-width: 320px) {
+  #portfolio-flters {
+    display: none;
+  }
+}
+/*--------------------------------------------------------------
+# 4D: Overlay PDF File
+--------------------------------------------------------------*/
 .overlay {
   display: none;
   position: fixed;
@@ -619,224 +853,6 @@ iframe {
   }
   60% {
       transform: translateY(-5px);
-  }
-}
-/*--------------------------------------------------------------
-# 3A: Methods & Technique
---------------------------------------------------------------*/ 
-.methods-technique .icon-box {
-  margin-bottom: 20px;
-}
-.methods-technique .title {
-  margin-left: 56px;
-  font-weight: 600;
-  margin-bottom: 4px;
-  font-size: 18px;
-  color: #1379a8;
-  letter-spacing: 0.05rem;
-}
-.methods-technique .description {
-  margin-left: 56px;
-  line-height: 20px;
-  font-size: 14px;
-}
-#oval-icon-title {
- margin-top: -80px;
-}
-.oval-shaped-icons {
-  fill:#1379a8;
-  border: .2px solid #1379a858;
-  border-radius: 100px;
-  width: 40px;
-  height: 80px;
-  background: #f5f8fd;
-  margin-top: 10px;
-}
-/*--------------------------------------------------------------
-# 3B: Tools & Technology
---------------------------------------------------------------*/
-.softskill-bar .progress {
-  height: 50px;
-  display: block;
-  background: none;
-}
-.softskill-bar .progress .skill {
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: none;
-  display: block;
-  font-weight: 500;
-  font-size: 14px;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-}
-.softskill-bar .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-.softskill-bar .progress-bar-wrap {
-  background: #a6d1e7;
-}
-.softskill-bar .progress-bar {
-  width: 1px;
-  height: 8px;
-  transition: 0.9s;
-  background-color: #1379a8;
-}
-/*--------------------------------------------------------------
-# (4) Portfolio Preview
---------------------------------------------------------------*/
-.image-intro {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 0 16px;
-}
-.title-icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-.title-text {
-  flex: 1;
-}
-.title-text h6 {
-  font-size: 18px;
-  color: #1379a8;
-  margin-top: 1px;
-}
-.card-title {
-  display: flex;
-  gap: 2px;
-}
-.image-intro h5 {
-  font-size: 12px;
-  letter-spacing: 0.025rem;
-  margin: 0;
-}
-.smaller-icons {
-  fill: #3280a4;
-  width: 20px;
-  height: 20px;
-}
-#card-button {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #f5f8fd;
-  border-radius: 20px;
-  color: #3c4261;
-  padding: 4px 10px;
-  transition: all 0.5s ease-in-out;
-  align-self: flex-start;
-  margin-left: -15px;
-  margin-top: -5px;
-}
-#card-button:hover {
-  background-color: #3280a4;
-  color: white;
-  border: 1px solid #3280a4;
-}
-.iframe-dimension {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-  overflow: hidden;
-  background-color: transparent;
-}
- .portfolio-item {
-  margin-bottom: 50px;
-}
- #portfolio-flters {
-  padding: 0;
-  margin: 0 auto 35px auto;
-  list-style: none;
-  text-align: center;
-  background: #ffffff;
-  border-radius: 50px;
-}
- #portfolio-flters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 10px 15px 8px 15px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  text-transform: capitalize;
-  color: #1379a8;
-  transition: all 0.3s ease-in-out;
-}
- #portfolio-flters li:hover, #portfolio-flters li.filter-active {
-  color: #ffffff;
-  background: #1379a8;
-  line-height: 1;
-  transition: all 0.3s ease-in-out;
-  border-radius: 50px;
-}
- #portfolio-flters li:last-child {
-  margin-right: 0;
-}
- .portfolio-wrap {
-  transition: 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 2;
-  border: solid .5px lightgray;
-  border-radius: 4px;
-}
- .portfolio-wrap::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  transition: all ease-in-out 0.3s;
-  z-index: 2;
-  opacity: 0;
-}
- .portfolio-wrap .portfolio-links {
-  opacity: 1;
-  left: 0;
-  right: 0;
-  bottom: -150px;
-  z-index: 2;
-  position: absolute;
-  transition: all ease-in-out 0.3s;
-  display: flex;
-}
- .portfolio-wrap .portfolio-links a {
-  color: #fff;
-  font-size: 16px;
-  text-align: center;
-  background: rgba(20, 157, 221, 0.5);
-  transition: 0.3s;
-  width: 50%;
-}
- .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(20, 157, 221, 0.80);
-}
- .portfolio-wrap .portfolio-links a + a {
-  border-left: 1px solid #149ddd;
-}
- .portfolio-wrap:hover::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 1;
-}
- .portfolio-wrap:hover .portfolio-links {
-  opacity: 1;
-  bottom: 0;
-}
-@media (max-width: 320px) {
-  #portfolio-flters {
-    display: none;
   }
 }
 /*--------------------------------------------------------------
