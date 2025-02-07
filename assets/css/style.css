@@ -645,75 +645,9 @@ section {
   margin-right: 0;
 }
 /*--------------------------------------------------------------
-# 4B: Card Intro Buttom
+# 4B: Project Art Gallarey
 --------------------------------------------------------------*/
-.image-intro {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 0 16px;
-}
-.title-icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-.title-text {
-  flex: 1;
-}
-.title-text h6 {
-  font-size: 18px;
-  color: #1379a8;
-  margin-top: 1px;
-}
-.card-title {
-  display: flex;
-  gap: 2px;
-}
-.image-intro h5 {
-  font-size: 12px;
-  letter-spacing: 0.025rem;
-  margin: 0;
-}
-.smaller-icons {
-  fill: #3280a4;
-  width: 20px;
-  height: 20px;
-}
-#card-button {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #f5f8fd;
-  border-radius: 4px;
-  color: #3c4261;
-  padding: 4px 10px;
-  transition: all 0.5s ease-in-out;
-  align-self: flex-start;
-  margin-left: -15px;
-  margin-top: -5px;
-}
-#card-button:hover {
-  background-color: #3280a4;
-  color: white;
-  border: 1px solid #3280a4;
-}
-
-.iframe-dimension {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-  overflow: hidden;
-  background-color: transparent;
-}
-/*--------------------------------------------------------------
-# 4C: Inside Card Info
---------------------------------------------------------------*/
- .portfolio-wrap {
+.portfolio-wrap {
   transition: 0.3s;
   position: relative;
   overflow: hidden;
@@ -773,7 +707,73 @@ section {
   }
 }
 /*--------------------------------------------------------------
-# 4D: Overlay PDF File
+# 4C: Under Image Information
+--------------------------------------------------------------*/
+.image-introbox {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+.title-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.image-title {
+  flex: 1;
+}
+.image-title h6 {
+  font-size: 18px;
+  color: #1379a8;
+  margin-top: 12px;
+  font-size: 500;
+  letter-spacing: 0.025rem;
+}
+.card-title {
+  display: flex;
+}
+.smaller-icons {
+  fill: #3280a4;
+  width: 30px;
+  height: 30px;
+}
+.reaction-box {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+.reaction-box p {
+  font-size: 16px;
+  margin-top: 12px;
+}
+.reaction-box span {
+  display: flex;
+  align-items: center;
+}
+.popup-button h5 {
+  font-size: 12px;
+  letter-spacing: 0.025rem;
+  margin: 0;
+}
+.popup-button {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: #f5f8fd;
+  border-radius: 4px;
+  color: #3c4261;
+  padding: 4px 6px;
+  transition: all 0.5s ease-in-out;
+  align-self: flex-start;
+  margin-left: -15px;
+  margin-top: -15px;
+}
+.popup-button:hover {
+  background-color: #3280a4;
+  color: white;
+  border: 1px solid #3280a4;
+}
+/*--------------------------------------------------------------
+# 4D: Overlay PDF Documents
 --------------------------------------------------------------*/
 .overlay {
   display: none;
@@ -786,6 +786,7 @@ section {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  overflow: auto;
 }
 .overlay-content {
   position: relative;
@@ -799,7 +800,7 @@ section {
 }
 .pdf-info {
   width: 20%;
-  padding: 60px 40px;
+  padding: 60px 20px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -820,19 +821,28 @@ section {
   right: 10px;
   font-size: 24px;
   cursor: pointer;
-  color: white;
-  background-color: rgb(138, 138, 138);
+  color: gray;
+  border: 1px solid gray;
   border-radius: 50%;
-  padding: 5px 12px;
+  padding: 12px;
   z-index: 1;
+  height: 40px;
+  width: 40ox;
 }
 .close-btn:hover {
-  background-color: rgb(0, 69, 137);
+  background-color: #3280a4;
+  color: white;
 }
 iframe {
   width: 100%;
   height: 100%;
   border: none;
+}
+h2 {
+  margin-top: 0;
+}
+p {
+  margin: 10px 0;
 }
 .scroll-down {
   position: absolute;

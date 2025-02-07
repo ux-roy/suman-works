@@ -95,7 +95,7 @@ $('[data-toggle="counter-up"]').counterUp({
     });
   });
 
-// Back To Top Button Scroll To Start Point
+// Button Scroll To Start Point
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
@@ -138,6 +138,22 @@ $(window).on('load', function () {
 
     portfolioIsotope.isotope({
       filter: $(this).attr('data-filter')
+    });
+  });
+});
+
+// Popup Button Open Overlay Preview
+document.querySelectorAll('.popup-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const overlay = button.nextElementSibling.cloneNode(true);
+    document.body.appendChild(overlay);
+    overlay.style.display = 'flex';
+    overlay.style.zIndex = '9999';
+
+// Add event listener to close button inside the newly appended overlay
+    overlay.querySelector('.close-btn').addEventListener('click', () => {
+      overlay.style.display = 'none';
+      document.body.removeChild(overlay);
     });
   });
 });
