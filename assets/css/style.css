@@ -827,7 +827,10 @@ section {
   padding: 12px;
   z-index: 1;
   height: 40px;
-  width: 40ox;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .close-btn:hover {
   background-color: #3280a4;
@@ -843,6 +846,9 @@ h2 {
 }
 p {
   margin: 10px 0;
+}
+.no-scroll {
+  overflow: hidden;
 }
 .scroll-down {
   position: absolute;

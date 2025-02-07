@@ -149,11 +149,13 @@ document.querySelectorAll('.popup-button').forEach(button => {
     document.body.appendChild(overlay);
     overlay.style.display = 'flex';
     overlay.style.zIndex = '9999';
+    document.body.classList.add('no-scroll');
 
-// Add event listener to close button inside the newly appended overlay
+// Disable Background Scrolling Clone Overlay
     overlay.querySelector('.close-btn').addEventListener('click', () => {
       overlay.style.display = 'none';
       document.body.removeChild(overlay);
+      document.body.classList.remove('no-scroll');
     });
   });
 });
