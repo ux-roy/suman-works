@@ -1036,8 +1036,8 @@ p {
   bottom: 14px;
   background: #e4edf9;
   z-index: 99999;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 50px;
   transition: all .5s ease-in-out;
   cursor: pointer;
@@ -1047,9 +1047,8 @@ p {
 }
 .back-to-top-icon {
   fill: #1379a8;
-  width: 20px;
-  height: 20px;
-  margin: 5px;
+  width: 30px;
+  height: 30px;
 }
 .back-to-top:hover {
   background: #1379a8;
