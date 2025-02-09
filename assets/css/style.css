@@ -633,6 +633,7 @@ section {
   text-transform: capitalize;
   color: #1379a8;
   transition: all 0.3s ease-in-out;
+  width: 115px;
 }
  #portfolio-flters li:hover, #portfolio-flters li.filter-active {
   color: #ffffff;
