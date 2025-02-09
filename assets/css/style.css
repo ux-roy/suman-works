@@ -652,10 +652,10 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 2;
-  border: solid .5px lightgray;
+  border: solid 0.5px lightgray;
   border-radius: 4px;
 }
- .portfolio-wrap::before {
+.portfolio-wrap::before {
   content: "";
   position: absolute;
   left: 0;
@@ -666,37 +666,52 @@ section {
   z-index: 2;
   opacity: 0;
 }
- .portfolio-wrap .portfolio-links {
-  opacity: 1;
+.portfolio-wrap .portfolio-links {
+  opacity: 0;
   left: 0;
   right: 0;
-  bottom: -150px;
+  top: 100%;
+  bottom: 0;
   z-index: 2;
   position: absolute;
   transition: all ease-in-out 0.3s;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
- .portfolio-wrap .portfolio-links a {
+.portfolio-wrap .portfolio-links a {
   color: #fff;
   font-size: 16px;
   text-align: center;
-  background: rgba(20, 157, 221, 0.5);
+  background: rgba(0, 38, 55, 0.5);
   transition: 0.3s;
-  width: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
- .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(20, 157, 221, 0.80);
-}
- .portfolio-wrap:hover::before {
+.portfolio-wrap:hover::before {
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   opacity: 1;
 }
- .portfolio-wrap:hover .portfolio-links {
+.portfolio-wrap:hover .portfolio-links {
   opacity: 1;
-  bottom: 0;
+  top: 0;
+}
+.portfolio-wrap .portfolio-links a svg {
+  fill: white;
+  width: 60px;
+  height: 60px;
+}
+.portfolio-wrap:hover img {
+  transform: scale(1.2);
+}
+.portfolio-wrap img {
+  transition: transform 0.3s ease-in-out;
 }
 @media (max-width: 320px) {
   #portfolio-flters {
