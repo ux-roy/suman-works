@@ -633,7 +633,6 @@ section {
   text-transform: capitalize;
   color: #1379a8;
   transition: all 0.3s ease-in-out;
-  width: 115px;
 }
  #portfolio-flters li:hover, #portfolio-flters li.filter-active {
   color: #ffffff;
@@ -687,9 +686,6 @@ section {
 }
  .portfolio-wrap .portfolio-links a:hover {
   background: rgba(20, 157, 221, 0.80);
-}
- .portfolio-wrap .portfolio-links a + a {
-  border-left: 1px solid #149ddd;
 }
  .portfolio-wrap:hover::before {
   top: 0;
