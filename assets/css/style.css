@@ -820,6 +820,7 @@ section {
   padding: 50px 20px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  position: relative;
 }
 .pdf-info h5 {
   color: #3280a4;
@@ -842,14 +843,43 @@ section {
   display: block;
   overflow: hidden;
 }
+.reaction-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #3c4261;
+  border-radius: 4px;
+  padding: 6px 18px;
+  position: relative;
+  margin-top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 10px);
+  background: #f5f8fd;
+  color: #3c4261;
+}
+.reaction-btn:hover {
+  background-color: #3280a4;
+  color: white;
+  border: 1px solid white;
+}
+.react-icons {
+  fill: #3c4261;
+  width: 30px;
+  height: 30px;
+}
+.reaction-btn:hover .react-icons {
+  fill: white;
+}
 .close-btn {
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 24px;
   cursor: pointer;
-  color: gray;
-  border: 1px solid gray;
+  color: #3c4261;
+  border: 1px solid #3c4261;
   border-radius: 50%;
   padding: 12px;
   z-index: 1;
@@ -860,20 +890,6 @@ section {
   justify-content: center;
 }
 .close-btn:hover {
-  background-color: #3280a4;
-  color: white;
-}
-.reaction-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: gray;
-  border: 1px solid white;
-  border-radius: 4px;
-  padding: 6px 18px;
-}
-.reaction-btn:hover {
   background-color: #3280a4;
   color: white;
 }
@@ -1090,17 +1106,11 @@ p {
   text-align: center;
   border: none;
   padding: 0;
-}
-.back-to-top-icon {
-  fill: #1379a8;
-  width: 30px;
-  height: 30px;
+  color: #1379a8;
+  border: 1px solid #3c426128;
 }
 .back-to-top:hover {
   background: #1379a8;
   transition: background 0.5s ease-in-out;
-}
-.back-to-top-icon:hover {
-  fill: #ffffff;
-  transition: all 0.5s ease-in-out;
+  color: white;
 }
