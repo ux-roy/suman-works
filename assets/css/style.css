@@ -898,6 +898,12 @@ iframe {
   height: 100%;
   border: none;
 }
+embed {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 h2 {
   margin-top: 0;
 }
@@ -911,8 +917,7 @@ p {
   position: absolute;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%);
-  font-size: 50px;
+  font-size: 30px;
   color: black;
   animation: bounce 2s infinite;
   z-index: 2;
@@ -929,8 +934,20 @@ p {
   }
 }
 @media (max-width: 768px) {
-  .pdf-info {
+  .pdf-info .scroll-down {
     display: none;
+  }
+  .pdf-viewer {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+  .close-btn {
+    top: 10px;
+    right: 10px;
   }
 }
 /*--------------------------------------------------------------
