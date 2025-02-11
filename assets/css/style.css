@@ -928,7 +928,12 @@ p {
   }
 }
 @media (max-width: 768px) {
-  .popup-button .portfolio-links {
+  .popup-button {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .popup-trigger {
     display: none;
   }
 }
