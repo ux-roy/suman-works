@@ -153,12 +153,38 @@ document.querySelectorAll('.popup-trigger').forEach(button => {
     overlay.style.display = 'flex';
     overlay.style.zIndex = '9999';
     document.body.classList.add('no-scroll');
+    overlay.classList.add('overlay-active'); 
+
+// Hide the "scroll to top" button when overlay is active
+    $('.back-to-top').hide();
 
 // Disable Background Scrolling Overlay
     overlay.querySelector('.close-btn').addEventListener('click', () => {
       overlay.style.display = 'none';
       document.body.removeChild(overlay);
       document.body.classList.remove('no-scroll');
+      overlay.classList.remove('overlay-active'); 
+
+// Show the "scroll to top" button when overlay is closed
+      $('.back-to-top').show();
     });
   });
+});
+
+// Button Scroll To Start Point
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 100 && !$('.overlay-active').length) { 
+    $('.back-to-top').fadeIn('slow');
+  } else {
+    $('.back-to-top').fadeOut('slow');
+  }
+});
+
+$('.back-to-top').click(function () {
+  if (!$('.overlay-active').length) {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1500, 'easeInOutExpo');
+    return false;
+  }
 });
