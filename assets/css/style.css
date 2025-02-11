@@ -928,7 +928,7 @@ p {
   }
 }
 @media (max-width: 768px) {
-  .popup-button {
+  .popup-button .portfolio-links {
     display: none;
   }
 }
