@@ -155,7 +155,7 @@ document.querySelectorAll('.popup-trigger').forEach(button => {
     document.body.classList.add('no-scroll');
     overlay.classList.add('overlay-active'); 
 
-// Hide the "scroll to top" button when overlay is active
+// Hide Scroll Up While Overlay Active
     $('.back-to-top').hide();
 
 // Disable Background Scrolling Overlay
@@ -165,7 +165,7 @@ document.querySelectorAll('.popup-trigger').forEach(button => {
       document.body.classList.remove('no-scroll');
       overlay.classList.remove('overlay-active'); 
 
-// Show the "scroll to top" button when overlay is closed
+// Show Scroll Up While Overlay Closed
       $('.back-to-top').show();
     });
   });
