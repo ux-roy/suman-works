@@ -21,18 +21,135 @@ p {
   letter-spacing: 0.005rem;
 }
 /*--------------------------------------------------------------
-# Hemburger Menu Icon
+# Global Header Styling
 --------------------------------------------------------------*/
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5rem;
+  transition: all ease-in-out 0.5s;
+  z-index: 9999;
+  background: #091330;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+#main {
+  margin-left: 5rem;
+}
+@media (max-width: 1199px) {
+  #header {
+    left: -300px;
+  }
+  #main {
+    margin-left: 0;
+  }
+}
+/*--------------------------------------------------------------
+# Website Introduction Logo
+--------------------------------------------------------------*/
+.website-logo {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+/*--------------------------------------------------------------
+# Expandable Side Navigation
+--------------------------------------------------------------*/
+.sidebar-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+.sidebar-link ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+}
+.navbar-icons {
+  fill: #9ea0b1;
+  width: 40px;
+  height: 40px;
+}
+.navbar-icons:hover {
+  fill: #fff;
+  width: 40px;
+  height: 40px;
+}
+.nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-menu {
+  padding-top: 1rem;
+}
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  color: #6f7180;
+  padding: 8px;
+  transition: 0.3s;
+  font-size: 16px;
+}
+.nav-menu a i {
+  font-size: 24px;
+  padding-right: 8px;
+  color: #6f7180;
+  cursor: pointer;
+  background-color: #6f718078;
+  border-radius: 0.5rem;
+}
+.nav-menu .active > a  {
+  text-decoration: none;
+  color: #ffffff;
+}
+.nav-menu li:hover > a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.nav-menu .active > a i 
+.nav-menu li:hover > a i {
+  color: #ffffff;
+}
+.nav-menu a:hover 
+.nav-menu li:hover > a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.nav-menu a:hover i 
+.nav-menu li:hover > a i {
+  color: #ffffff;
+}
+/*--------------------------------------------------------------
+# Hemburger Menu Iconography
+--------------------------------------------------------------*/
+#hamburger {
+  fill: #fff;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 1rem 0;
+}
 #menu-line-icon {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30px;
-  width: 40px;
-  border-radius: .5rem;
+  height: 40px;
+  width: 50px;
   transition: all .5s ease-in-out;
   cursor: pointer;
+  background-color: #6f718078;
+  border-radius: 0.3rem;
 }
 .burger-bar-1 {
   content: '';
@@ -69,94 +186,6 @@ p {
 }
 .change .burger-bar-3 {
   transform: rotate(45deg) translateY(0px);
-}
-/*--------------------------------------------------------------
-# Expanded Side Navbar
---------------------------------------------------------------*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  --sb-width: 5rem;
-  font-family: system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #333;
-  background-color: #fff;
-}
-body.sb-expanded {
-  --sb-width: 13rem;
-}
-aside {
-  position: fixed;
-  inset: 0 auto 0 0;
-  padding: 1rem;
-  width: var(--sb-width);
-  background: #0c1b48;
-  transition: width 0.5s ease-in-out;
-}
-nav {
-  height: 100%;
-}
-nav ul {
-  list-style: none;
-  height: 100%;
-  display: flex;
-  flex-flow: column;
-  gap: 2rem;
-  margin-top: 5rem;
-}
-nav a {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  padding: 0.5rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-}
-nav a.active,
-nav a:hover,
-nav a:focus-visible {
-  outline: none;
-  background-color: #1379a84b;
-}
-nav a span {
-  font-size: 0.9rem;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, margin-left 0.5s ease-in-out;
-  margin-left: -1rem;
-  white-space: nowrap;
-  color: #6f7180;
-}
-.sb-expanded nav a span {
-  opacity: 1;
-  visibility: visible;
-  margin-left: 0;
-}
-.sb-expanded aside .bx-chevrons-right {
-  rotate: 180deg;
-}
-main {
-  margin-left: 5rem;
-  transition: margin-left 0.5s ease-in-out;
-}
-@media (min-width: 768px) {
-  main {
-    margin-left: var(--sb-width);
-  }
-}
-.navbar-icons {
-  fill: #6f7180;
-  width: 30px;
-  height: 30px;
-  margin-left: 0px;
 }
 /*--------------------------------------------------------------
 # General Section Styling
@@ -431,7 +460,7 @@ hr {
   background-color: #e4edf9;
   border-radius: 40px;
   font-size: 12px;
-  margin-left: 20px;
+  margin-left: -18px;
   margin-bottom: -4px;
 }
  .certification ul a:hover {
@@ -443,7 +472,7 @@ hr {
 3C. Professional Employment
 --------------------------------------------------------------*/
 .employment {
-  padding: 0 0 26px 0px;
+  padding: 0 0 19px 0px;
   position: relative;
 }
 .employment h5 {
@@ -519,11 +548,11 @@ hr {
 3D. Achievement & Rewards
 --------------------------------------------------------------*/
 .achievements li {
-  list-style-type: '⛦';
+  list-style-type: '★';
   padding: 6px 12px;
   color: #014b6e;
   font-size: 14px;
-  margin-left: 20px;
+  margin-left: -20px;
   }
 /*--------------------------------------------------------------
 (4) Section: Design Expertise
@@ -1065,8 +1094,8 @@ p {
 6B. Social Media Platforms
 --------------------------------------------------------------*/
 .social-icons {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   fill: white;
 }
 .social-links {
@@ -1108,9 +1137,8 @@ p {
   display: flex;
   flex: 1;
   padding: 1rem;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: flex-end;
-  width: 200px;
 }
 .copyright p {
   font-size: 16px;
@@ -1121,8 +1149,8 @@ p {
   border-right: 1px solid #3c4261;
 }
 .copyright svg {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   fill: #0c1b48;
   margin-left: 1rem;
 }
@@ -1138,18 +1166,18 @@ p {
   z-index: 99999;
   height: 40px;
   width: 40px;
-  border-radius: 50px;
+  border-radius: 8px;
   transition: all .5s ease-in-out;
   cursor: pointer;
   text-align: center;
-  border: none;
-  padding: 0;
   color: #1379a8;
+  padding-top: 4px;
   border: 1px solid #3c426128;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 .back-to-top:hover {
   background: #1379a8;
