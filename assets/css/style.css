@@ -46,7 +46,7 @@ p {
   }
 }
 /*--------------------------------------------------------------
-# Main Website Logo
+# Main Website Logograph
 --------------------------------------------------------------*/
 #logo-container {
   display: flex;
@@ -54,21 +54,25 @@ p {
   align-items: center;
   border: 2px solid #3c4261;
   padding: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   width: 120px;
   height: 120px;
   margin: 0 auto;
 }
 #logo-container:hover {
-  background: rgba(9, 19, 48, 0.3);;
+  background: rgba(9, 19, 48, 0.3);
   transition: background 0.5s ease-in-out;
-  color: white;
 }
-.logo {
-  fill: whitesmoke;
+#logo-container .logo {
+  fill: white;
   width: 80px;
   height: 80px;
   position: relative;
+  transition: all 0.5s ease-in-out;
+}
+#logo-container .logo:hover {
+  fill: #7481bf;
+  transform: scale(1.1);
 }
 /*--------------------------------------------------------------
 # Side Navigation Links
@@ -104,8 +108,8 @@ p {
 }
 .navbar-icons {
   fill: #6f7180;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   margin-left: 1rem;
 }
 .nav-menu a:hover, .nav-menu .active > a {
@@ -120,14 +124,14 @@ p {
   fill: #7481bf;
   transition: all 0.5s ease 0s;
 }
-.nav-menu .active > a .navbar-icons {
-  fill: #ffffff;
-  transition: all 0.5s ease 0s;
-}
 .nav-menu .active > a {
   color: #ffffff;
   transition: all 0.5s ease 0s;
   background: rgba(9, 19, 48, 0.3);
+}
+.nav-menu .active .navbar-icons {
+  fill: #ffffff;
+  transition: all 0.5s ease 0s;
 }
 /*--------------------------------------------------------------
 # Hemburger Menu Icon
@@ -1114,17 +1118,21 @@ p {
 /*--------------------------------------------------------------
 6B. Social Media Platforms
 --------------------------------------------------------------*/
-.social-icons {
-  width: 40px;
-  height: 40px;
-  fill: white;
-}
 .social-links {
   display: flex;
   justify-content: space-between;
   flex: 1;
   padding: 1rem;
   align-items: flex-end;
+}
+.social-icons {
+  width: 40px;
+  height: 40px;
+  fill: whitesmoke;
+}
+.social-icons:hover {
+  fill: white;
+  transition: all 0.5s ease 0s;
 }
 .social-links h3 {
   margin-left: -0.5rem;
@@ -1140,16 +1148,15 @@ p {
   justify-content: center;
   align-items: center;
   margin-right: 1rem;
-  margin-top: -1rem;
+
 }
 .social-links a:last-child {
   margin-right: 0;
 }
 .social-links a:hover {
-  fill: #fff;
   background: #0c1b48;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 /*--------------------------------------------------------------
 6C. Copyright Info Text
@@ -1172,8 +1179,14 @@ p {
 .copyright svg {
   width: 60px;
   height: 60px;
+  fill: #1379a8;
+  margin-left: 1rem;
+  transition: all 0.5s ease 0s;
+}
+.copyright svg:hover {
   fill: #0c1b48;
   margin-left: 1rem;
+  transform: scale(1.1);
 }
 /*--------------------------------------------------------------
 (7) Scroll Upto Top
@@ -1181,12 +1194,12 @@ p {
 .back-to-top {
   position: fixed;
   display: none;
-  right: 14px;
-  bottom: 14px;
+  right: 15px;
+  bottom: 15px;
   background: #e4edf9;
   z-index: 99999;
-  height: 40px;
-  width: 40px;
+  height: 2rem;
+  width: 2rem;
   border: 1px solid #7480bf3c;
   border-radius: 0.5rem;
   transition: all .5s ease-in-out;
@@ -1202,16 +1215,16 @@ p {
 .back-to-top::before {
   content: '';
   display: block;
-  width: 12px;
-  height: 12px;
+  width: 0.7rem;
+  height: 0.7rem;
   border-top: 2px solid #1379a8;
   border-left: 2px solid #1379a8;
   transform: rotate(45deg);
 }
 .back-to-top::after {
   content: '';
-  width: 2px;
-  height: 20px;
+  width: 0.1rem;
+  height: 1rem;
   background-color: #1379a8;
   margin-top: -0.8rem;
 }
