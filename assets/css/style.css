@@ -46,7 +46,7 @@ p {
   }
 }
 /*--------------------------------------------------------------
-# Main Website Logograph
+# Main Website Logodesign
 --------------------------------------------------------------*/
 #logo-container {
   display: flex;
@@ -54,9 +54,9 @@ p {
   align-items: center;
   border: 2px solid #3c4261;
   padding: 1.5rem;
-  border-radius: 1.5rem;
-  width: 120px;
-  height: 120px;
+  border-radius: 1rem;
+  width: 90px;
+  height: 90px;
   margin: 0 auto;
 }
 #logo-container:hover {
@@ -65,8 +65,8 @@ p {
 }
 #logo-container .logo {
   fill: white;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   position: relative;
   transition: all 0.5s ease-in-out;
 }
@@ -627,8 +627,9 @@ hr {
 }
 .oval-shaped-icons:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
   background: white;
+  transition: transform 0.5s ease;
+  filter: drop-shadow(0 0 10px rgba(19, 121, 168, 0.7));
 }
 /*--------------------------------------------------------------
 4B. Tools & Technology
@@ -881,25 +882,8 @@ hr {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
-.pdf-info {
-  width: 20%;
-  padding: 20px;
-  position: relative;
-  border-left: 1px solid lightgrey;
-}
-.pdf-info h5 {
-  color: #3280a4;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.02rem;
-  margin-bottom: -0.5rem;
-}
-.pdf-info h6 {
-  font-size: 16px;
-  font-weight: 400;
-}
 .pdf-viewer {
-  width: 80%;
+  width: 100%;
   position: relative;
   object-fit: cover;
   border: none;
@@ -909,40 +893,11 @@ hr {
   display: block;
   overflow: hidden;
 }
-.button-container {
-  display: flex;
-  gap: 10px;
-  position: absolute;
-  right: 15px;
-  left: 15px;
-  bottom: 15px;
-  justify-content: flex-end; 
-}
-.overlay-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: 1px solid #3280a4;
-  border-radius: 6px;
-  padding: 2px 6px;
-  background: #f5f8fd;
-  color: #3280a4;
-  font-size: 14px;
-}
-.overlay-button:hover {
-  background-color: #3280a4;
-  color: white;
-  border: 1px solid white;
-}
-.overlay-button:hover .smaller-icons {
-  fill: white;
-}
 .close-btn {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 20px;
+  font-size: 14px;
   cursor: pointer;
   color: #3280a4;
   border: 1px solid #3280a4;
@@ -965,12 +920,6 @@ iframe {
   height: 100%;
   border: none;
 }
-h2 {
-  margin-top: 0;
-}
-p {
-  margin: 10px 0;
-}
 .no-scroll {
   overflow: hidden;
 }
@@ -978,11 +927,11 @@ p {
   position: absolute;
   bottom: 20px;
   left: 50%;
+  transform: translateX(-50%);
   color: black;
   animation: bounce 2s infinite;
   z-index: 2;
   font-size: 1rem;
-  color: black;
   border-radius: 50px;
   border: 1px solid lightgray;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -1000,17 +949,6 @@ p {
   }
   60% {
       transform: translateY(-5px);
-  }
-}
-@media (max-width: 768px) {
-  .popup-button {
-    display: none;
-  }
-  .pdf-info {
-    display: none;
-  }
-  .pdf-viewer {
-    width: 100%;
   }
 }
 /*--------------------------------------------------------------
