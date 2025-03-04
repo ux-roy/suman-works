@@ -95,6 +95,9 @@ $(document).on('click', '.nav-menu a, .scrollto', function (e) {
   });
 
 // Button Scroll To Start Point:
+$(document).ready(function () {
+  $('.back-to-top').hide(); 
+
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
@@ -102,12 +105,14 @@ $(document).on('click', '.nav-menu a, .scrollto', function (e) {
       $('.back-to-top').fadeOut('slow');
     }
   });
+
   $('.back-to-top').click(function () {
     $('html, body').animate({
       scrollTop: 0
     }, 1500, 'easeInOutExpo');
     return false;
   });
+});
 
 // First Time Animated Progressive Bar:
   $('.skills-content').waypoint(function () {

@@ -928,15 +928,13 @@ iframe {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  color: black;
+  color: #3280a4;
   animation: bounce 2s infinite;
   z-index: 2;
   font-size: 1rem;
   border-radius: 50px;
-  border: 1px solid lightgray;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.449);
-  padding: 0.5rem;
+  background-color: white;
   text-align: center;
   padding: 0.5rem 1rem;
 }
@@ -1092,9 +1090,9 @@ iframe {
   margin-right: 0;
 }
 .social-links a:hover {
-  background: #0c1b48;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-  transform: scale(1.2);
+  background: #7481bf;
+  filter: drop-shadow(0 0 10px rgba(19, 121, 168, 0.7));
+  transform: scale(1.1);
 }
 /*--------------------------------------------------------------
 6C. Copyright Info Text
@@ -1115,11 +1113,12 @@ iframe {
   border-right: 1px solid #3c4261;
 }
 .copyright svg {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   fill: #1379a8;
   margin-left: 1rem;
   transition: all 0.5s ease 0s;
+  margin-bottom: 0.5rem;
 }
 .copyright svg:hover {
   fill: #0c1b48;
@@ -1150,33 +1149,9 @@ iframe {
   flex-direction: column;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
 }
-.back-to-top::before {
-  content: '';
-  display: block;
-  width: 0.7rem;
-  height: 0.7rem;
-  border-top: 2px solid #1379a8;
-  border-left: 2px solid #1379a8;
-  transform: rotate(45deg);
+.back-to-top svg:hover {
+  fill: #091330;
 }
-.back-to-top::after {
-  content: '';
-  width: 0.1rem;
-  height: 1rem;
-  background-color: #1379a8;
-  margin-top: -0.8rem;
-}
-.back-to-top:hover {
-  background: #1379a8;
-  transition: background 0.5s ease-in-out;
-  color: white;
-}
-.back-to-top:hover::before,
-.back-to-top:hover::after {
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-}
-
 /*--------------------------------------------------------------
 # Global Footer Style
 --------------------------------------------------------------*/ 
