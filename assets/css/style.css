@@ -678,22 +678,30 @@ hr {
   text-align: center;
   background: #ffffff;
   border-radius: 50px;
+  border: 1px solid #a6d1e7;
 }
  #portfolio-flters li {
+  position: relative;
   cursor: pointer;
   display: inline-block;
-  padding: 10px 15px 8px 15px;
+  padding: 8px 16px;
   font-size: 14px;
   font-weight: 500;
-  line-height: 1;
-  text-transform: capitalize;
+  line-height: 1.2;
   color: #1379a8;
   transition: all 0.3s ease-in-out;
 }
- #portfolio-flters li:hover, #portfolio-flters li.filter-active {
+ #portfolio-flters li:hover {
+  color: #1379a8;
+  background: #a6d1e7;
+  line-height: 1.2;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50px;
+}
+#portfolio-flters li.filter-active {
   color: #ffffff;
   background: #1379a8;
-  line-height: 1;
+  line-height: 1.2;
   transition: all 0.3s ease-in-out;
   border-radius: 50px;
 }
