@@ -1160,23 +1160,3 @@ iframe {
 .back-to-top svg:hover {
   fill: #091330;
 }
-/*--------------------------------------------------------------
-# Global Footer Style
---------------------------------------------------------------*/ 
-#footer {
-  color: #f4f6fd;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: 9999;
-  background: #091330;
-  padding: 2px;
-  display: none;
-}
-@media (max-width: 1199px) {
-  #footer {
-    position: static;
-    width: auto;
-    padding-right: 20px 15px;
-  }
-}
