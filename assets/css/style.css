@@ -692,8 +692,8 @@ hr {
   transition: all 0.3s ease-in-out;
 }
  #portfolio-flters li:hover {
-  color: #1379a8;
-  background: #a6d1e7;
+  color: #ffffff;
+  background: #b6c2ff;
   line-height: 1.2;
   transition: all 0.3s ease-in-out;
   border-radius: 50px;
