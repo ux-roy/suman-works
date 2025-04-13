@@ -1146,7 +1146,7 @@ iframe {
   height: 2rem;
   width: 2rem;
   border: 1px solid #7480bf3c;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   transition: all .5s ease-in-out;
   cursor: pointer;
   text-align: center;
