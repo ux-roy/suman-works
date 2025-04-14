@@ -812,7 +812,7 @@ hr {
 .image-title h6 {
   font-size: 18px;
   color: #1379a8;
-  margin-top: 12px;
+  margin-top: 18px;
   font-weight: 500;
   letter-spacing: 0.025rem;
 }
@@ -821,12 +821,8 @@ hr {
 }
 .smaller-icons {
   fill: #3280a4;
-  width: 30px;
-  height: 30px;
-  transition: transform 0.5s ease-in-out;
-}
-.smaller-icons:hover {
-  transform: scale(1.1);
+  width: 2.2rem;
+  height: 2.2rem;
 }
 .reaction-box {
   display: flex;
@@ -835,7 +831,8 @@ hr {
 }
 .reaction-box p {
   font-size: 16px;
-  margin-top: 12px;
+  margin-top: 1rem;
+  margin-left: -0.2rem;
 }
 .reaction-box span {
   display: flex;
@@ -1134,7 +1131,7 @@ iframe {
   margin-left: 1rem;
 }
 /*--------------------------------------------------------------
-(7) Scroll Upto Top
+(7) Scroll UpTo Top
 --------------------------------------------------------------*/ 
 .back-to-top {
   position: fixed;
@@ -1143,20 +1140,30 @@ iframe {
   bottom: 15px;
   background: #e4edf9;
   z-index: 99999;
-  height: 2rem;
+  height: 3rem;
   width: 2rem;
   border: 1px solid #7480bf3c;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   transition: all .5s ease-in-out;
   cursor: pointer;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
   flex-direction: column;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  padding-bottom: 2px; 
+}
+.back-to-top svg {
+  margin-bottom: -0.5rem;
+  transition: transform 0.4s ease;
 }
 .back-to-top svg:hover {
   fill: #091330;
+  animation: jump 1s ease-in-out;
+}
+@keyframes jump {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
 }
