@@ -27,7 +27,7 @@ p {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 220px;
+  width: 15rem;
   transition: all ease-in-out 0.5s;
   z-index: 9999;
   transition: all 0.5s;
@@ -64,11 +64,14 @@ p {
   transition: background 0.5s ease-in-out;
 }
 #logo-container .logo {
-  fill: white;
+  fill: #fff;
   width: 5rem;
   height: 5rem;
   position: relative;
   transition: all 0.5s ease-in-out;
+}
+#logo-container a {
+  background: none;
 }
 #logo-container .logo:hover {
   fill: #7481bf;
@@ -90,10 +93,9 @@ p {
   align-items: center;
   color: #6f7180;
   transition: color 0.3s ease;
-  font-size: 16px;
   text-decoration: none;
-  padding: 1rem 0;
-  transition: 0.3s;
+  padding: 1rem;
+  margin: 1rem;
 }
 .nav-menu ul li {
   margin-bottom: 2px;
@@ -108,13 +110,17 @@ p {
 }
 .navbar-icons {
   fill: #6f7180;
-  width: 40px;
-  height: 40px;
-  margin-left: 1rem;
+  width: 30px;
+  height: 30px;
 }
-.nav-menu a:hover, .nav-menu .active > a {
-  color: #ffffff;
-  transition: all 0.5s ease 0s;
+.nav-menu a:hover {
+  color: #f5f8fd;
+  background: rgba(9, 19, 48, 0.3);
+  border-radius: 0.4rem;
+  transition: background 0.5s ease-in-out;
+}
+.nav-menu .active > a {
+  color: #f5f8fd;
 }
 .nav-menu li:hover > a {
   color: #7481bf;
@@ -125,12 +131,11 @@ p {
   transition: all 0.5s ease 0s;
 }
 .nav-menu .active > a {
-  color: #ffffff;
+  color: #f5f8fd;
   transition: all 0.5s ease 0s;
-  background: rgba(9, 19, 48, 0.3);
 }
 .nav-menu .active .navbar-icons {
-  fill: #ffffff;
+  fill: #f5f8fd;
   transition: all 0.5s ease 0s;
 }
 /*--------------------------------------------------------------
@@ -178,16 +183,18 @@ p {
 .burger-bar-1 {
   content: '';
   position: absolute;
-  background: lightcyan;
-  height: 2px;
+  background: #6f7180;
+  height: 1.5px;
   width: 22px;
   border-radius: 10px;
   transition: all .5s ease-in-out;
   transform: translateY(-6px);
 }
 .burger-bar-2 {
-  background: lightcyan;
-  height: 2px;
+  content: '';
+  position: absolute;
+  background: #6f7180;
+  height: 1.5px;
   width: 22px;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
@@ -195,8 +202,8 @@ p {
 .burger-bar-3 {
   content: '';
   position: absolute;
-  background: lightcyan;
-  height: 2px;
+  background: #6f7180;
+  height: 1.5px;
   width: 22px;
   border-radius: 10px;
   transition: all .5s ease-in-out;
@@ -627,7 +634,7 @@ hr {
 }
 .oval-shaped-icons:hover {
   transform: scale(1.1);
-  background: white;
+  background: #fff;
   transition: transform 0.5s ease;
   filter: drop-shadow(0 0 10px rgba(19, 121, 168, 0.7));
 }
@@ -676,7 +683,7 @@ hr {
   margin: 0 auto 35px auto;
   list-style: none;
   text-align: center;
-  background: #ffffff;
+  background: #f5f8fd;
   border-radius: 50px;
   border: 1px solid #a6d1e7;
 }
@@ -692,14 +699,14 @@ hr {
   transition: all 0.3s ease-in-out;
 }
  #portfolio-flters li:hover {
-  color: #ffffff;
+  color: #f5f8fd;
   background: #a6d1e7;
   line-height: 1.2;
   transition: all 0.3s ease-in-out;
   border-radius: 50px;
 }
 #portfolio-flters li.filter-active {
-  color: #ffffff;
+  color: #f5f8fd;
   background: #1379a8;
   line-height: 1.2;
   transition: all 0.3s ease-in-out;
@@ -864,7 +871,7 @@ hr {
 }
 .popup-trigger:hover {
   background-color: #3280a4;
-  color: white;
+  color: #fff;
   border: 1px solid #3280a4;
 }
 /*--------------------------------------------------------------
@@ -888,7 +895,7 @@ hr {
   width: 90%;
   height: 90%;
   display: flex;
-  background-color: white;
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -921,11 +928,11 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: #fff;
 }
 .close-btn:hover {
   background-color: #3280a4;
-  color: white;
+  color: #fff;
 }
 iframe {
   width: 100%;
@@ -945,7 +952,7 @@ iframe {
   text-align: center;
   border-radius: 50px;
   padding: 0.5rem 1rem;
-  background-color: white;
+  background-color: #fff;
   transform: translateX(50%);
   animation: bounce 2s infinite;
   filter: drop-shadow(0 0 10px rgba(19, 121, 168, 0.7));
@@ -1076,10 +1083,10 @@ iframe {
 .social-icons {
   width: 40px;
   height: 40px;
-  fill: whitesmoke;
+  fill: #f5f8fd;
 }
 .social-icons:hover {
-  fill: white;
+  fill: #fff;
   transition: all 0.5s ease 0s;
 }
 .social-links h3 {
@@ -1207,9 +1214,24 @@ iframe {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 220px;
+  width: 15rem;
   z-index: 9999;
-  padding: 20px;
+  padding-bottom: 1rem;
+}
+#closer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.4rem;
+  transition: all 0.5s ease 0s;
+  margin-left: auto;
+  margin-right: 0rem;
+}
+#closer:hover {
+  background: rgba(9, 19, 48, 0.3);
+  transition: background 0.5s ease-in-out;
 }
 .container {
   display: block;
@@ -1219,6 +1241,7 @@ iframe {
   height: 30px;
   position: relative;
   cursor: pointer;
+  justify-items: end;
 }
 .footer-menu-icon .line {
   display: block;
@@ -1238,20 +1261,23 @@ iframe {
   width: 60%;
 }
 .footer-menu-icon:hover .line1 {
-  transform: rotate(45deg) translate(17.5px, -12.5px);
+  transform: rotate(-45deg) translate(-14.5px, -9px);
   width: 40%;
   transition: all 0.4s ease;
+  background-color: #7481bf;
 }
 .footer-menu-icon:hover .line2 {
-  transform: translateX(8px);
+  transform: translateX(-3px);
   width: 80%;
   opacity: 1;
   transition: all 0.4s ease;
+  background-color: #7481bf;
 }
 .footer-menu-icon:hover .line3 {
-  transform: rotate(-45deg) translate(17.5px, 12.5px);
+  transform: rotate(45deg) translate(-14.5px, 9.5px);
   width: 40%;
   transition: all 0.4s ease;
+  background-color: #7481bf;
 }
 @media (max-width: 1199px) {
   #footer {
