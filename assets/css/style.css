@@ -27,7 +27,7 @@ p {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 15rem;
+  width: 220px;
   transition: all ease-in-out 0.5s;
   z-index: 9999;
   transition: all 0.5s;
@@ -52,8 +52,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #3c4261;
-  padding: 1rem;
+  border:2px solid #3c4261;
+  padding: 0.5rem;
   border-radius: 10rem;
   width: 8rem;
   height: 8rem;
@@ -94,8 +94,9 @@ p {
   color: #6f7180;
   transition: color 0.3s ease;
   text-decoration: none;
-  padding: 1rem;
+  padding: 0.7rem;
   margin: 1rem;
+  justify-content:center;
 }
 .nav-menu ul li {
   margin-bottom: 2px;
@@ -112,6 +113,7 @@ p {
   fill: #6f7180;
   width: 30px;
   height: 30px;
+  margin-left: -0.5rem;
 }
 .nav-menu a:hover {
   color: #f5f8fd;
@@ -139,7 +141,7 @@ p {
   transition: all 0.5s ease 0s;
 }
 /*--------------------------------------------------------------
-# Hemburger Menu Icon
+# Mobile Hemburger Menu
 --------------------------------------------------------------*/
 .mobile-nav-toggle {
   position: fixed;
@@ -183,7 +185,7 @@ p {
 .burger-bar-1 {
   content: '';
   position: absolute;
-  background: #6f7180;
+  background: #e4edf9;
   height: 1.5px;
   width: 22px;
   border-radius: 10px;
@@ -193,7 +195,7 @@ p {
 .burger-bar-2 {
   content: '';
   position: absolute;
-  background: #6f7180;
+  background: #e4edf9;
   height: 1.5px;
   width: 22px;
   border-radius: 10px;
@@ -202,7 +204,7 @@ p {
 .burger-bar-3 {
   content: '';
   position: absolute;
-  background: #6f7180;
+  background: #e4edf9;
   height: 1.5px;
   width: 22px;
   border-radius: 10px;
@@ -1153,7 +1155,7 @@ iframe {
   background: #e4edf9;
   z-index: 99999;
   height: 3.5rem;
-  width: 2.5rem;
+  width: 2rem;
   border-radius: 1.5rem;
   transition: all .5s ease-in-out;
   cursor: pointer;
@@ -1184,26 +1186,26 @@ iframe {
   transition: all 0.5s ease-in-out;
 }
 .scroll-up-icon .line1,.scroll-up-icon .line3 {
-  height: 15px;
+  height: 14px;
 }
 .scroll-up-icon .line2 {
-  height: 22px;
+  height: 24px;
 }
 .scroll-up-icon:hover .line1 {
-  transform: rotate(45deg) translate(-10px, -13px);
-  height: 12px;
+  transform: rotate(45deg) translate(-11.5px, -14px);
+  height: 13px;
   background-color: #1379a8;
   transition: all 0.5s ease-in-out;
 }
 .scroll-up-icon:hover .line2 {
-  transform: translateY(-6px);
-  height: 20px;
+  transform: translateY(-4px);
+  height: 24px;
   background-color: #1379a8;
   transition: all 0.5s ease-in-out;
 }
 .scroll-up-icon:hover .line3 {
-  transform: rotate(-45deg) translate(10px, -13px);
-  height: 12px;
+  transform: rotate(-45deg) translate(11.5px, -14px);
+  height: 13px;
   background-color: #1379a8;
   transition: all 0.5s ease-in-out;
 }
@@ -1214,7 +1216,7 @@ iframe {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 15rem;
+  width: 220px;
   z-index: 9999;
   padding-bottom: 1rem;
 }
@@ -1222,8 +1224,8 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 0.4rem;
   transition: all 0.5s ease 0s;
   margin-left: auto;
@@ -1237,7 +1239,7 @@ iframe {
   display: block;
 }
 .footer-menu-icon {
-  width: 30px;
+  width: 25px;
   height: 30px;
   position: relative;
   cursor: pointer;
@@ -1261,20 +1263,20 @@ iframe {
   width: 60%;
 }
 .footer-menu-icon:hover .line1 {
-  transform: rotate(-45deg) translate(-14.5px, -9px);
+  transform: rotate(-45deg) translate(-14px, -8px);
   width: 40%;
   transition: all 0.4s ease;
   background-color: #7481bf;
 }
 .footer-menu-icon:hover .line2 {
-  transform: translateX(-3px);
+  transform: translateX(-4px);
   width: 80%;
   opacity: 1;
   transition: all 0.4s ease;
   background-color: #7481bf;
 }
 .footer-menu-icon:hover .line3 {
-  transform: rotate(45deg) translate(-14.5px, 9.5px);
+  transform: rotate(45deg) translate(-14px, 8px);
   width: 40%;
   transition: all 0.4s ease;
   background-color: #7481bf;

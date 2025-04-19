@@ -188,34 +188,34 @@
 <body>
 
 <header id="header">
-    <div class="d-flex flex-column">
-      <nav class="nav-menu">
-<!-- Web Indentification Logo -->
-      <div id="logo-container">
-        <a href="#hero"><svg class="logo"><use xlink:href="#website-logo"/></svg></a></div>       
-<!-- Side Navigation Links -->
-        <div class="sidebar-link">
-          <ul>
-            <li><a href="#Profile-Depiction"><i><svg class="navbar-icons">
-              <use xlink:href="#profile-depiction"/></svg></i><span>Profile Depiction</span></a></li>
-            <li><a href="#Work-Experience"><i><svg class="navbar-icons">
-              <use xlink:href="#work-experience"/></svg></i><span>Work Experience</span></a></li>
-            <li><a href="#Design-Expertise"><i><svg class="navbar-icons">
-              <use xlink:href="#design-expertise"/></svg></i><span>Design Expertise</span></a></li>
-            <li><a href="#Portfolio-Preview"><i><svg class="navbar-icons">
-              <use xlink:href="#portfolio-preview"/></svg></i><span>Portfolio Preview</span></a></li>
-            <li><a href="#Contact-Synopsis"><i><svg class="navbar-icons">
-              <use xlink:href="#contact-synopsis"/></svg></i><span>Contact Synopsis</span></a></li>
+ <div class="d-flex flex-column"><nav class="nav-menu">
+
+  <!-- Web Identification Logo -->
+    <div id="logo-container"><a href="#hero"><svg class="logo"><use xlink:href="#website-logo"/></svg></a></div>
+
+  <!-- Side Navigation Links -->
+    <div class="sidebar-link"><ul>
+      <li><a href="#Profile-Depiction"><i><svg class="navbar-icons"><use xlink:href="#profile-depiction"/></svg></i>
+          <span>Profile Depiction</span></a></li>
+      <li><a href="#Work-Experience"><i><svg class="navbar-icons"><use xlink:href="#work-experience"/></svg></i>
+          <span>Work Experience</span></a></li>
+      <li><a href="#Design-Expertise"><i><svg class="navbar-icons"><use xlink:href="#design-expertise"/></svg></i>
+          <span>Design Expertise</span></a></li>
+      <li><a href="#Portfolio-Preview"><i><svg class="navbar-icons"><use xlink:href="#portfolio-preview"/></svg></i>
+          <span>Portfolio Preview</span></a></li>
+      <li><a href="#Contact-Synopsis"><i><svg class="navbar-icons"><use xlink:href="#contact-synopsis"/></svg></i>
+          <span>Contact Synopsis</span></a></li>
           </ul>
+      </div>
+    
+  <!-- Mobile Hamburger Menu -->
+    <div class="mobile-nav-toggle d-xl-none">
+      <div id="menu-line-icon" onclick="myFunction(this)">
+          <div class="burger-bar-1"></div>
+          <div class="burger-bar-2"></div>
+          <div class="burger-bar-3"></div>
           </div>
-<!-- Hemburger Menu Icon -->
-        <div class="mobile-nav-toggle d-xl-none">
-            <div id="menu-line-icon" onclick="myFunction(this)">
-              <div class="burger-bar-1"></div>
-              <div class="burger-bar-2"></div>
-              <div class="burger-bar-3"></div>
-            </div>
-         </div>
+        </div>
       </nav>
     </div>
 </header>
@@ -997,9 +997,7 @@
   <section id="Contact-Synopsis">
     <div class="container">
       <div class="section-title"><h2>Contact Synopsis</h2></div>       
-      <div class="contact-details">
-
-        <div class="row">
+      <div class="contact-details"><div class="row">
   <!-- 6A. Address Details -->
         <div class="col-lg-5 d-flex align-items-stretch">
           <div class="address-details">
@@ -1012,67 +1010,41 @@
             </iframe>
           </div>
           </div>
-  <!-- 6B. Form Submit -->
-        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="name">Your Name</label>
-                <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4"
-                  data-msg="Please enter at least 4 chars" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="name">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" data-rule="email"
-                  data-msg="Please enter a valid email" />
-                <div class="validate"></div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="name">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4"
-                data-msg="Please enter at least 8 chars of subject" />
-              <div class="validate"></div>
-            </div>
-            <div class="form-group">
-              <label for="name">Message</label>
-              <textarea class="form-control" name="message" rows="10" data-rule="required"
-                data-msg="Please write something for us"></textarea>
-              <div class="validate"></div>
-            </div>
-            <div class="mb-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-          </div>   
-        </div>
-
+  <!-- 6B. Form Submition -->
+  <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="name">Your Name</label>
+            <input  type="text"  name="name" class="form-control" id="name" data-rule="minlen:4"  data-msg="Please enter at least 4 chars" />
+          <div class="validate"></div></div>
+        <div class="form-group col-md-6">
+          <label for="email">Your Email</label>
+          <input  type="email"  class="form-control"  name="email"   id="email"  data-rule="email" data-msg="Please enter a valid email" />
+          <div class="validate"></div></div></div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input  type="text"   class="form-control"   name="subject"  id="subject"  data-rule="minlen:8"  data-msg="Please enter at least 8 chars of subject" />
+        <div class="validate"></div></div> 
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea  class="form-control"  name="message"  id="message"  rows="10"  data-rule="required"  data-msg="Please write something for us"></textarea>
+        <div class="validate"></div></div>
+      <div class="mb-3"> <div class="loading">Loading</div> <div class="error-message"></div>
+        <div class="sent-message">Your message has been sent. Thank you!</div> </div>
+      <div class="text-center"> <button type="submit">Send Message</button> </div>
+    </form>
+  </div>
+<!-- 6C. Social Media -->
   <br><br><h3 class="section-subtitle">Connect with Me</h3><hr>
-        <div class="row"> 
-  <!-- 6C. Social Media -->
-        <div class="social-media">
+        <div class="row"><div class="social-media">
             <div class="social-links mt-3 text-center">
-              <a href="https://in.linkedin.com/in/ux-roy/" target="_blank">
-                <svg class="social-icons"><use xlink:href="#linkedIn"/></svg></a>
-  
-              <a href="https://www.behance.net/ux-roy/moodboards" target="_blank">
-                <svg class="social-icons"><use xlink:href="#behance"/></svg></a>
-  
-              <a href="https://www.credly.com/users/ux-roy" target="_blank">
-                <svg class="social-icons"><use xlink:href="#credly"/></svg></a>
-  
-              <a href="https://dribbble.com/ux-roy" target="_blank">
-                <svg class="social-icons"><use xlink:href="#dribbble"/></svg></a>
-  
-              <a href="https://in.pinterest.com/uxroy123/" target="_blank">
-                <svg class="social-icons"><use xlink:href="#pinterest"/></svg></a>
-  
-              <a href="https://www.instagram.com/amisumankanti/" target="_blank">
-                <svg class="social-icons"><use xlink:href="#instagram"/></svg></a>
+              <a href="https://in.linkedin.com/in/ux-roy/" target="_blank"><svg class="social-icons"><use xlink:href="#linkedIn"/></svg></a>
+              <a href="https://www.behance.net/ux-roy/moodboards" target="_blank"><svg class="social-icons"><use xlink:href="#behance"/></svg></a>
+              <a href="https://www.credly.com/users/ux-roy" target="_blank"><svg class="social-icons"><use xlink:href="#credly"/></svg></a>
+              <a href="https://dribbble.com/ux-roy" target="_blank"><svg class="social-icons"><use xlink:href="#dribbble"/></svg></a>
+              <a href="https://in.pinterest.com/uxroy123/" target="_blank"><svg class="social-icons"><use xlink:href="#pinterest"/></svg></a>
+              <a href="https://www.instagram.com/amisumankanti/" target="_blank"><svg class="social-icons"><use xlink:href="#instagram"/></svg></a>
             </div>
         </div>  
   <!-- 6D. Copyright Info --> 
@@ -1096,7 +1068,9 @@
 </main>
 
 <!-- <footer id="footer">
-  <div class="container"><div id="closer"><div class="footer-menu-icon">
+  <div class="container">
+    <div id="closer">
+      <div class="footer-menu-icon">
         <span class="line line1"></span>
         <span class="line line2"></span>
         <span class="line line3"></span>
