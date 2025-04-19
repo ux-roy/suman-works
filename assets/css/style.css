@@ -1075,6 +1075,18 @@ iframe {
 /*--------------------------------------------------------------
 6B. Social Media Platforms
 --------------------------------------------------------------*/
+.connect-me-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+.social-media {
+  display: flex;
+  flex: 1;
+  padding: 1rem;
+}
 .social-links {
   display: flex;
   justify-content: space-between;
@@ -1088,7 +1100,7 @@ iframe {
   fill: #f5f8fd;
 }
 .social-icons:hover {
-  fill: #fff;
+  fill: #f5f8fd;
   transition: all 0.5s ease 0s;
 }
 .social-links h3 {
@@ -1105,14 +1117,14 @@ iframe {
   justify-content: center;
   align-items: center;
   margin-right: 1rem;
-
 }
 .social-links a:last-child {
   margin-right: 0;
 }
 .social-links a:hover {
-  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
-  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px rgba(19, 121, 168, 0.7));
+  transform: scale(1.1);
+  background: #7481bf;
 }
 /*--------------------------------------------------------------
 6C. Copyright Info Text
@@ -1123,9 +1135,10 @@ iframe {
   padding: 1rem;
   justify-content: flex-end;
   align-items: flex-end;
+  margin-bottom: 0.5rem;
 }
 .copyright p {
-  font-size: 12px;
+  font-size: 10px;
   text-decoration: none;
   color: #3c4261;
   text-align: right;
@@ -1213,12 +1226,79 @@ iframe {
 # Global Footer Style
 --------------------------------------------------------------*/
 #footer {
+  display: none;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 220px;
   z-index: 9999;
   padding-bottom: 1rem;
+}
+@media (max-width: 1199px) {
+#footer {
+  display: none;
+  }
+}
+.arrow-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+#opener {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.4rem;
+  transition: all 0.5s ease 0s;
+}
+#opener:hover {
+  background: rgba(9, 19, 48, 0.3);
+  transition: background 0.5s ease-in-out;
+}
+.footer-opener-icon {
+  width: 25px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.footer-opener-icon .line {
+  display: block;
+  height: 1.5px;
+  background-color: #6f7180;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+.footer-opener-icon .line1 {
+  width: 100%;
+}
+.footer-opener-icon .line2 {
+  width: 80%;
+}
+.footer-opener-icon .line3 {
+  width: 60%;
+}
+.footer-opener-icon:hover .line1 {
+  transform: rotate(45deg) translate(14px, -8px);
+  width: 40%;
+  transition: all 0.4s ease;
+  background-color: #7481bf;
+}
+.footer-opener-icon:hover .line2 {
+  transform: translateX(4px);
+  width: 80%;
+  opacity: 1;
+  transition: all 0.4s ease;
+  background-color: #7481bf;
+}
+.footer-opener-icon:hover .line3 {
+  transform: rotate(-45deg) translate(14px, 8px);
+  width: 40%;
+  transition: all 0.4s ease;
+  background-color: #7481bf;
 }
 #closer {
   display: flex;
@@ -1235,17 +1315,14 @@ iframe {
   background: rgba(9, 19, 48, 0.3);
   transition: background 0.5s ease-in-out;
 }
-.container {
-  display: block;
-}
-.footer-menu-icon {
+.footer-closer-icon {
   width: 25px;
   height: 30px;
   position: relative;
   cursor: pointer;
   justify-items: end;
 }
-.footer-menu-icon .line {
+.footer-closer-icon .line {
   display: block;
   height: 1.5px;
   background-color: #6f7180;
@@ -1253,36 +1330,31 @@ iframe {
   border-radius: 2px;
   transition: all 0.4s ease;
 }
-.footer-menu-icon .line1 {
+.footer-closer-icon .line1 {
   width: 100%;
 }
-.footer-menu-icon .line2 {
+.footer-closer-icon .line2 {
   width: 80%;
 }
-.footer-menu-icon .line3 {
+.footer-closer-icon .line3 {
   width: 60%;
 }
-.footer-menu-icon:hover .line1 {
+.footer-closer-icon:hover .line1 {
   transform: rotate(-45deg) translate(-14px, -8px);
   width: 40%;
   transition: all 0.4s ease;
   background-color: #7481bf;
 }
-.footer-menu-icon:hover .line2 {
+.footer-closer-icon:hover .line2 {
   transform: translateX(-4px);
   width: 80%;
   opacity: 1;
   transition: all 0.4s ease;
   background-color: #7481bf;
 }
-.footer-menu-icon:hover .line3 {
+.footer-closer-icon:hover .line3 {
   transform: rotate(45deg) translate(-14px, 8px);
   width: 40%;
   transition: all 0.4s ease;
   background-color: #7481bf;
 }
-@media (max-width: 1199px) {
-  #footer {
-    display: none;
-    }
-  }
