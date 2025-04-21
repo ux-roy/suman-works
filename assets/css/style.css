@@ -718,7 +718,7 @@ hr {
   margin-right: 0;
 }
 /*--------------------------------------------------------------
-5B. Inside Image Styling
+5B. Inside Image Preview
 --------------------------------------------------------------*/
 .portfolio-wrap {
   transition: 0.3s;
@@ -802,7 +802,7 @@ hr {
   }
 }
 /*--------------------------------------------------------------
-5C. Under Image Styling
+5C. Buttom Image Preview
 --------------------------------------------------------------*/
 .image-introbox {
   display: flex;
@@ -828,30 +828,59 @@ hr {
 .card-title {
   display: flex;
 }
-.smaller-icons {
-  fill: #7481bf;
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-}
-.smaller-icons:hover {
-  fill: #1379a8;
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  transform: scale(1.2);
-  transition: all 0.5s ease-in-out;
-}
 .reaction-box {
   display: flex;
   align-items: center;
   height: auto;
-  margin-top: 12px;
+  margin-top: 10px;
+  gap: 0.2rem;
 }
 .reaction-box span {
   display: flex;
   align-items: center;
+}
+.smaller-icons {
+  fill: #1379a8;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border-radius: 1rem;
+}
+.smaller-icons:hover {
+  fill: #e4edf9;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+  background: #1379a8;
+  border-radius: 1rem;
+}
+.icon-with-tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip {
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.6);
+  color: #e4edf9;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+.icon-with-tooltip:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 .popup-button {
   margin-top: -5px;
@@ -863,10 +892,10 @@ hr {
   margin: 0;
 }
 .popup-trigger {
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #1379a8;
+  border: 0.1px solid #1379a8;
   background-color: #f5f8fd;
   border-radius: 4px;
-  color: #3c4261;
   padding: 4px 6px;
   transition: all 0.5s ease-in-out;
   align-self: flex-start;
@@ -874,10 +903,9 @@ hr {
 .popup-trigger:hover {
   background-color: #3280a4;
   color: #fff;
-  border: 1px solid #3280a4;
 }
 /*--------------------------------------------------------------
-5D. Overlay Popup Styling
+5D. Overlay Image Popup
 --------------------------------------------------------------*/
 .overlay {
   display: none;
@@ -1070,6 +1098,14 @@ iframe {
 .php-email-form button[type="submit"]:hover {
   background: #3c4261;
 }
+#thank-you-message {
+  display: none;
+  text-align: center;
+  padding: 30px;
+  background: #dff0d8;
+  color: #3c763d;
+  font-size: 20px;
+}
 @keyframes animate-loading {
   0% {
     transform: rotate(0deg);
@@ -1159,7 +1195,6 @@ iframe {
   display: none;
   right: 15px;
   bottom: 15px;
-  background: #e4edf9;
   z-index: 99999;
   height: 3.5rem;
   width: 2rem;
@@ -1171,6 +1206,7 @@ iframe {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: #e4edf972;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   padding-bottom: 2px; 
 }
@@ -1188,7 +1224,7 @@ iframe {
 .scroll-up-icon .line {
   display: block;
   width: 2px;
-  background-color: #6f7180;
+  background-color: #014b6e;
   border-radius: 2px;
   transition: all 0.5s ease-in-out;
 }

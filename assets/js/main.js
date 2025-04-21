@@ -228,3 +228,45 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize the indicator position:
   updateIndicator(document.querySelector('#portfolio-flters .filter-active'));
 });
+
+
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const loading = form.querySelector('.loading');
+  const error = form.querySelector('.error-message');
+  const success = form.querySelector('.sent-message');
+
+  loading.style.display = 'block';
+  error.style.display = 'none';
+  success.style.display = 'none';
+
+  fetch("https://formsubmit.co/ajax/roy.sumankanti@gmail.com", {
+    method: "POST",
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    loading.style.display = 'none';
+    if (response.ok) {
+      success.style.display = 'block';
+      form.reset();
+      // Optional: scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      response.json().then(data => {
+        error.innerHTML = data.message || 'Oops! Something went wrong.';
+        error.style.display = 'block';
+      });
+    }
+  })
+  .catch(err => {
+    loading.style.display = 'none';
+    error.innerHTML = 'Could not send message. Please try again later.';
+    error.style.display = 'block';
+  });
+});
