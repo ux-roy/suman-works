@@ -993,13 +993,12 @@
   <!-- 6A. Address Details -->
       <div class="col-lg-5 d-flex align-items-stretch">
           <div class="address-details">
-            <div class="text-block"><h4>Address:</h4><span><p>AA-1D, Newtown, Kolkata-700156, West Bengal, India</p></span></div>
-            <div class="text-block"><h4>Email:</h4><span></span><p>roy.sumankanti@gmail.com</p></span></div>
-            <div class="text-block"><h4>Phone:</h4><span></span><p>+91 7411940354</p></div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58940.95081685817!2d88.45160130810373!3d22.5862299466359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275350398a5b9%3A0x75e165b244323425!2sNewtown%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1738755750641!5m2!1sen!2sin"
+            <div class="text-block"><h4>Home</h4><span><p>AA-1D, Newtown, Kolkata-700156, West Bengal, India</p></span></div>
+            <div class="text-block"><h4>Email</h4><span><p>roy.sumankanti@gmail.com</p></span></div>
+            <div class="text-block"><h4>Mobile</h4><span><p>+91 7411940354</p></div>
+            <div class="text-block"><h4>Location</h4><span><iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58940.95081685817!2d88.45160130810373!3d22.5862299466359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275350398a5b9%3A0x75e165b244323425!2sNewtown%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1738755750641!5m2!1sen!2sin"
               frameborder="0" style="border:0; width: 100%; height: 300px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            </iframe></span></div>
           </div>
       </div>
   <!-- 6B. Form Submition -->
@@ -1009,17 +1008,12 @@
           <input type="hidden" name="_subject" value="form">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://ux-roy.github.io/123/">
-          <div class="form-row">
-            <div class="form-group col-md-6"><label for="name">Your Name</label><input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Provide your name" /></div>
-            <div class="form-group col-md-6"><label for="name">Email ID</label><input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Enter valid email" /></div></div>
-            <div class="form-group"><label for="name">Message</label><textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Write your message"></textarea></div>
-          <div class="mb-3">
-            <div class="loading">Sending message. It is on the way...</div>
-            <div class="error-message">Something went wrong. Please retry.</div>
-            <div class="sent-message">Message has been send. Thank you!</div></div>
+          <div class="form-group"><label for="name">Enter your name:</label><input type="text" name="name" class="form-control" id="name" data-rule="required" data-msg="Provide your name" /></div>
+          <div class="form-group"><label for="name">Provide your email:</label><input type="email" class="form-control" name="email" id="email" data-rule="required" data-msg="Enter valid email" /></div>
+          <div class="form-group"><label for="name">Your contact deatils:</label><input type="email" class="form-control" name="mobile" id="mobile" data-rule="required" data-msg="Your Mobile Number" /></div>
+          <div class="form-group"><label for="name">Write something here:</label><textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Type your message"></textarea></div>
           <div class="text-center"><button type="submit">Send Message</button></div>
         </form>
-
       </div></div>
   <!-- 6C. Social Media -->
       <br><div class="connect-me-content">

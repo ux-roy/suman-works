@@ -1138,7 +1138,7 @@ iframe {
 6A. Address Details
 --------------------------------------------------------------*/
 .address-details {
-  padding: 20px;
+  padding: 30px;
   background: #fff;
   width: 100%;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
@@ -1148,15 +1148,18 @@ iframe {
   display: inline-block;
 }
 .address-details h4 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 550;
   color: #1379a8;
   letter-spacing: 0.05rem;
 }
 .address-details p {
   font-size: 15px;
-  color: #173b6c;
-  margin-top: -0.5rem;
+  color: #7481bf;
+  margin-top: -0.2rem;
+}
+#map {
+  margin-top: 0.5rem;
 }
 /*--------------------------------------------------------------
 6B. Form Submition
@@ -1167,60 +1170,17 @@ iframe {
   background: #fff;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
-.form-submition .form-group {
-  padding-bottom: 10px;
-}
-.form-submition .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-.form-submition .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-.form-submition .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-.form-submition .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-.form-submition .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  animation: animate-loading 1s linear infinite;
-}
 .form-submition input,
 .form-submition textarea {
   border-radius: 0;
   box-shadow: none;
-  font-size: 14px;
+  font-size: 12px;
 }
 .form-submition input {
-  height: 50px;
+  height: 40px;
 }
 .form-submition textarea {
-  padding: 40px 12px;
+  padding: 12px;
 }
 .form-submition button[type="submit"] {
   background: #1379a8;
@@ -1229,9 +1189,10 @@ iframe {
   color: #fff;
   transition: 0.4s;
   border-radius: 4px;
+  margin-top: 0.5rem;
 }
 .form-submition button[type="submit"]:hover {
-  background: #3c4261;
+  background: #7481bf;
 }
 @keyframes animate-loading {
   0% {
@@ -1280,7 +1241,6 @@ iframe {
   margin-right: 0;
 }
 .social-links a:hover {
-  filter: drop-shadow(0 0 10px rgba(19, 121, 168, 0.7));
   transform: scale(1.1);
   background: #7481bf;
 }
