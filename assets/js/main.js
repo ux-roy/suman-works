@@ -229,44 +229,37 @@ document.addEventListener('DOMContentLoaded', function() {
   updateIndicator(document.querySelector('#portfolio-flters .filter-active'));
 });
 
-
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-  e.preventDefault();
+// Form Submition:
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault(); // Prevent page refresh
 
   const form = e.target;
   const formData = new FormData(form);
-  const loading = form.querySelector('.loading');
-  const error = form.querySelector('.error-message');
-  const success = form.querySelector('.sent-message');
+  const messageBox = document.getElementById("form-message");
 
-  loading.style.display = 'block';
-  error.style.display = 'none';
-  success.style.display = 'none';
+  // Show loading message
+  messageBox.style.display = "block";
+  messageBox.style.color = "#555";
+  messageBox.innerText = "Sending...";
 
-  fetch("https://formsubmit.co/ajax/roy.sumankanti@gmail.com", {
+  fetch(form.action, {
     method: "POST",
     body: formData,
     headers: {
       'Accept': 'application/json'
     }
-  })
-  .then(response => {
-    loading.style.display = 'none';
+  }).then(response => {
     if (response.ok) {
-      success.style.display = 'block';
+      messageBox.style.color = "green";
+      messageBox.innerText = "✅ Thank you! Message sent.";
       form.reset();
-      // Optional: scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      response.json().then(data => {
-        error.innerHTML = data.message || 'Oops! Something went wrong.';
-        error.style.display = 'block';
+      return response.json().then(data => {
+        throw new Error(data.message || "Something went wrong.");
       });
     }
-  })
-  .catch(err => {
-    loading.style.display = 'none';
-    error.innerHTML = 'Could not send message. Please try again later.';
-    error.style.display = 'block';
+  }).catch(error => {
+    messageBox.style.color = "red";
+    messageBox.innerText = `❌ ${error.message}`;
   });
 });

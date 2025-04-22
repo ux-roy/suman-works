@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-# Basic Page Style
+Basic Style
 --------------------------------------------------------------*/ 
 body {
   font-family: "Open Sans", sans-serif;
@@ -20,7 +20,7 @@ p {
   letter-spacing: 0.005rem;
 }
 /*--------------------------------------------------------------
-# Global Header Style
+Global Header
 --------------------------------------------------------------*/ 
 #header {
   position: fixed;
@@ -46,7 +46,7 @@ p {
   }
 }
 /*--------------------------------------------------------------
-# Web Indentification Logo
+Website Logo
 --------------------------------------------------------------*/
 #logo-container {
   display: flex;
@@ -78,70 +78,198 @@ p {
   transform: scale(1.1);
 }
 /*--------------------------------------------------------------
-# Side Navigation Links
+Side Navigation
 --------------------------------------------------------------*/
 .nav-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
+/* Layout */
 .nav-menu {
-  margin-top: 5rem;
-}
-.nav-menu a {
-  display: flex;
-  align-items: center;
-  color: #6f7180;
-  transition: color 0.3s ease;
-  text-decoration: none;
-  padding: 0.7rem;
-  margin: 1rem;
-  justify-content:center;
+  margin-top: 2rem;
 }
 .nav-menu ul li {
   margin-bottom: 2px;
+}
+.sidebar-link {
+  margin-top: 5rem;
+}
+.arrow-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+/*--------------------------------------------------------------
+Navigator Link & Icon
+--------------------------------------------------------------*/
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6f7180;
+  text-decoration: none;
+  padding: 0.7rem;
+  margin: 1rem;
+  transition: color 0.3s ease, background 0.5s ease-in-out;
+}
+.nav-menu li > a {
+  transition: all 0.5s ease;
 }
 .nav-menu span {
   display: block;
   position: relative;
   margin-left: 0.5rem;
 }
-.sidebar-link {
-  margin-top: 5rem;
+.nav-menu a:hover {
+  color: #f5f8fd;
+  background: rgba(9, 19, 48, 0.3);
+  border-radius: 0.4rem;
+}
+.nav-menu li:hover > a {
+  color: #7481bf;
+}
+.nav-menu .active > a {
+  color: #f5f8fd;
 }
 .navbar-icons {
   fill: #6f7180;
   width: 30px;
   height: 30px;
   margin-left: -0.5rem;
-}
-.nav-menu a:hover {
-  color: #f5f8fd;
-  background: rgba(9, 19, 48, 0.3);
-  border-radius: 0.4rem;
-  transition: background 0.5s ease-in-out;
-}
-.nav-menu .active > a {
-  color: #f5f8fd;
-}
-.nav-menu li:hover > a {
-  color: #7481bf;
-  transition: all 0.5s ease 0s;
-}
-.nav-menu a:hover .navbar-icons {
-  fill: #7481bf;
-  transition: all 0.5s ease 0s;
-}
-.nav-menu .active > a {
-  color: #f5f8fd;
-  transition: all 0.5s ease 0s;
+  transition: all 0.5s ease;
 }
 .nav-menu .active .navbar-icons {
   fill: #f5f8fd;
-  transition: all 0.5s ease 0s;
+}
+.nav-menu a:hover .navbar-icons {
+  fill: #7481bf;
 }
 /*--------------------------------------------------------------
-# Mobile Hemburger Menu
+Panel Switcher
+--------------------------------------------------------------*/
+.panel-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+#opener {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  transition: all 0.5s ease 0s;
+}
+#opener:hover {
+  background: rgba(9, 19, 48, 0.3);
+  transition: background 0.5s ease-in-out;
+}
+.opener-icon {
+  width: 25px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.opener-icon .line {
+  display: block;
+  height: 1.5px;
+  background: #6f7180;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+.opener-icon .line1 {
+  width: 100%;
+}
+.opener-icon .line2 {
+  width: 80%;
+}
+.opener-icon .line3 {
+  width: 60%;
+}
+.closer-icon .line1 {
+  width: 100%;
+}
+.closer-icon .line2 {
+  width: 80%;
+}
+.closer-icon .line3 {
+  width: 60%;
+}
+.opener-icon:hover .line1 {
+  width: 40%;
+  transition: all 0.4s ease;
+  background: #7481bf;
+  transform: rotate(45deg) translate(14px, -8px);
+}
+.opener-icon:hover .line2 {
+  width: 80%;
+  opacity: 1;
+  transition: all 0.4s ease;
+  background: #7481bf;
+  transform: translateX(4px);
+}
+.opener-icon:hover .line3 {
+  width: 40%;
+  transition: all 0.4s ease;
+  background: #7481bf;
+  transform: rotate(-45deg) translate(14px, 8px);
+}
+#closer {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  transition: all 0.5s ease 0s;
+  margin-left: auto;
+}
+#closer:hover {
+  background: rgba(9, 19, 48, 0.3);
+  transition: background 0.5s ease-in-out;
+}
+.closer-icon {
+  width: 25px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  justify-items: end;
+}
+.closer-icon .line {
+  display: block;
+  height: 1.5px;
+  background: #6f7180;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+.closer-icon:hover .line1 {
+  width: 40%;
+  transition: all 0.4s ease;
+  background: #7481bf;
+  transform: rotate(-45deg) translate(-14px, -8px);
+}
+.closer-icon:hover .line2 {
+  width: 80%;
+  opacity: 1;
+  transition: all 0.4s ease;
+  background: #7481bf;
+  transform: translateX(-4px);
+}
+.closer-icon:hover .line3 {
+  width: 40%;
+  transition: all 0.4s ease;
+  background: #7481bf;
+  transform: rotate(45deg) translate(-14px, 8px);
+}
+/*--------------------------------------------------------------
+Hemburger Menu
 --------------------------------------------------------------*/
 .mobile-nav-toggle {
   position: fixed;
@@ -180,7 +308,6 @@ p {
   transition: all .5s ease-in-out;
   cursor: pointer;
   background: rgba(9, 19, 48, 0.50);
-  border: 1px solid #6f718042;
 }
 .burger-bar-1 {
   content: '';
@@ -221,7 +348,7 @@ p {
   transform: rotate(45deg) translateY(0px);
 }
 /*--------------------------------------------------------------
-# General Page Sections
+General Sections
 --------------------------------------------------------------*/
 section {
   padding: 60px 0;
@@ -268,7 +395,7 @@ hr {
   margin-bottom: 0.5rem;
 }
 /*--------------------------------------------------------------
-(1) Section: Hero Background
+(1) Hero Background
 --------------------------------------------------------------*/
 .hero-container {
   padding: 12px;
@@ -329,7 +456,7 @@ hr {
   }
 }
 /*--------------------------------------------------------------
-(2) Section: Profile Depiction 
+(2) Profile Depiction 
 --------------------------------------------------------------*/
 #profile-pic {
   border: 1px solid #1379a8;
@@ -349,7 +476,7 @@ hr {
   margin-bottom: 0;
 }
 /*--------------------------------------------------------------
-2A. Animated Iconography
+2A. Animated Icons
 --------------------------------------------------------------*/
 #animated-icons .count-box {
   width: 100%;
@@ -404,7 +531,7 @@ hr {
   }
 }
 /*--------------------------------------------------------------
-(3) Section: Work Experience
+(3) Work Experience
 --------------------------------------------------------------*/
 #work_experience {
   font-size: 20px;
@@ -588,7 +715,7 @@ hr {
   margin-left: -20px;
   }
 /*--------------------------------------------------------------
-(4) Section: Design Expertise
+(4) Design Expertise
 --------------------------------------------------------------*/
 #Design-Expertise .methods-technique {
   margin-bottom: 30px;
@@ -672,13 +799,13 @@ hr {
   background-color: #1379a8;
 }
 /*--------------------------------------------------------------
-(5) Section: Portfolio Preview
+(5) Portfolio Preview
 --------------------------------------------------------------*/
 .portfolio-item {
   margin-bottom: 50px;
 }
 /*--------------------------------------------------------------
-5A. Apply Filter Tab
+5A. Apply Filter
 --------------------------------------------------------------*/
 #portfolio-flters {
   padding: 0;
@@ -718,7 +845,7 @@ hr {
   margin-right: 0;
 }
 /*--------------------------------------------------------------
-5B. Inside Image Preview
+5B. Inside Preview
 --------------------------------------------------------------*/
 .portfolio-wrap {
   transition: 0.3s;
@@ -802,7 +929,7 @@ hr {
   }
 }
 /*--------------------------------------------------------------
-5C. Buttom Image Preview
+5C. Image Buttom 
 --------------------------------------------------------------*/
 .image-introbox {
   display: flex;
@@ -905,7 +1032,7 @@ hr {
   color: #fff;
 }
 /*--------------------------------------------------------------
-5D. Overlay Image Popup
+5D. Overlay Popup
 --------------------------------------------------------------*/
 .overlay {
   display: none;
@@ -999,7 +1126,16 @@ iframe {
   }
 }
 /*--------------------------------------------------------------
-(6) Section: Contact Synopsis
+(6) Contact Synopsis
+--------------------------------------------------------------*/
+.address-details,
+.form-submition {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/*--------------------------------------------------------------
+6A. Address Details
 --------------------------------------------------------------*/
 .address-details {
   padding: 20px;
@@ -1009,41 +1145,39 @@ iframe {
 }
 .text-block {
   padding: 0.25rem;
+  display: inline-block;
 }
-/*--------------------------------------------------------------
-6A. Address Details Format
---------------------------------------------------------------*/
 .address-details h4 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #1379a8;
   letter-spacing: 0.05rem;
 }
 .address-details p {
-  font-size: 16px;
+  font-size: 15px;
   color: #173b6c;
   margin-top: -0.5rem;
 }
 /*--------------------------------------------------------------
-6B. Entery Form Submition
+6B. Form Submition
 --------------------------------------------------------------*/
-.php-email-form {
+.form-submition {
   width: 100%;
   padding: 30px;
   background: #fff;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
-.php-email-form .form-group {
-  padding-bottom: 8px;
+.form-submition .form-group {
+  padding-bottom: 10px;
 }
-.php-email-form .validate {
+.form-submition .validate {
   display: none;
   color: red;
   margin: 0 0 15px 0;
   font-weight: 400;
   font-size: 13px;
 }
-.php-email-form .error-message {
+.form-submition .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1051,7 +1185,7 @@ iframe {
   padding: 15px;
   font-weight: 600;
 }
-.php-email-form .sent-message {
+.form-submition .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1059,13 +1193,13 @@ iframe {
   padding: 15px;
   font-weight: 600;
 }
-.php-email-form .loading {
+.form-submition .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
-.php-email-form .loading:before {
+.form-submition .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1076,18 +1210,19 @@ iframe {
   border-top-color: #eee;
   animation: animate-loading 1s linear infinite;
 }
-.php-email-form input, .php-email-form textarea {
+.form-submition input,
+.form-submition textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
-.php-email-form input {
-  height: 44px;
+.form-submition input {
+  height: 50px;
 }
-.php-email-form textarea {
-  padding: 10px 12px;
+.form-submition textarea {
+  padding: 40px 12px;
 }
-.php-email-form button[type="submit"] {
+.form-submition button[type="submit"] {
   background: #1379a8;
   border: 0;
   padding: 10px 24px;
@@ -1095,16 +1230,8 @@ iframe {
   transition: 0.4s;
   border-radius: 4px;
 }
-.php-email-form button[type="submit"]:hover {
+.form-submition button[type="submit"]:hover {
   background: #3c4261;
-}
-#thank-you-message {
-  display: none;
-  text-align: center;
-  padding: 30px;
-  background: #dff0d8;
-  color: #3c763d;
-  font-size: 20px;
 }
 @keyframes animate-loading {
   0% {
@@ -1115,7 +1242,7 @@ iframe {
   }
 }
 /*--------------------------------------------------------------
-6C. Social Media Platform
+6C. Social Media
 --------------------------------------------------------------*/
 .connect-me-content {
   display: flex;
@@ -1158,7 +1285,7 @@ iframe {
   background: #7481bf;
 }
 /*--------------------------------------------------------------
-6D. Copyright Text & Logo 
+6D. Copyright Info 
 --------------------------------------------------------------*/
 .copyright {
   display: flex;
@@ -1168,7 +1295,7 @@ iframe {
   align-items: flex-end;
 }
 .copyright p {
-  font-size: 10px;
+  font-size: 12px;
   text-decoration: none;
   color: #3c4261;
   text-align: right;
@@ -1188,7 +1315,7 @@ iframe {
   margin-left: 1rem;
 }
 /*--------------------------------------------------------------
-(7) Scroll UpTo Top
+(7) Scrollup Arrow
 --------------------------------------------------------------*/ 
 .back-to-top {
   position: fixed;
@@ -1253,138 +1380,13 @@ iframe {
   transition: all 0.5s ease-in-out;
 }
 /*--------------------------------------------------------------
-# Global Footer Style
+Global Footer
 --------------------------------------------------------------*/
 #footer {
-  display: none;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 220px;
   z-index: 9999;
   padding-bottom: 1rem;
-}
-@media (max-width: 1199px) {
-#footer {
-  display: none;
-  }
-}
-.arrow-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-#opener {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.4rem;
-  transition: all 0.5s ease 0s;
-}
-#opener:hover {
-  background: rgba(9, 19, 48, 0.3);
-  transition: background 0.5s ease-in-out;
-}
-.footer-opener-icon {
-  width: 25px;
-  height: 30px;
-  position: relative;
-  cursor: pointer;
-}
-.footer-opener-icon .line {
-  display: block;
-  height: 1.5px;
-  background-color: #6f7180;
-  margin: 6px 0;
-  border-radius: 2px;
-  transition: all 0.4s ease;
-}
-.footer-opener-icon .line1 {
-  width: 100%;
-}
-.footer-opener-icon .line2 {
-  width: 80%;
-}
-.footer-opener-icon .line3 {
-  width: 60%;
-}
-.footer-opener-icon:hover .line1 {
-  transform: rotate(45deg) translate(14px, -8px);
-  width: 40%;
-  transition: all 0.4s ease;
-  background-color: #7481bf;
-}
-.footer-opener-icon:hover .line2 {
-  transform: translateX(4px);
-  width: 80%;
-  opacity: 1;
-  transition: all 0.4s ease;
-  background-color: #7481bf;
-}
-.footer-opener-icon:hover .line3 {
-  transform: rotate(-45deg) translate(14px, 8px);
-  width: 40%;
-  transition: all 0.4s ease;
-  background-color: #7481bf;
-}
-#closer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.4rem;
-  transition: all 0.5s ease 0s;
-  margin-left: auto;
-  margin-right: 0rem;
-}
-#closer:hover {
-  background: rgba(9, 19, 48, 0.3);
-  transition: background 0.5s ease-in-out;
-}
-.footer-closer-icon {
-  width: 25px;
-  height: 30px;
-  position: relative;
-  cursor: pointer;
-  justify-items: end;
-}
-.footer-closer-icon .line {
-  display: block;
-  height: 1.5px;
-  background-color: #6f7180;
-  margin: 6px 0;
-  border-radius: 2px;
-  transition: all 0.4s ease;
-}
-.footer-closer-icon .line1 {
-  width: 100%;
-}
-.footer-closer-icon .line2 {
-  width: 80%;
-}
-.footer-closer-icon .line3 {
-  width: 60%;
-}
-.footer-closer-icon:hover .line1 {
-  transform: rotate(-45deg) translate(-14px, -8px);
-  width: 40%;
-  transition: all 0.4s ease;
-  background-color: #7481bf;
-}
-.footer-closer-icon:hover .line2 {
-  transform: translateX(-4px);
-  width: 80%;
-  opacity: 1;
-  transition: all 0.4s ease;
-  background-color: #7481bf;
-}
-.footer-closer-icon:hover .line3 {
-  transform: rotate(45deg) translate(-14px, 8px);
-  width: 40%;
-  transition: all 0.4s ease;
-  background-color: #7481bf;
 }
