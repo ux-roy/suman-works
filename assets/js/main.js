@@ -225,41 +225,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Initialize the indicator position:
+  // Initialize The Indicator Position:
   updateIndicator(document.querySelector('#portfolio-flters .filter-active'));
 });
 
-// Form Submition:
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault(); // Prevent page refresh
+  // Contact Form Submission & Message:
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
 
   const form = e.target;
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const mobile = form.mobile.value.trim();
+  const message = form.message.value.trim();
+
+  // Send form using FormSubmit via AJAX
   const formData = new FormData(form);
-  const messageBox = document.getElementById("form-message");
 
-  // Show loading message
-  messageBox.style.display = "block";
-  messageBox.style.color = "#555";
-  messageBox.innerText = "Sending...";
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
-  fetch(form.action, {
-    method: "POST",
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    if (response.ok) {
-      messageBox.style.color = "green";
-      messageBox.innerText = "✅ Thank you! Message sent.";
+    if (res.ok) {
       form.reset();
+      document.getElementById('thankYouOverlay').style.display = 'flex';
+      setTimeout(() => {
+        document.getElementById('thankYouOverlay').style.display = 'none';
+      }, 4000);
     } else {
-      return response.json().then(data => {
-        throw new Error(data.message || "Something went wrong.");
-      });
+      alert('Something went wrong. Please try again.');
     }
-  }).catch(error => {
-    messageBox.style.color = "red";
-    messageBox.innerText = `❌ ${error.message}`;
-  });
+
+  } catch (err) {
+    console.error(err);
+    alert('Error sending message.');
+  }
 });
