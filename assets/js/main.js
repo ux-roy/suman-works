@@ -229,46 +229,53 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Contact Form Submission & Message:
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('.form-submition');
-    if (!form) return;
-  
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-  
-      // const loading = form.querySelector('.sending-message');
-      // const errorMsg = form.querySelector('.error-message');
-      // const successMsg = form.querySelector('.confirm-message');
-  
-      loading.style.display = 'block';
-      errorMsg.style.display = 'none';
-      successMsg.style.display = 'none';
-  
-      const formData = new FormData(form);
-  
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-  
-        loading.style.display = 'none';
-  
-        if (response.ok) {
-          successMsg.style.display = 'block';
-          form.reset();
-        } else {
-          const result = await response.json();
-          errorMsg.innerText = result.message || 'Something went wrong. Please try again.';
-          errorMsg.style.display = 'block';
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.form-submition');
+  if (!form) return;
+
+  const loading = form.querySelector('.sending-message');
+  const errorMsg = form.querySelector('.error-message');
+  const successMsg = form.querySelector('.confirm-message');
+
+  const showMessage = (el) => {
+    el.style.display = 'flex';
+  };
+  const hideMessage = (el) => {
+    el.style.display = 'none';
+  };
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    showMessage(loading);
+    hideMessage(errorMsg);
+    hideMessage(successMsg);
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
         }
-      } catch (error) {
-        loading.style.display = 'none';
-        errorMsg.innerText = 'Failed to send message. Please check your connection.';
-        errorMsg.style.display = 'block';
+      });
+
+      hideMessage(loading);
+
+      if (response.ok) {
+        showMessage(successMsg);
+        form.reset();
+      } else {
+        const result = await response.json();
+        errorMsg.innerText = result.message || 'Something went wrong. Please try again.';
+        showMessage(errorMsg);
       }
-    });
+    } catch (error) {
+      hideMessage(loading);
+      errorMsg.innerText = 'Failed to send message. Please check your connection.';
+      showMessage(errorMsg);
+    }
   });
+});
