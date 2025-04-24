@@ -236,9 +236,9 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
   
-      const loading = form.querySelector('.sending-message');
-      const errorMsg = form.querySelector('.error-message');
-      const successMsg = form.querySelector('.confirm-message');
+      // const loading = form.querySelector('.sending-message');
+      // const errorMsg = form.querySelector('.error-message');
+      // const successMsg = form.querySelector('.confirm-message');
   
       loading.style.display = 'block';
       errorMsg.style.display = 'none';
