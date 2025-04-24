@@ -1174,13 +1174,13 @@ iframe {
 .form-submition textarea {
   border-radius: 0;
   box-shadow: none;
-  font-size: 12px;
+  font-size: 14px;
 }
 .form-submition input {
   height: 40px;
 }
 .form-submition textarea {
-  padding: 12px;
+  padding: 14px;
 }
 .form-submition button[type="submit"] {
   background: #1379a8;
@@ -1193,6 +1193,22 @@ iframe {
 }
 .form-submition button[type="submit"]:hover {
   background: #7481bf;
+}
+.sending-message, .error-message, .confirm-message {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000000aa;
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:1.5rem;
+  text-align:center;
+  padding:2rem;
 }
 @keyframes animate-loading {
   0% {

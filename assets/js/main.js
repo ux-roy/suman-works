@@ -170,13 +170,13 @@ document.querySelectorAll('.popup-trigger').forEach(button => {
       document.body.classList.remove('no-scroll');
       overlay.classList.remove('overlay-active'); 
 
-// Inactive Overlay & Show Scroll Up:
+
       $('.back-to-top').show();
     });
   });
 });
 
-// Button Scroll To Start Point:
+// Active Scroll Back To Top Button:
 $(window).scroll(function () {
   if ($(this).scrollTop() > 100 && !$('.overlay-active').length) { 
     $('.back-to-top').fadeIn('slow');
@@ -185,7 +185,7 @@ $(window).scroll(function () {
   }
 });
 
-// Button Scroll To Start Point:
+// Return Scroll Back To Top Button:
 $('.back-to-top').click(function () {
   if (!$('.overlay-active').length) {
     $('html, body').animate({
@@ -202,8 +202,7 @@ resizeBtn.addEventListener("click", function (e) {
   document.body.classList.toggle("sb-expanded");
 });
 
-
-// Sliding Effect For Moving Active Tab:
+// Sliding Effect Moving Active Tab:
 document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.querySelectorAll('#portfolio-flters li');
   const indicator = document.createElement('div');
@@ -229,40 +228,47 @@ document.addEventListener('DOMContentLoaded', function() {
   updateIndicator(document.querySelector('#portfolio-flters .filter-active'));
 });
 
-  // Contact Form Submission & Message:
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  const form = e.target;
-  const name = form.name.value.trim();
-  const email = form.email.value.trim();
-  const mobile = form.mobile.value.trim();
-  const message = form.message.value.trim();
-
-  // Send form using FormSubmit via AJAX
-  const formData = new FormData(form);
-
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
+// Contact Form Submission & Message:
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.form-submition');
+    if (!form) return;
+  
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+  
+      const loading = form.querySelector('.sending-message');
+      const errorMsg = form.querySelector('.error-message');
+      const successMsg = form.querySelector('.confirm-message');
+  
+      loading.style.display = 'block';
+      errorMsg.style.display = 'none';
+      successMsg.style.display = 'none';
+  
+      const formData = new FormData(form);
+  
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+  
+        loading.style.display = 'none';
+  
+        if (response.ok) {
+          successMsg.style.display = 'block';
+          form.reset();
+        } else {
+          const result = await response.json();
+          errorMsg.innerText = result.message || 'Something went wrong. Please try again.';
+          errorMsg.style.display = 'block';
+        }
+      } catch (error) {
+        loading.style.display = 'none';
+        errorMsg.innerText = 'Failed to send message. Please check your connection.';
+        errorMsg.style.display = 'block';
       }
     });
-
-    if (res.ok) {
-      form.reset();
-      document.getElementById('thankYouOverlay').style.display = 'flex';
-      setTimeout(() => {
-        document.getElementById('thankYouOverlay').style.display = 'none';
-      }, 4000);
-    } else {
-      alert('Something went wrong. Please try again.');
-    }
-
-  } catch (err) {
-    console.error(err);
-    alert('Error sending message.');
-  }
-});
+  });
