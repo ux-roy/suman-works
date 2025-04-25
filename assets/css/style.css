@@ -85,16 +85,11 @@ Side Navigation
   padding: 0;
   list-style: none;
 }
-
-/* Layout */
 .nav-menu {
   margin-top: 2rem;
 }
 .nav-menu ul li {
   margin-bottom: 2px;
-}
-.sidebar-link {
-  margin-top: 5rem;
 }
 .arrow-buttons {
   display: flex;
@@ -103,7 +98,7 @@ Side Navigation
   padding: 1rem;
 }
 /*--------------------------------------------------------------
-Navigator Link & Icon
+Sidebar Sections
 --------------------------------------------------------------*/
 .nav-menu a {
   display: flex;
@@ -157,7 +152,7 @@ Panel Switcher
   padding: 1rem;
 }
 #opener {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
@@ -221,7 +216,7 @@ Panel Switcher
   transform: rotate(-45deg) translate(14px, 8px);
 }
 #closer {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
@@ -269,7 +264,7 @@ Panel Switcher
   transform: rotate(45deg) translate(-14px, 8px);
 }
 /*--------------------------------------------------------------
-Hemburger Menu
+Hamburger Menu
 --------------------------------------------------------------*/
 .mobile-nav-toggle {
   position: fixed;
@@ -283,7 +278,8 @@ Hemburger Menu
   outline: none !important;
   line-height: 1;
   cursor: pointer;
-  text-align: right; 
+  text-align: right;
+  filter: drop-shadow(0 0 10px rgba(19, 121, 168, 100));
 }
 .mobile-nav-toggle i {
   color: #fff;
@@ -1128,11 +1124,8 @@ iframe {
 /*--------------------------------------------------------------
 (6) Contact Synopsis
 --------------------------------------------------------------*/
-.address-details,
-.form-submition {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.contact-details {
+  margin-bottom: 50px;
 }
 /*--------------------------------------------------------------
 6A. Address Details
@@ -1141,6 +1134,9 @@ iframe {
   padding: 30px;
   background: #fff;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 .text-block {
@@ -1158,20 +1154,16 @@ iframe {
   color: #7481bf;
   margin-top: -0.2rem;
 }
-#map {
-  margin-top: 0.5rem;
-}
 /*--------------------------------------------------------------
 6B. Form Submition
 --------------------------------------------------------------*/
 .form-submition {
   width: 100%;
-  padding: 30px;
+  padding: 30px 30px 0px 30px;
   background: #fff;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
-.form-submition input,
-.form-submition textarea {
+.form-submition input, .form-submition textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
@@ -1189,7 +1181,7 @@ iframe {
   color: #fff;
   transition: 0.4s;
   border-radius: 4px;
-  margin-top: 0.5rem;
+  margin: 10px;
 }
 .form-submition button[type="submit"]:hover {
   background: #7481bf;

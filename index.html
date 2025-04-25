@@ -186,35 +186,39 @@
 </head>
 
 <body>
-
+  
 <header id="header">
- <div class="d-flex flex-column">
-  <nav class="nav-menu">
+  <aside><div class="d-flex flex-column">
 
+<!-- Hamburger Menu -->
+<div class="mobile-nav-toggle d-xl-none">
+  <div id="menu-line-icon" onclick="myFunction(this)">
+    <div class="burger-bar-1"></div>
+    <div class="burger-bar-2"></div>
+    <div class="burger-bar-3"></div>
+  </div>
+</div>
+
+<nav class="nav-menu">
 <!-- Website Logo -->
     <div id="logo-container"><a href="#hero"><svg class="logo"><use xlink:href="#website-logo"/></svg></a></div>
 
 <!-- Side Navigation -->
-    <div class="sidebar-link"><ul>
+    <ul>
       <li><a href="#Profile-Depiction"><i><svg class="navbar-icons"><use xlink:href="#profile-depiction"/></svg></i><span>Profile Depiction</span></a></li>
       <li><a href="#Work-Experience"><i><svg class="navbar-icons"><use xlink:href="#work-experience"/></svg></i><span>Work Experience</span></a></li>
       <li><a href="#Design-Expertise"><i><svg class="navbar-icons"><use xlink:href="#design-expertise"/></svg></i><span>Design Expertise</span></a></li>
       <li><a href="#Portfolio-Preview"><i><svg class="navbar-icons"><use xlink:href="#portfolio-preview"/></svg></i><span>Portfolio Preview</span></a></li>
       <li><a href="#Contact-Synopsis"><i><svg class="navbar-icons"><use xlink:href="#contact-synopsis"/></svg></i><span>Contact Synopsis</span></a></li>
-    </ul></div>
-    
-<!-- Hamburger Menu -->
-    <div class="mobile-nav-toggle d-xl-none">
-      <div id="menu-line-icon" onclick="myFunction(this)">
-      <div class="burger-bar-1"></div><div class="burger-bar-2"></div><div class="burger-bar-3"></div></div></div>
- 
-<!-- Panel Switcher -->       
-    <div class="opener-&-closer d-none d-xl-block"><div class="panel-switcher">
-    <div id="opener"><div class="opener-icon"><span class="line line1"></span><span class="line line2"></span><span class="line line3"></span></div></div>
-    <div id="closer"><div class="closer-icon"><span class="line line1"></span><span class="line line2"></span><span class="line line3"></span></div></div></div></div>
 
-    </nav>
-  </div>
+<!-- Panel Switcher -->       
+      <li d-none d-xl-block><div class="panel-switcher" data-resize-btn>
+      <div id="opener"><div class="...opener-icon"><span class="line line1"></span><span class="line line2"></span><span class="line line3"></span></div></div>
+      <div id="closer"><div class="...closer-icon"><span class="line line1"></span><span class="line line2"></span><span class="line line3"></span></div></div></div></li>
+    </ul>
+</nav>
+    </div>
+  </aside>
 </header>
     
 <main id="main">
@@ -991,18 +995,18 @@
       <div class="section-title"><h2>Contact Synopsis</h2></div>       
       <div class="contact-details"><div class="row align-items-stretch">
   <!-- 6A. Address Details -->
-      <div class="col-lg-5 d-flex align-items-stretch">
+      <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch">
           <div class="address-details">
             <div class="text-block"><h4>Home</h4><span><p>AA-1D, Newtown, Kolkata-700156, West Bengal, India</p></span></div>
             <div class="text-block"><h4>Email</h4><span><p>roy.sumankanti@gmail.com</p></span></div>
             <div class="text-block"><h4>Mobile</h4><span><p>+91 7411940354</p></div>
-            <div class="text-block"><h4>Location</h4><span><iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58940.95081685817!2d88.45160130810373!3d22.5862299466359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275350398a5b9%3A0x75e165b244323425!2sNewtown%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1738755750641!5m2!1sen!2sin"
-              frameborder="0" style="border:0; width: 100%; height: 300px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            <div class="text-block"><h4>Location</h4><span><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58940.95081685817!2d88.45160130810373!3d22.5862299466359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275350398a5b9%3A0x75e165b244323425!2sNewtown%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1738755750641!5m2!1sen!2sin"
+              frameborder="0" style="border:0; width: 100%; height: 390px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe></span></div>
           </div>
       </div>
   <!-- 6B. Form Submition -->
-      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+      <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch">
         <form id="contact-form" class="form-submition" action="https://formsubmit.co/roy.sumankanti@gmail.com" method="post" role="form">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_subject" value="form">
@@ -1011,13 +1015,15 @@
           <div class="form-group"><label for="name">Enter your name:</label><input type="text" name="name" class="form-control" id="name" required /></div>          
           <div class="form-group"><label for="email">Share your email:</label><input type="email" name="email" class="form-control" id="email" required /></div>
           <div class="form-group"><label for="mobile">Your phone number:</label><input type="tel" name="mobile" class="form-control" id="mobile" pattern="\+\d{1,4}\s?\d{6,11}"  required /></div>
-          <div class="form-group"><label for="message">Write something here:</label><textarea name="message" class="form-control" id="message" rows="10" required></textarea></div>
+          <div class="form-group"><label for="message">Write something here:</label><textarea name="message" class="form-control" id="message" rows="15" required></textarea></div>
           <div class="text-center"><button type="submit">Send Message</button></div>
           <div class="mb-3">
             <div class="confirm-message">Thank you! Message has been sent.</div>
             <div class="sending-message"><div class="spinner"></div>Wait a moment! Message is sending.</div>
             <div class="error-message">Something went wrong. Please retry.</div></div>
-        </form></div></div>
+          </form>
+        </div>
+      </div>
   <!-- 6C. Social Media -->
       <br><div class="connect-me-content">
           <div class="social-links mt-3 text-center">
