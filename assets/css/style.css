@@ -335,13 +335,13 @@ Hamburger Menu
   transform: translateY(6px);
 }
 .change .burger-bar-1{
-  transform: rotate(-45deg) translateY(0px);
+  transform: rotate(-45deg);
 }
 .change .burger-bar-2 {
   opacity: 0;
 }
 .change .burger-bar-3 {
-  transform: rotate(45deg) translateY(0px);
+  transform: rotate(45deg);
 }
 /*--------------------------------------------------------------
 General Sections

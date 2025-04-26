@@ -55,11 +55,45 @@ $(document).on('click', '.nav-menu a, .scrollto', function (e) {
   }
 });
 
-// Mobile Navigation Link Selected Function:
-  $(document).on('click', '.mobile-nav-toggle', function (e) {
+// Hamburger mobile menu toggl and animate
+$(document).ready(function () {
+  $(document).on('click', '.mobile-nav-toggle', function () {
     $('body').toggleClass('mobile-nav-active');
-    $('.mobile-nav-toggle i');
+    $('#menu-line-icon').toggleClass('change');
   });
+
+// Scroll to section reset hamburger icon
+  $(document).on('click', '.nav-menu a, .mobile-nav a', function (e) {
+    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') &&
+        location.hostname === this.hostname) {
+
+      const target = $(this.hash);
+      if (target.length) {
+        e.preventDefault();
+
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1500, 'easeInOutExpo');
+
+// Close panel and reset hamburger
+        $('body').removeClass('mobile-nav-active');
+        $('#menu-line-icon').removeClass('change');
+        $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+        $(this).closest('li').addClass('active');
+      }
+    }
+  });
+
+// Clicking outside nav closes panel & resets hamburger
+  $(document).click(function (e) {
+    const $target = $(e.target);
+    if (!$target.closest('.mobile-nav-toggle, .nav-menu, .mobile-nav').length &&
+        $('body').hasClass('mobile-nav-active')) {
+      $('body').removeClass('mobile-nav-active');
+      $('#menu-line-icon').removeClass('change');
+    }
+  });
+});
 
 // Mob Navigation Menu Toggle Active Links:
   $(document).click(function (e) {
@@ -97,7 +131,7 @@ $(document).on('click', '.nav-menu a, .scrollto', function (e) {
 
 // Button Scroll To Start Point:
 $(document).ready(function () {
-  $('.back-to-top').hide(); 
+  $('.back-to-top').hide();
 
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
@@ -111,6 +145,13 @@ $(document).ready(function () {
     $('html, body').animate({
       scrollTop: 0
     }, 1500, 'easeInOutExpo');
+
+    // Close the mobile nav if open
+    if ($('body').hasClass('mobile-nav-active')) {
+      $('body').removeClass('mobile-nav-active');
+      $('#menu-line-icon').removeClass('change'); // Reset hamburger icon
+    }
+
     return false;
   });
 });
@@ -123,11 +164,6 @@ $(document).ready(function () {
   }, {
     offset: '80%'
   });
-
-// On Click Hamburger Lines Turn Cross:
-  function myFunction(x) {
-    x.classList.toggle("change");
-  }
 
 // Portfolio Section Choose Filter Tab:
 $(window).on('load', function () {
@@ -237,8 +273,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const errorMsg = form.querySelector('.error-message');
   const successMsg = form.querySelector('.confirm-message');
 
-  const showMessage = (el) => {
+  const showMessage = (el, duration = 5000) => {
     el.style.display = 'flex';
+    setTimeout(() => {
+      hideMessage(el);
+    }, duration);
   };
   const hideMessage = (el) => {
     el.style.display = 'none';
@@ -247,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    showMessage(loading);
+    showMessage(loading, 5000);
     hideMessage(errorMsg);
     hideMessage(successMsg);
 
@@ -265,17 +304,17 @@ document.addEventListener('DOMContentLoaded', () => {
       hideMessage(loading);
 
       if (response.ok) {
-        showMessage(successMsg);
+        showMessage(successMsg); // Will auto-hide after 5s
         form.reset();
       } else {
         const result = await response.json();
         errorMsg.innerText = result.message || 'Something went wrong. Please try again.';
-        showMessage(errorMsg);
+        showMessage(errorMsg); // Will auto-hide after 5s
       }
     } catch (error) {
       hideMessage(loading);
-      errorMsg.innerText = 'Failed to send message. Please check your connection.';
-      showMessage(errorMsg);
+      errorMsg.innerText = 'Failed to send. Check your connection.';
+      showMessage(errorMsg); // Will auto-hide after 5s
     }
   });
 });
