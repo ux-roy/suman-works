@@ -1,35 +1,36 @@
-
+// MAIN SCRIPT FILE
 
 !(function ($) {
   "use strict";
 
-// jQuery Initial All Section Content Appear:
+  // AOS Initialization (Animate On Scroll)
   AOS.init({
     duration: 1000,
     easing: "ease-in-out-back"
   });
-  })(jQuery);
 
-//  jQuery Numarical Numbers Animate Counter: 
+})(jQuery);
+
+// Counter Animation for Numerical Stats
 $('[data-toggle="counter-up"]').counterUp({
   delay: 10,
   time: 1000
 });
 
-// Animated Typed Texts on Hero Background:
-  if ($('.typed').length) {
-    var typed_strings = $(".typed").data('typed-items');
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
+// Typed.js Animated Text in Hero Section
+if ($('.typed').length) {
+  var typed_strings = $(".typed").data('typed-items');
+  typed_strings = typed_strings.split(',')
+  new Typed('.typed', {
+    strings: typed_strings,
+    loop: true,
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 2000
+  });
+}
 
-// Vertical Smooth Scroll Navigation Menu:
+// Smooth Scroll on Navigation Click
 $(document).on('click', '.nav-menu a, .scrollto', function (e) {
   if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
     e.preventDefault();
@@ -55,117 +56,48 @@ $(document).on('click', '.nav-menu a, .scrollto', function (e) {
   }
 });
 
-// Hamburger mobile menu toggl and animate
-$(document).ready(function () {
-  $(document).on('click', '.mobile-nav-toggle', function () {
-    $('body').toggleClass('mobile-nav-active');
-    $('#menu-line-icon').toggleClass('change');
-  });
-
-// Scroll to section reset hamburger icon
-  $(document).on('click', '.nav-menu a, .mobile-nav a', function (e) {
-    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') &&
-        location.hostname === this.hostname) {
-
-      const target = $(this.hash);
-      if (target.length) {
-        e.preventDefault();
-
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1500, 'easeInOutExpo');
-
-// Close panel and reset hamburger
-        $('body').removeClass('mobile-nav-active');
-        $('#menu-line-icon').removeClass('change');
-        $('.nav-menu .active, .mobile-nav .active').removeClass('active');
-        $(this).closest('li').addClass('active');
-      }
-    }
-  });
-
-// Clicking outside nav closes panel & resets hamburger
-  $(document).click(function (e) {
-    const $target = $(e.target);
-    if (!$target.closest('.mobile-nav-toggle, .nav-menu, .mobile-nav').length &&
-        $('body').hasClass('mobile-nav-active')) {
-      $('body').removeClass('mobile-nav-active');
-      $('#menu-line-icon').removeClass('change');
-    }
-  });
-});
-
-// Mob Navigation Menu Toggle Active Links:
-  $(document).click(function (e) {
-    var container = $(".mobile-nav-toggle");
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-      if ($('body').hasClass('mobile-nav-active')) {
-        $('body').removeClass('mobile-nav-active');
-        $('.mobile-nav-toggle i');
-      }
-    }
-  });
-
-// Navigation Active State Cursor on Scroll:
-  var nav_sections = $('section');
-  var main_nav = $('.nav-menu, #mobile-nav');
-  $(window).on('scroll', function () {
-    var cur_pos = $(this).scrollTop() + 10;
-
-    nav_sections.each(function () {
-      var top = $(this).offset().top,
-        bottom = top + $(this).outerHeight();
-
-      if (cur_pos >= top && cur_pos <= bottom) {
-        if (cur_pos <= bottom) {
-          main_nav.find('li').removeClass('active');
-        }
-        main_nav.find('#menu-line-icon').removeClass('change');
-        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
-      }
-      if (cur_pos < 200) {
-        $(".nav-menu ul:first li:first").addClass('active');
-      }
-    });
-  });
-
-// Button Scroll To Start Point:
-$(document).ready(function () {
-  $('.back-to-top').hide();
-
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-    }
-  });
-
-  $('.back-to-top').click(function () {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 1500, 'easeInOutExpo');
-
-    // Close the mobile nav if open
+// Close Mobile Nav on Outside Click
+$(document).click(function (e) {
+  var container = $(".mobile-nav-toggle");
+  if (!container.is(e.target) && container.has(e.target).length === 0) {
     if ($('body').hasClass('mobile-nav-active')) {
       $('body').removeClass('mobile-nav-active');
-      $('#menu-line-icon').removeClass('change'); // Reset hamburger icon
+      $('.mobile-nav-toggle i'); // No toggle class action here
     }
+  }
+});
 
-    return false;
+// Update Navigation Active State on Scroll
+var nav_sections = $('section');
+var main_nav = $('.nav-menu, #mobile-nav');
+$(window).on('scroll', function () {
+  var cur_pos = $(this).scrollTop() + 10;
+
+  nav_sections.each(function () {
+    var top = $(this).offset().top,
+        bottom = top + $(this).outerHeight();
+
+    if (cur_pos >= top && cur_pos <= bottom) {
+      main_nav.find('li').removeClass('active');
+      main_nav.find('#menu-line-icon').removeClass('change');
+      main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+    }
+    if (cur_pos < 200) {
+      $(".nav-menu ul:first li:first").addClass('active');
+    }
   });
 });
 
-// First Time Animated Progressive Bar:
-  $('.skills-content').waypoint(function () {
-    $('.progress .progress-bar').each(function () {
-      $(this).css("width", $(this).attr("aria-valuenow") + '%');
-    });
-  }, {
-    offset: '80%'
+// Progress Bars Animation Triggered on Scroll
+$('.skills-content').waypoint(function () {
+  $('.progress .progress-bar').each(function () {
+    $(this).css("width", $(this).attr("aria-valuenow") + '%');
   });
+}, {
+  offset: '80%'
+});
 
-// Portfolio Section Choose Filter Tab:
+// Portfolio Filtering using Isotope
 $(window).on('load', function () {
   var portfolioIsotope = $('.portfolio-container').isotope({
     itemSelector: '.portfolio-item',
@@ -183,7 +115,12 @@ $(window).on('load', function () {
   });
 });
 
-// Popup Button Open Overlay Preview:
+// Popup Overlay for Portfolio Previews
+// Clone overlay from portfolio item, display and block background scroll
+// Also hides the back-to-top button
+// Adds close functionality to overlay
+
+// Trigger Overlay
 document.querySelectorAll('.popup-trigger').forEach(button => {
   button.addEventListener('click', () => {
     const portfolioItem = button.closest('.portfolio-item');
@@ -194,34 +131,31 @@ document.querySelectorAll('.popup-trigger').forEach(button => {
     overlay.style.display = 'flex';
     overlay.style.zIndex = '9999';
     document.body.classList.add('no-scroll');
-    overlay.classList.add('overlay-active'); 
+    overlay.classList.add('overlay-active');
 
-// Active Overlay & Hide Scroll Up:
     $('.back-to-top').hide();
 
-// Disable Background Scrolling Overlay:
     overlay.querySelector('.close-btn').addEventListener('click', () => {
       overlay.style.display = 'none';
       document.body.removeChild(overlay);
       document.body.classList.remove('no-scroll');
-      overlay.classList.remove('overlay-active'); 
-
+      overlay.classList.remove('overlay-active');
 
       $('.back-to-top').show();
     });
   });
 });
 
-// Active Scroll Back To Top Button:
+// Show or Hide Back to Top Button based on scroll position
 $(window).scroll(function () {
-  if ($(this).scrollTop() > 100 && !$('.overlay-active').length) { 
+  if ($(this).scrollTop() > 100 && !$('.overlay-active').length) {
     $('.back-to-top').fadeIn('slow');
   } else {
     $('.back-to-top').fadeOut('slow');
   }
 });
 
-// Return Scroll Back To Top Button:
+// Back to Top Button Click Scroll to Top
 $('.back-to-top').click(function () {
   if (!$('.overlay-active').length) {
     $('html, body').animate({
@@ -231,15 +165,17 @@ $('.back-to-top').click(function () {
   }
 });
 
-// Partial Side Navtion Open & Close:
+// Side Navigation Toggle Expand/Collapse
 const resizeBtn = document.querySelector("[data-resize-btn]");
 resizeBtn.addEventListener("click", function (e) {
   e.preventDefault();
   document.body.classList.toggle("sb-expanded");
 });
 
-// Sliding Effect Moving Active Tab:
-document.addEventListener('DOMContentLoaded', function() {
+// Sliding Effect for Portfolio Filter Active Tab Indicator
+// Creates a moving indicator for selected tab
+
+document.addEventListener('DOMContentLoaded', function () {
   const tabs = document.querySelectorAll('#portfolio-flters li');
   const indicator = document.createElement('div');
   indicator.classList.add('indicator');
@@ -260,11 +196,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Initialize The Indicator Position:
   updateIndicator(document.querySelector('#portfolio-flters .filter-active'));
 });
 
-// Contact Form Submission & Message:
+// Contact Form Handling with Fetch API
+// Handles form loading, success, and error messages
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.form-submition');
   if (!form) return;
@@ -304,17 +241,82 @@ document.addEventListener('DOMContentLoaded', () => {
       hideMessage(loading);
 
       if (response.ok) {
-        showMessage(successMsg); // Will auto-hide after 5s
+        showMessage(successMsg);
         form.reset();
       } else {
         const result = await response.json();
         errorMsg.innerText = result.message || 'Something went wrong. Please try again.';
-        showMessage(errorMsg); // Will auto-hide after 5s
+        showMessage(errorMsg);
       }
     } catch (error) {
       hideMessage(loading);
       errorMsg.innerText = 'Failed to send. Check your connection.';
-      showMessage(errorMsg); // Will auto-hide after 5s
+      showMessage(errorMsg);
     }
+  });
+});
+
+// Additional DOM Ready Scripts for Menu and Back to Top Button
+$(document).ready(function () {
+
+  // Toggle Mobile Navigation Menu
+  $(document).on('click', '.mobile-nav-toggle', function () {
+    $('body').toggleClass('mobile-nav-active');
+    $('#menu-line-icon').toggleClass('change');
+  });
+
+  // Smooth Scroll with Reset on Nav Click
+  $(document).on('click', '.nav-menu a, .mobile-nav a', function (e) {
+    const pathnameMatch = location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '');
+    const hostnameMatch = location.hostname === this.hostname;
+    const target = $(this.hash);
+
+    if (pathnameMatch && hostnameMatch && target.length) {
+      e.preventDefault();
+
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1500, 'easeInOutExpo');
+
+      $('body').removeClass('mobile-nav-active');
+      $('#menu-line-icon').removeClass('change');
+
+      $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+      $(this).closest('li').addClass('active');
+    }
+  });
+
+  // Close Nav Menu on Outside Click
+  $(document).on('click', function (e) {
+    const isClickInside = $(e.target).closest('.mobile-nav-toggle, .nav-menu, .mobile-nav').length > 0;
+    if (!isClickInside && $('body').hasClass('mobile-nav-active')) {
+      $('body').removeClass('mobile-nav-active');
+      $('#menu-line-icon').removeClass('change');
+    }
+  });
+
+  // Back to Top Button Scroll
+  const $backToTop = $('.back-to-top');
+
+  $backToTop.hide();
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $backToTop.fadeIn('slow');
+    } else {
+      $backToTop.fadeOut('slow');
+    }
+  });
+
+  $backToTop.click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+
+    // Reset mobile nav if open
+    if ($('body').hasClass('mobile-nav-active')) {
+      $('body').removeClass('mobile-nav-active');
+      $('#menu-line-icon').removeClass('change');
+    }
+
+    return false;
   });
 });
