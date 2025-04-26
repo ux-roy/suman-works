@@ -1185,7 +1185,7 @@ iframe {
 .form-submition button[type="submit"]:hover {
   background: #7481bf;
 }
-.sending-message, .error-message, .confirm-message {
+.sending-message, .confirm-message, .error-message {
   display:none;
   position:fixed;
   top:0;
