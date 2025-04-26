@@ -759,6 +759,9 @@ Apply Filter
  #portfolio-flters li:last-child {
   margin-right: 0;
 }
+.portfolio-item {
+  margin-bottom: 50px;
+}
 /*--------------------------------------------------------------
 Inside Preview
 --------------------------------------------------------------*/
@@ -844,7 +847,7 @@ Inside Preview
   }
 }
 /*--------------------------------------------------------------
-Image Buttom 
+Picture Buttom 
 --------------------------------------------------------------*/
 .image-introbox {
   display: flex;
@@ -1204,7 +1207,7 @@ Copyright Info
   margin-bottom: 0.5rem;
 }
 /*--------------------------------------------------------------
-Scrollup Arrow
+Scroll Upword
 --------------------------------------------------------------*/ 
 .back-to-top {
   position: fixed;
