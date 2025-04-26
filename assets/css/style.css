@@ -143,15 +143,15 @@ Sidebar Sections
   fill: #7481bf;
 }
 /*--------------------------------------------------------------
-Panel Switcher
+Panel Toggler
 --------------------------------------------------------------*/
-.panel-switcher {
+.panel-toggler {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
 }
-#opener {
+#side-switch {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,17 +160,17 @@ Panel Switcher
   border-radius: 0.2rem;
   transition: all 0.5s ease 0s;
 }
-#opener:hover {
+#side-switch:hover {
   background: rgba(9, 19, 48, 0.3);
   transition: background 0.5s ease-in-out;
 }
-.opener-icon {
+.switch-icon {
   width: 25px;
   height: 30px;
   position: relative;
   cursor: pointer;
 }
-.opener-icon .line {
+.switch-icon .line {
   display: block;
   height: 1.5px;
   background: #6f7180;
@@ -178,90 +178,33 @@ Panel Switcher
   border-radius: 2px;
   transition: all 0.4s ease;
 }
-.opener-icon .line1 {
+.switch-icon .line1 {
   width: 100%;
 }
-.opener-icon .line2 {
+.switch-icon .line2 {
   width: 80%;
 }
-.opener-icon .line3 {
+.switch-icon .line3 {
   width: 60%;
 }
-.closer-icon .line1 {
-  width: 100%;
-}
-.closer-icon .line2 {
-  width: 80%;
-}
-.closer-icon .line3 {
-  width: 60%;
-}
-.opener-icon:hover .line1 {
+.switch-icon:hover .line1 {
   width: 40%;
   transition: all 0.4s ease;
   background: #7481bf;
   transform: rotate(45deg) translate(14px, -8px);
 }
-.opener-icon:hover .line2 {
+.switch-icon:hover .line2 {
   width: 80%;
   opacity: 1;
   transition: all 0.4s ease;
   background: #7481bf;
   transform: translateX(4px);
 }
-.opener-icon:hover .line3 {
+.switch-icon:hover .line3 {
   width: 40%;
   transition: all 0.4s ease;
   background: #7481bf;
   transform: rotate(-45deg) translate(14px, 8px);
-}
-#closer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.2rem;
-  transition: all 0.5s ease 0s;
-  margin-left: auto;
-}
-#closer:hover {
-  background: rgba(9, 19, 48, 0.3);
-  transition: background 0.5s ease-in-out;
-}
-.closer-icon {
-  width: 25px;
-  height: 30px;
-  position: relative;
-  cursor: pointer;
-  justify-items: end;
-}
-.closer-icon .line {
-  display: block;
-  height: 1.5px;
-  background: #6f7180;
-  margin: 6px 0;
-  border-radius: 2px;
-  transition: all 0.4s ease;
-}
-.closer-icon:hover .line1 {
-  width: 40%;
-  transition: all 0.4s ease;
-  background: #7481bf;
-  transform: rotate(-45deg) translate(-14px, -8px);
-}
-.closer-icon:hover .line2 {
-  width: 80%;
-  opacity: 1;
-  transition: all 0.4s ease;
-  background: #7481bf;
-  transform: translateX(-4px);
-}
-.closer-icon:hover .line3 {
-  width: 40%;
-  transition: all 0.4s ease;
-  background: #7481bf;
-  transform: rotate(45deg) translate(-14px, 8px);
 }
 /*--------------------------------------------------------------
 Hamburger Menu
@@ -391,7 +334,7 @@ hr {
   margin-bottom: 0.5rem;
 }
 /*--------------------------------------------------------------
-(1) Hero Background
+Hero Background
 --------------------------------------------------------------*/
 .hero-container {
   padding: 12px;
@@ -452,7 +395,7 @@ hr {
   }
 }
 /*--------------------------------------------------------------
-(2) Profile Depiction 
+Profile Depiction 
 --------------------------------------------------------------*/
 #profile-pic {
   border: 1px solid #1379a8;
@@ -472,7 +415,7 @@ hr {
   margin-bottom: 0;
 }
 /*--------------------------------------------------------------
-2A. Animated Icons
+Animated Icons
 --------------------------------------------------------------*/
 #animated-icons .count-box {
   width: 100%;
@@ -526,18 +469,7 @@ hr {
   }
 }
 /*--------------------------------------------------------------
-(3) Work Experience
---------------------------------------------------------------*/
-#work_experience {
-  font-size: 20px;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-top: 4px;
-  margin-bottom: -1px;
-}
-/*--------------------------------------------------------------
-3A. Education Qualification
+Education Qualification
 --------------------------------------------------------------*/
 .education .degree {
   margin-bottom: 1rem;
@@ -575,7 +507,7 @@ hr {
   letter-spacing: 0.008rem;
 }
 /*--------------------------------------------------------------
-3B. Credential Certification
+Credential Certification
 --------------------------------------------------------------*/
 .certification h4 {
   font-size: 17px;
@@ -624,7 +556,7 @@ hr {
   transition: all 0.3s ease-in-out;
 }
 /*--------------------------------------------------------------
-3C. Professional Employment
+Professional Employment
 --------------------------------------------------------------*/
 .employment {
   padding: 0 0 19px 0px;
@@ -700,7 +632,7 @@ hr {
   background: #1379a8;
 }
 /*--------------------------------------------------------------
-3D. Achievement & Rewards
+Achievement & Rewards
 --------------------------------------------------------------*/
 .achievements li {
   list-style-type: '★';
@@ -710,16 +642,7 @@ hr {
   margin-left: -20px;
   }
 /*--------------------------------------------------------------
-(4) Design Expertise
---------------------------------------------------------------*/
-#Design-Expertise .methods-technique {
-  margin-bottom: 30px;
-}
-#Design-Expertise .softskill-bar {
-  margin-top: 30px;
-}
-/*--------------------------------------------------------------
-4A. Skills & Technique 
+Skills & Technique 
 --------------------------------------------------------------*/ 
 .methods-technique .title {
   margin-left: 56px;
@@ -763,8 +686,11 @@ hr {
   filter: drop-shadow(0 0 10px rgba(19, 121, 168, 0.7));
 }
 /*--------------------------------------------------------------
-4B. Tools & Technology
+Tools & Technology
 --------------------------------------------------------------*/
+.softskill-bar {
+  margin-top: 3rem;
+}
 .softskill-bar .progress {
   height: 50px;
   display: block;
@@ -794,13 +720,7 @@ hr {
   background-color: #1379a8;
 }
 /*--------------------------------------------------------------
-(5) Portfolio Preview
---------------------------------------------------------------*/
-.portfolio-item {
-  margin-bottom: 50px;
-}
-/*--------------------------------------------------------------
-5A. Apply Filter
+Apply Filter
 --------------------------------------------------------------*/
 #portfolio-flters {
   padding: 0;
@@ -840,7 +760,7 @@ hr {
   margin-right: 0;
 }
 /*--------------------------------------------------------------
-5B. Inside Preview
+Inside Preview
 --------------------------------------------------------------*/
 .portfolio-wrap {
   transition: 0.3s;
@@ -924,7 +844,7 @@ hr {
   }
 }
 /*--------------------------------------------------------------
-5C. Image Buttom 
+Image Buttom 
 --------------------------------------------------------------*/
 .image-introbox {
   display: flex;
@@ -1027,7 +947,7 @@ hr {
   color: #fff;
 }
 /*--------------------------------------------------------------
-5D. Overlay Popup
+Overlay Popup
 --------------------------------------------------------------*/
 .overlay {
   display: none;
@@ -1121,13 +1041,7 @@ iframe {
   }
 }
 /*--------------------------------------------------------------
-(6) Contact Synopsis
---------------------------------------------------------------*/
-.contact-details {
-  margin-bottom: 5rem;
-}
-/*--------------------------------------------------------------
-6A. Address Details
+Address Details
 --------------------------------------------------------------*/
 .address-details {
   padding: 30px;
@@ -1154,7 +1068,7 @@ iframe {
   margin-top: -0.2rem;
 }
 /*--------------------------------------------------------------
-6B. Form Submition
+Form Submition
 --------------------------------------------------------------*/
 .form-submition {
   width: 100%;
@@ -1219,24 +1133,26 @@ iframe {
   }
 }
 /*--------------------------------------------------------------
-6C. Social Media
+Social Media
 --------------------------------------------------------------*/
 .connect-me-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
-  padding: 1rem 0rem;
   margin-top: 2.5rem;
 }
 .social-links {
   display: flex;
-  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 1rem 1rem 1.5rem 0rem;
+  gap: 0.5rem;
 }
 .social-icons {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   fill: #f5f8fd;
 }
 .social-icons:hover {
@@ -1252,7 +1168,6 @@ iframe {
   transition: 0.9s;
   justify-content: center;
   align-items: center;
-  margin-right: 1rem;
 }
 .social-links a:last-child {
   margin-right: 0;
@@ -1262,7 +1177,7 @@ iframe {
   background: #7481bf;
 }
 /*--------------------------------------------------------------
-6D. Copyright Info 
+Copyright Info 
 --------------------------------------------------------------*/
 .copyright {
   display: flex;
@@ -1289,7 +1204,7 @@ iframe {
   margin-bottom: 0.5rem;
 }
 /*--------------------------------------------------------------
-(7) Scrollup Arrow
+Scrollup Arrow
 --------------------------------------------------------------*/ 
 .back-to-top {
   position: fixed;
