@@ -245,12 +245,12 @@ document.addEventListener('DOMContentLoaded', () => {
         form.reset();
       } else {
         const result = await response.json();
-        errorMsg.innerText = result.message || 'Something went wrong. Please try again.';
+        errorMsg.innerText = result.message || 'Something wrong! Please try again.';
         showMessage(errorMsg);
       }
     } catch (error) {
       hideMessage(loading);
-      errorMsg.innerText = 'Failed to send. Check your connection.';
+      errorMsg.innerText = 'Lost connection? Take a look.';
       showMessage(errorMsg);
     }
   });
