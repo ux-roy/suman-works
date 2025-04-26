@@ -1124,7 +1124,7 @@ iframe {
 (6) Contact Synopsis
 --------------------------------------------------------------*/
 .contact-details {
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 }
 /*--------------------------------------------------------------
 6A. Address Details
@@ -1227,6 +1227,7 @@ iframe {
   align-items: flex-end;
   flex-wrap: wrap;
   padding: 1rem 0rem;
+  margin-top: 2.5rem;
 }
 .social-links {
   display: flex;
@@ -1277,6 +1278,7 @@ iframe {
   text-align: right;
   padding-right: 1rem;
   border-right: 1px solid #3c4261;
+  margin-top: auto;
 }
 .copyright svg {
   width: 50px;
@@ -1285,10 +1287,6 @@ iframe {
   margin-left: 1rem;
   transition: all 0.5s ease 0s;
   margin-bottom: 0.5rem;
-}
-.copyright svg:hover {
-  fill: #1379a8;
-  margin-left: 1rem;
 }
 /*--------------------------------------------------------------
 (7) Scrollup Arrow
