@@ -1150,6 +1150,14 @@ iframe {
   flex-wrap: wrap;
   padding: 1rem 1rem 1.5rem 0rem;
   gap: 2rem;
+  justify-content: flex-start;
+}
+@media (max-width: 600px) {
+  .social-links {
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
 }
 .social-icons {
   width: 45px;
