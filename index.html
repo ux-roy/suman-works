@@ -186,44 +186,47 @@
 </head>
 
 <body>
-  
+
 <header id="header">
-  <aside><div class="d-flex flex-column">
+  <div class="d-flex flex-column">
 
-<!-- Hamburger Menu -->
-<div class="mobile-nav-toggle d-xl-none">
-  <div id="menu-line-icon">
-    <div class="burger-bar-1"></div>
-    <div class="burger-bar-2"></div>
-    <div class="burger-bar-3"></div>
-  </div>
-</div>
+<!-- 📌 Mobile Hamburger -->
+  <div class="mobile-nav-toggle d-xl-none"><div id="menu-line-icon">
+  <div class="burger burger-1"></div><div class="burger burger-2"></div><div class="burger burger-3"></div></div></div>
 
-<nav class="nav-menu">
-<!-- Website Logo -->
-    <div id="logo-container"><a href="#hero"><svg class="logo"><use xlink:href="#website-logo"/></svg></a></div>
+<!-- 📌 Website Logo -->
+  <div id="logo-container"><div class="logo-circle">
+  <a href="#hero"><svg class="logo-svg"><use xlink:href="#website-logo"/></svg></a></div></div>
 
-<!-- Side Navigation -->
-  <ul><li><a href="#Profile-Depiction"><i><svg class="navbar-icons"><use xlink:href="#profile-depiction"/></svg></i><span>Profile Depiction</span></a></li>
-      
-      <li><a href="#Work-Experience"><i><svg class="navbar-icons"><use xlink:href="#work-experience"/></svg></i><span>Work Experience</span></a></li>
-      
-      <li><a href="#Design-Expertise"><i><svg class="navbar-icons"><use xlink:href="#design-expertise"/></svg></i><span>Design Expertise</span></a></li>
-      
-      <li><a href="#Portfolio-Preview"><i><svg class="navbar-icons"><use xlink:href="#portfolio-preview"/></svg></i><span>Portfolio Preview</span></a></li>
-      
-      <li><a href="#Contact-Synopsis"><i><svg class="navbar-icons"><use xlink:href="#contact-synopsis"/></svg></i><span>Contact Synopsis</span></a></li>
-<!-- Panel Toggler -->       
-      <li><div class="panel-toggler" data-resize-btn d-none d-xl-block>
-      <div id="side-switch"><div class=".....switch-icon"><span class="line line1"></span><span class="line line2"></span><span class="line line3"></span></div></div>
+<!-- 📌 Side Navigation -->
+      <nav class="nav-menu"><ul><div class="nav-links-group">
+        <li><a href="#Profile-Depiction"><i><svg class="navbar-icons">
+          <use xlink:href="#profile-depiction"/></svg></i><span>Profile Depiction</span></a></li>
+        
+        <li><a href="#Work-Experience"><i><svg class="navbar-icons">
+          <use xlink:href="#work-experience"/></svg></i><span>Work Experience</span></a></li>
+        
+        <li><a href="#Design-Expertise"><i><svg class="navbar-icons">
+          <use xlink:href="#design-expertise"/></svg></i><span>Design Expertise</span></a></li>
+        
+        <li><a href="#Portfolio-Preview"><i><svg class="navbar-icons">
+          <use xlink:href="#portfolio-preview"/></svg></i><span>Portfolio Preview</span></a></li>
+        
+        <li><a href="#Contact-Synopsis"><i><svg class="navbar-icons">
+          <use xlink:href="#contact-synopsis"/></svg></i><span>Contact Synopsis</span></a></li>
+      </div>
+
+<!-- 📌 Sidebar Swtich -->       
+        <li><div class="panel-toggler" data-resize-btn d-none d-xl-block><div id="side-switch"><div class="switch-icon">
+        <span class="line line1"></span><span class="line line2"></span><span class="line line3"></span></div></div></div></li>
+
     </ul>
-</nav>
-    </div>
-  </aside>
+  </nav>
+  </div>
 </header>
-    
+
 <main id="main">
-<!-- Hero Background -->
+<!-- 📌 Hero Background -->
   <section id="hero"
     class="d-flex flex-column justify-content-center align-items-center">
       <div class="hero-container" data-aos="fade-in">
@@ -233,7 +236,7 @@
       </div>
   </section>
 
-<!-- Profile Depiction -->
+<!-- 📌 Profile Depiction -->
   <section id="Profile-Depiction">
     <div class="profile-depiction">
       <div class="container"><div class="section-title">
@@ -289,7 +292,7 @@
     </div>
   </section>
 
-<!-- Work Experience -->
+<!-- 📌 Work Experience -->
   <section id="Work-Experience" class="section-background">
     <div class="work_experience">
     <div class="container">
@@ -301,13 +304,10 @@
           <div class="col-lg-6" data-aos="fade-up">
   <!-- Education Qualification -->
             <h3 class="section-subtitle">Education Qualification</h3><hr>
-              <div class="education">
-                <div class="degree">
-                  <h4>Bachelor of Fine Art</h4>
-                  <h5>Drawing & Painting</h5>
-                  <h6>Govt. College of Art and Craft, Tripura University • 2007 – 2010</h6></div>
-                <div><h4>Bachelor of Science</h4>
-                    <h5>Physics, Math, Statistics</h5>
+              <div class="education" id="degree">
+                <div><h4>Bachelor of Fine Art</h4><h5>Drawing & Painting</h5>
+                  <h6>Govt. College of Art and Craft, Tripura University • 2007 – 2010</h6></div><br>
+                <div><h4>Bachelor of Science</h4><h5>Physics, Math, Statistics</h5>
                     <h6>Maharaja Bir Bikram College, Tripura University • 2004 – 2006</h6></div></div><br>
 
   <!-- Credential Certification -->
@@ -334,17 +334,23 @@
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="section-subtitle">Professional Employment</h3><hr>
               <div id="Employment-History">
-              <div class="employment"><hr class="connector-line"><h5>17 Jan 2022 - Present Data</h5><h4>Lexmark International India Pvt. Ltd.</h4><h3>Usability Design Engineer</h3></div>
+              <div class="employment"><hr class="connector-line"><h5>17 Jan 2022 - Present Data</h5>
+                <h4>Lexmark International India Pvt. Ltd.</h4><h3>Usability Design Engineer</h3></div>
 
-              <div class="employment"><hr class="connector-line"><h5>17 Mar 2017 - 15 Jan 2022</h5><h4>Wipro Limited</h4><h3>User Experience Designer</h3></div>
+              <div class="employment"><hr class="connector-line"><h5>17 Mar 2017 - 15 Jan 2022</h5>
+                <h4>Wipro Limited</h4><h3>User Experience Designer</h3></div>
 
-              <div class="employment"><hr class="connector-line"><h5>11 Mar 2015 - 15 Mar 2017</h5><h4>Rxprism Health System Pvt. Ltd.</h4><h3>Graphic UI and UX Designer</h3></div>
+              <div class="employment"><hr class="connector-line"><h5>11 Mar 2015 - 15 Mar 2017</h5>
+                <h4>Rxprism Health System Pvt. Ltd.</h4><h3>Graphic UI and UX Designer</h3></div>
 
-              <div class="employment"><hr class="connector-line"><h5>06 Jan 2014 - 20 Feb 2015</h5><h4>Hibu India Pvt. Ltd.</h4><h3>Graphic and Web Designer</h3></div>
+              <div class="employment"><hr class="connector-line"><h5>06 Jan 2014 - 20 Feb 2015</h5>
+                <h4>Hibu India Pvt. Ltd.</h4><h3>Graphic and Web Designer</h3></div>
 
-              <div class="employment"><hr class="connector-line"><h5>15 Apr 2013 - 30 Dec 2013</h5><h4>Bid & Hammer Fine Art Auctioneer Pvt. Ltd.</h4><h3>Visual Design Researcher</h3></div>
+              <div class="employment"><hr class="connector-line"><h5>15 Apr 2013 - 30 Dec 2013</h5>
+                <h4>Bid & Hammer Fine Art Auctioneer Pvt. Ltd.</h4><h3>Visual Design Researcher</h3></div>
 
-              <div class="employment"><hr class="connector-line"><h5>15 Sep 2012 - 30 Dec 2012</h5><h4>Synova Innovative Technology Pvt. Ltd.</h4><h3>Design Internship (Contract)</h3></div>
+              <div class="employment"><hr class="connector-line"><h5>15 Sep 2012 - 30 Dec 2012</h5>
+                <h4>Synova Innovative Technology Pvt. Ltd.</h4><h3>Design Internship (Contract)</h3></div>
               </div></div>
         </div>
       </div>  
@@ -353,11 +359,11 @@
           <h3 class="section-subtitle">Achievement & Rewards</h3><hr>
           <div class="achievements">
             <ul>
-              <li>Lexmark CTO Excellence Award - 2022: Recognized for my exceptional contributions in designing a hybrid retail and e-commerce app using augmented reality (AR).</li>
-              <li>Adobe XD Essentials - 2019: Successfully completed softskill training and assignments hosted by Wipro Digital, earning a $100 reward and a digital credential badge.</li>
-              <li>Satyajit Ray Film Society Bengaluru - 2018: Received admiration and appreciation from renowned Bengali movie director Atanu Ghosh for design the society's logo.</li>
-              <li>Best Creative Professional Award - 2015: Awarded for my creative tech installation at the World Environment Day on the event by Rxprism Health System Pvt. Ltd.</li>
-              <li>Sumangol Sen Memorial Scholarship - 2010: Honored as best performer of the batch in Painting Department at the Government College of Art and Craft, Agartala.</li>
+              <li><p>Lexmark CTO Excellence Award - 2022: Recognized for my exceptional contributions in designing a hybrid retail and e-commerce app using augmented reality.</p></li>
+              <li><p>Adobe XD Essentials - 2019: Successfully completed training and assignments hosted by Wipro Digital, earning a $100 reward and a digital credential badge.</p></li>
+              <li><p>Satyajit Ray Film Society Bengaluru - 2018: Received admiration and appreciation from Bengali movie director Atanu Ghosh for design the society's logo.</p></li>
+              <li><p>Best Creative Professional Award - 2015: Awarded for my creative tech installation at the World Environment Day a event by Rxprism Health System Pvt. Ltd.</p></li>
+              <li><p>Sumangol Sen Memorial Scholarship - 2010: Honored as best performer in Painting Department at the Government College of Art and Craft, Agartala.</p></li>
             </ul>
             </div>
       </div>
@@ -366,7 +372,7 @@
     </div>
   </section>
 
-<!-- Design Expertise -->
+<!-- 📌 Design Expertise -->
   <section id="Design-Expertise">
     <div class="container">
       <div class="section-title"><h2>Design Expertise</h2></div>
@@ -578,7 +584,7 @@
     </div>
   </section>
 
-<!-- Portfolio Preview -->
+<!-- 📌 Portfolio Preview -->
   <section id="Portfolio-Preview" class="section-background">
     <div class="container">
       <div class="section-title">
@@ -961,7 +967,7 @@
     </div>
   </section>
 
-<!-- Contact Synopsis -->
+<!-- 📌 Contact Synopsis -->
   <section id="Contact-Synopsis">
     <div class="container">
       <div class="section-title"><h2>Contact Synopsis</h2></div>       
@@ -1011,30 +1017,37 @@
               </div></div>
   </section>
 
-<!-- Scroll Upword -->
-    <a href="#"><div class="back-to-top"><div class="scroll-up-icon">
+<!-- 📌 Scrolling Upword -->
+  <a href="#">
+      <div class="back-to-top"><div class="scroll-up-icon">
       <span class="line line1"></span><span class="line line2"></span><span class="line line3"></span>
-        </div></div></a>
+        </div></div>
+    </a>
 </main>
 
 <footer id="footer">
+  <div>
+    
+  </div>
 </footer>
 
+<div id="scripts">
 <!-- Other-JS -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="assets/vendor/counterup/counterup.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/venobox/venobox.min.js"></script>
+<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="assets/vendor/typed.js/typed.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
 
 <!-- JS-File -->
-  <script src="assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
+</div>
 
 </body>
 

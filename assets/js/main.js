@@ -1,5 +1,6 @@
-// MAIN SCRIPT FILE
-
+//
+// 📌 Initialization and External Libraries ----------->
+//
 !(function ($) {
   "use strict";
 
@@ -10,12 +11,6 @@
   });
 
 })(jQuery);
-
-// Counter Animation for Numerical Stats
-$('[data-toggle="counter-up"]').counterUp({
-  delay: 10,
-  time: 1000
-});
 
 // Typed.js Animated Text in Hero Section
 if ($('.typed').length) {
@@ -30,6 +25,8 @@ if ($('.typed').length) {
   });
 }
 
+// 📌 Smooth Scrolling & Navigation Handling ----------->
+//
 // Smooth Scroll on Navigation Click
 $(document).on('click', '.nav-menu a, .scrollto', function (e) {
   if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -42,11 +39,13 @@ $(document).on('click', '.nav-menu a, .scrollto', function (e) {
         scrollTop: scrollto
       }, 1500, 'easeInOutExpo');
 
+      // Update active navigation item
       if ($(this).parents('.nav-menu, .mobile-nav').length) {
         $('.nav-menu .active, .mobile-nav .active').removeClass('active');
         $(this).closest('li').addClass('active');
       }
 
+      // Close mobile nav after clicking
       if ($('body').hasClass('mobile-nav-active')) {
         $('body').removeClass('mobile-nav-active');
         $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
@@ -56,17 +55,40 @@ $(document).on('click', '.nav-menu a, .scrollto', function (e) {
   }
 });
 
-// Close Mobile Nav on Outside Click
+// Smooth Scroll with Reset on Nav Click (For mobile nav as well)
+$(document).on('click', '.nav-menu a, .mobile-nav a', function (e) {
+  const pathnameMatch = location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '');
+  const hostnameMatch = location.hostname === this.hostname;
+  const target = $(this.hash);
+
+  if (pathnameMatch && hostnameMatch && target.length) {
+    e.preventDefault();
+
+    $('html, body').animate({
+      scrollTop: target.offset().top
+    }, 1500, 'easeInOutExpo');
+
+    $('body').removeClass('mobile-nav-active');
+    $('#menu-line-icon').removeClass('change');
+
+    $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+    $(this).closest('li').addClass('active');
+  }
+});
+
+// Close Nav Menu on Outside Click (Mobile)
 $(document).click(function (e) {
   var container = $(".mobile-nav-toggle");
   if (!container.is(e.target) && container.has(e.target).length === 0) {
     if ($('body').hasClass('mobile-nav-active')) {
       $('body').removeClass('mobile-nav-active');
-      $('.mobile-nav-toggle i'); // No toggle class action here
+      $('.mobile-nav-toggle i');
     }
   }
 });
 
+// 📌 Navigation State & Scroll-based Effects ----------->
+//
 // Update Navigation Active State on Scroll
 var nav_sections = $('section');
 var main_nav = $('.nav-menu, #mobile-nav');
@@ -97,6 +119,8 @@ $('.skills-content').waypoint(function () {
   offset: '80%'
 });
 
+// 📌 Portfolio and Filtering Interactions ----------->
+//
 // Portfolio Filtering using Isotope
 $(window).on('load', function () {
   var portfolioIsotope = $('.portfolio-container').isotope({
@@ -115,12 +139,34 @@ $(window).on('load', function () {
   });
 });
 
-// Popup Overlay for Portfolio Previews
-// Clone overlay from portfolio item, display and block background scroll
-// Also hides the back-to-top button
-// Adds close functionality to overlay
+// Sliding Effect for Portfolio Filter Active Tab Indicator
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('#portfolio-flters li');
+  const indicator = document.createElement('div');
+  indicator.classList.add('indicator');
+  document.querySelector('#portfolio-flters').appendChild(indicator);
 
-// Trigger Overlay
+  function updateIndicator(element) {
+    const rect = element.getBoundingClientRect();
+    const parentRect = element.parentElement.getBoundingClientRect();
+    indicator.style.width = `${rect.width}px`;
+    indicator.style.left = `${rect.left - parentRect.left}px`;
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', event => {
+      document.querySelector('#portfolio-flters .filter-active').classList.remove('filter-active');
+      event.target.classList.add('filter-active');
+      updateIndicator(event.target);
+    });
+  });
+
+  updateIndicator(document.querySelector('#portfolio-flters .filter-active'));
+});
+
+// 📌 Popup Overlay and Back-to-Top Button ----------->
+//
+// Popup Overlay for Portfolio Previews
 document.querySelectorAll('.popup-trigger').forEach(button => {
   button.addEventListener('click', () => {
     const portfolioItem = button.closest('.portfolio-item');
@@ -155,7 +201,11 @@ $(window).scroll(function () {
   }
 });
 
-// Back to Top Button Click Scroll to Top
+$(document).ready(function () {
+  $('.back-to-top').hide();
+});
+
+// Back to Top Button Clicks Smoothly Scrolling Upward To The Top
 $('.back-to-top').click(function () {
   if (!$('.overlay-active').length) {
     $('html, body').animate({
@@ -165,43 +215,52 @@ $('.back-to-top').click(function () {
   }
 });
 
-// Side Navigation Toggle Expand/Collapse
+// Website Logo Click Smoothly Scrolling Upward To The Top
+$(document).on('click', '#logo-container a', function (e) {
+  const target = $('#hero');
+  if (target.length) {
+    e.preventDefault();
+    if (!$('.overlay-active').length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1500, 'easeInOutExpo');
+    }
+
+    // Close mobile nav if open and reset icon
+    if ($('body').hasClass('mobile-nav-active')) {
+      $('body').removeClass('mobile-nav-active');
+      $('#menu-line-icon').removeClass('change');
+    }
+  }
+});
+
+// 📌 Mobile Navigation and State Handling ----------->
+//
+// Side Navigation Toggle Expand/Collapse (For sidebar resizing)
 const resizeBtn = document.querySelector("[data-resize-btn]");
 resizeBtn.addEventListener("click", function (e) {
   e.preventDefault();
   document.body.classList.toggle("sb-expanded");
 });
 
-// Sliding Effect for Portfolio Filter Active Tab Indicator
-// Creates a moving indicator for selected tab
-
-document.addEventListener('DOMContentLoaded', function () {
-  const tabs = document.querySelectorAll('#portfolio-flters li');
-  const indicator = document.createElement('div');
-  indicator.classList.add('indicator');
-  document.querySelector('#portfolio-flters').appendChild(indicator);
-
-  function updateIndicator(element) {
-    const rect = element.getBoundingClientRect();
-    const parentRect = element.parentElement.getBoundingClientRect();
-    indicator.style.width = `${rect.width}px`;
-    indicator.style.left = `${rect.left - parentRect.left}px`;
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', event => {
-      document.querySelector('#portfolio-flters .filter-active').classList.remove('filter-active');
-      event.target.classList.add('filter-active');
-      updateIndicator(event.target);
-    });
-  });
-
-  updateIndicator(document.querySelector('#portfolio-flters .filter-active'));
+// Mobile Navigation Toggle
+$(document).on('click', '.mobile-nav-toggle', function () {
+  $('body').toggleClass('mobile-nav-active');
+  $('#menu-line-icon').toggleClass('change');
 });
 
-// Contact Form Handling with Fetch API
-// Handles form loading, success, and error messages
+// Close Nav Menu on Outside Click (Mobile Navigation)
+$(document).on('click', function (e) {
+  const isClickInside = $(e.target).closest('.mobile-nav-toggle, .nav-menu, .mobile-nav').length > 0;
+  if (!isClickInside && $('body').hasClass('mobile-nav-active')) {
+    $('body').removeClass('mobile-nav-active');
+    $('#menu-line-icon').removeClass('change');
+  }
+});
 
+// 📌 Contact Form Submission and Messsging ----------->
+//
+// Contact Form Handling: Loading, Success, Error
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.form-submition');
   if (!form) return;
@@ -216,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hideMessage(el);
     }, duration);
   };
+
   const hideMessage = (el) => {
     el.style.display = 'none';
   };
@@ -245,78 +305,38 @@ document.addEventListener('DOMContentLoaded', () => {
         form.reset();
       } else {
         const result = await response.json();
-        errorMsg.innerText = result.message || 'Something wrong! Please try again.';
+        errorMsg.innerText = result.message || 'Something went wrong! Please try again.';
         showMessage(errorMsg);
       }
     } catch (error) {
       hideMessage(loading);
-      errorMsg.innerText = 'Lost connection? Take a look.';
+      errorMsg.innerText = 'Lost connection? Please check your internet.';
       showMessage(errorMsg);
     }
   });
 });
 
-// Additional DOM Ready Scripts for Menu and Back to Top Button
-$(document).ready(function () {
+// 📌 Side Panel Toggle Icon State Switching ----------->
+//
+// Cycle States for Switch Icon (Example: menu, forward, backward)
+let clickCount = 0;
+const switchIcon = document.querySelector('.switch-icon');
 
-  // Toggle Mobile Navigation Menu
-  $(document).on('click', '.mobile-nav-toggle', function () {
-    $('body').toggleClass('mobile-nav-active');
-    $('#menu-line-icon').toggleClass('change');
-  });
+switchIcon.classList.add('menu');
 
-  // Smooth Scroll with Reset on Nav Click
-  $(document).on('click', '.nav-menu a, .mobile-nav a', function (e) {
-    const pathnameMatch = location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '');
-    const hostnameMatch = location.hostname === this.hostname;
-    const target = $(this.hash);
+switchIcon.addEventListener('click', () => {
+  clickCount++;
 
-    if (pathnameMatch && hostnameMatch && target.length) {
-      e.preventDefault();
+  // Remove all state classes
+  switchIcon.classList.remove('arrow-backward', 'arrow-forward', 'menu');
 
-      $('html, body').animate({
-        scrollTop: target.offset().top
-      }, 1500, 'easeInOutExpo');
-
-      $('body').removeClass('mobile-nav-active');
-      $('#menu-line-icon').removeClass('change');
-
-      $('.nav-menu .active, .mobile-nav .active').removeClass('active');
-      $(this).closest('li').addClass('active');
-    }
-  });
-
-  // Close Nav Menu on Outside Click
-  $(document).on('click', function (e) {
-    const isClickInside = $(e.target).closest('.mobile-nav-toggle, .nav-menu, .mobile-nav').length > 0;
-    if (!isClickInside && $('body').hasClass('mobile-nav-active')) {
-      $('body').removeClass('mobile-nav-active');
-      $('#menu-line-icon').removeClass('change');
-    }
-  });
-
-  // Back to Top Button Scroll
-  const $backToTop = $('.back-to-top');
-
-  $backToTop.hide();
-
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $backToTop.fadeIn('slow');
-    } else {
-      $backToTop.fadeOut('slow');
-    }
-  });
-
-  $backToTop.click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
-
-    // Reset mobile nav if open
-    if ($('body').hasClass('mobile-nav-active')) {
-      $('body').removeClass('mobile-nav-active');
-      $('#menu-line-icon').removeClass('change');
-    }
-
-    return false;
-  });
+  if (clickCount % 4 === 1) {
+    switchIcon.classList.add('arrow-backward');
+  } else if (clickCount % 4 === 2) {
+    switchIcon.classList.add('menu');
+  } else if (clickCount % 4 === 3) {
+    switchIcon.classList.add('arrow-forward');
+  } else {
+    switchIcon.classList.add('menu');
+  }
 });
