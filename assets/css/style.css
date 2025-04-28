@@ -572,6 +572,11 @@ hr {
 }
 /* Professional Employment 📌
 --------------------------------------------------------------*/
+@media (max-width: 440px) {
+  #employment-history{
+    margin-top: 2rem;
+  }
+}
 .employment {
   padding: 0 0 24px 0px;
   position: relative;
@@ -658,6 +663,11 @@ hr {
   color: #1379a8;
   font-size: 14px;
   margin-bottom: 0px;
+  }
+  @media (max-width: 440px) {
+    #award-stars{
+      margin-top: 2rem;
+    }
   }
 /* Skills & Technique 📌
 --------------------------------------------------------------*/ 
@@ -768,7 +778,7 @@ hr {
 .portfolio-item {
   margin-bottom: 50px;
 }
-/* Inside Preview 📌
+/* Inside Portfolio 📌
 --------------------------------------------------------------*/
 .portfolio-wrap {
   transition: 0.3s;
@@ -851,7 +861,7 @@ hr {
     display: none;
   }
 }
-/* Picture Buttom 📌
+/* Under Portfolio 📌
 --------------------------------------------------------------*/
 .image-introbox {
   display: flex;
@@ -953,7 +963,7 @@ hr {
   background-color: #3280a4;
   color: #fff;
 }
-/* Overlay Popup 📌
+/* Pupup Portfolio 📌
 --------------------------------------------------------------*/
 .overlay {
   display: none;
@@ -1048,6 +1058,11 @@ iframe {
 }
 /* Address Details 📌
 --------------------------------------------------------------*/
+@media (max-width: 440px) {
+  .contact-info{
+    margin-top: -2rem;
+  }
+}
 .address-details {
   padding: 20px;
   background: #fff;
@@ -1143,7 +1158,7 @@ iframe {
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
-  margin: 4rem 0;
+  margin: 2rem 0;
 }
 .social-links {
   display: flex;
