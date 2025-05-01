@@ -1,10 +1,8 @@
-//
-// 📌 Initialization and External Libraries ----------->
-//
+
 !(function ($) {
   "use strict";
 
-  // AOS Initialization (Animate On Scroll)
+// AOS Initialization Animation On Scroll -----------> 📌 
   AOS.init({
     duration: 1000,
     easing: "ease-in-out-back"
@@ -12,7 +10,7 @@
 
 })(jQuery);
 
-// Typed.js Animated Text in Hero Section
+// Typed Animated Text On Hero Background -----------> 📌
 if ($('.typed').length) {
   var typed_strings = $(".typed").data('typed-items');
   typed_strings = typed_strings.split(',')
@@ -25,9 +23,7 @@ if ($('.typed').length) {
   });
 }
 
-// 📌 Smooth Scrolling & Navigation Handling ----------->
-//
-// Smooth Scroll on Navigation Click
+// Smooth Scrolling & Navigation Handling -----------> 📌
 $(document).on('click', '.nav-menu a, .scrollto', function (e) {
   if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
     e.preventDefault();
@@ -38,24 +34,11 @@ $(document).on('click', '.nav-menu a, .scrollto', function (e) {
       $('html, body').animate({
         scrollTop: scrollto
       }, 1500, 'easeInOutExpo');
-
-      // Update active navigation item
-      if ($(this).parents('.nav-menu, .mobile-nav').length) {
-        $('.nav-menu .active, .mobile-nav .active').removeClass('active');
-        $(this).closest('li').addClass('active');
-      }
-
-      // Close mobile nav after clicking
-      if ($('body').hasClass('mobile-nav-active')) {
-        $('body').removeClass('mobile-nav-active');
-        $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-      }
-      return false;
     }
   }
 });
 
-// Smooth Scroll with Reset on Nav Click (For mobile nav as well)
+// Smooth Scroll With Reset Navigation Click -----------> 📌 
 $(document).on('click', '.nav-menu a, .mobile-nav a', function (e) {
   const pathnameMatch = location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '');
   const hostnameMatch = location.hostname === this.hostname;
@@ -76,20 +59,7 @@ $(document).on('click', '.nav-menu a, .mobile-nav a', function (e) {
   }
 });
 
-// Close Nav Menu on Outside Click (Mobile)
-$(document).click(function (e) {
-  var container = $(".mobile-nav-toggle");
-  if (!container.is(e.target) && container.has(e.target).length === 0) {
-    if ($('body').hasClass('mobile-nav-active')) {
-      $('body').removeClass('mobile-nav-active');
-      $('.mobile-nav-toggle i');
-    }
-  }
-});
-
-// 📌 Navigation State & Scroll-based Effects ----------->
-//
-// Update Navigation Active State on Scroll
+// Update Navigation Active State Scroll Effects -----------> 📌
 var nav_sections = $('section');
 var main_nav = $('.nav-menu, #mobile-nav');
 $(window).on('scroll', function () {
@@ -110,7 +80,7 @@ $(window).on('scroll', function () {
   });
 });
 
-// Progress Bars Animation Triggered on Scroll
+// Progress Bar Animation Triggered On Scroll -----------> 📌
 $('.skills-content').waypoint(function () {
   $('.progress .progress-bar').each(function () {
     $(this).css("width", $(this).attr("aria-valuenow") + '%');
@@ -119,9 +89,7 @@ $('.skills-content').waypoint(function () {
   offset: '80%'
 });
 
-// 📌 Portfolio and Filtering Interactions ----------->
-//
-// Portfolio Filtering using Isotope
+// Portfolio Filtering Interaction Isotope -----------> 📌
 $(window).on('load', function () {
   var portfolioIsotope = $('.portfolio-container').isotope({
     itemSelector: '.portfolio-item',
@@ -139,7 +107,7 @@ $(window).on('load', function () {
   });
 });
 
-// Sliding Effect for Portfolio Filter Active Tab Indicator
+// Portfolio Filter Sliding Indicator of Active Tab -----------> 📌
 document.addEventListener('DOMContentLoaded', function () {
   const tabs = document.querySelectorAll('#portfolio-flters li');
   const indicator = document.createElement('div');
@@ -164,9 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
   updateIndicator(document.querySelector('#portfolio-flters .filter-active'));
 });
 
-// 📌 Popup Overlay and Back-to-Top Button ----------->
-//
-// Popup Overlay for Portfolio Previews
+// Portfolio Popup Overlay for Pictures Preview -----------> 📌
 document.querySelectorAll('.popup-trigger').forEach(button => {
   button.addEventListener('click', () => {
     const portfolioItem = button.closest('.portfolio-item');
@@ -192,7 +158,7 @@ document.querySelectorAll('.popup-trigger').forEach(button => {
   });
 });
 
-// Show or Hide Back to Top Button based on scroll position
+// Back to Top Button Visibility On Scroll Position -----------> 📌
 $(window).scroll(function () {
   if ($(this).scrollTop() > 100 && !$('.overlay-active').length) {
     $('.back-to-top').fadeIn('slow');
@@ -205,7 +171,7 @@ $(document).ready(function () {
   $('.back-to-top').hide();
 });
 
-// Back to Top Button Clicks Smoothly Scrolling Upward To The Top
+// Back to Top On Click Smooth Scrolling To Top -----------> 📌
 $('.back-to-top').click(function () {
   if (!$('.overlay-active').length) {
     $('html, body').animate({
@@ -215,7 +181,7 @@ $('.back-to-top').click(function () {
   }
 });
 
-// Website Logo Click Smoothly Scrolling Upward To The Top
+// Website Logo On Click Smooth Scrolling To Start -----------> 📌
 $(document).on('click', '#logo-container a', function (e) {
   const target = $('#hero');
   if (target.length) {
@@ -226,7 +192,7 @@ $(document).on('click', '#logo-container a', function (e) {
       }, 1500, 'easeInOutExpo');
     }
 
-    // Close mobile nav if open and reset icon
+// Mobile Navigation Reset Menu Icon When Open -----------> 📌
     if ($('body').hasClass('mobile-nav-active')) {
       $('body').removeClass('mobile-nav-active');
       $('#menu-line-icon').removeClass('change');
@@ -234,22 +200,31 @@ $(document).on('click', '#logo-container a', function (e) {
   }
 });
 
-// 📌 Mobile Navigation and State Handling ----------->
-//
-// Side Navigation Toggle Expand/Collapse (For sidebar resizing)
+// Mobile Navigation Toggle Transition Icon Cross -----------> 📌
+$(document).on('click', '.mobile-nav-toggle', function () {
+  $('body').toggleClass('mobile-nav-active');
+  $('#menu-line-icon').toggleClass('change');
+});
+
+// Resiz Side Panel Toggle Expand & Collapse -----------> 📌
 const resizeBtn = document.querySelector("[data-resize-btn]");
 resizeBtn.addEventListener("click", function (e) {
   e.preventDefault();
   document.body.classList.toggle("sb-expanded");
 });
 
-// Mobile Navigation Toggle
-$(document).on('click', '.mobile-nav-toggle', function () {
-  $('body').toggleClass('mobile-nav-active');
-  $('#menu-line-icon').toggleClass('change');
+// Mobile Navigation Close Outside Clicking -----------> 📌
+$(document).click(function (e) {
+  var container = $(".mobile-nav-toggle");
+  if (!container.is(e.target) && container.has(e.target).length === 0) {
+    if ($('body').hasClass('mobile-nav-active')) {
+      $('body').removeClass('mobile-nav-active');
+      $('.mobile-nav-toggle i');
+    }
+  }
 });
 
-// Close Nav Menu on Outside Click (Mobile Navigation)
+// Mobile Navigation Close Clicking On Outside  -----------> 📌
 $(document).on('click', function (e) {
   const isClickInside = $(e.target).closest('.mobile-nav-toggle, .nav-menu, .mobile-nav').length > 0;
   if (!isClickInside && $('body').hasClass('mobile-nav-active')) {
@@ -258,9 +233,7 @@ $(document).on('click', function (e) {
   }
 });
 
-// 📌 Contact Form Submission and Messsging ----------->
-//
-// Contact Form Handling: Loading, Success, Error
+// Contact Form Handleing With Loading, Success, Error -----------> 📌
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.form-submition');
   if (!form) return;
@@ -316,18 +289,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// 📌 Side Panel Toggle Icon State Switching ----------->
-//
-// Cycle States for Switch Icon (Example: menu, forward, backward)
+// Cycleing State Changing With Menu, Open & Close -----------> 📌
 let clickCount = 0;
 const switchIcon = document.querySelector('.switch-icon');
-
 switchIcon.classList.add('menu');
-
 switchIcon.addEventListener('click', () => {
   clickCount++;
-
-  // Remove all state classes
   switchIcon.classList.remove('arrow-backward', 'arrow-forward', 'menu');
 
   if (clickCount % 4 === 1) {
