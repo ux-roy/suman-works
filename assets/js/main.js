@@ -137,9 +137,15 @@ document.querySelectorAll('.popup-trigger').forEach(button => {
   button.addEventListener('click', () => {
     const portfolioItem = button.closest('.portfolio-item');
     const overlay = portfolioItem.querySelector('.overlay').cloneNode(true);
-    const pdfSrc = portfolioItem.querySelector('iframe').src;
-    overlay.querySelector('iframe').src = pdfSrc;
+    const mediaSrc = portfolioItem.querySelector('iframe').src || 
+                     portfolioItem.querySelector('img')?.src || 
+                     portfolioItem.querySelector('video')?.src;
+    
+    const iframe = overlay.querySelector('iframe');
+    if (iframe) iframe.src = mediaSrc;
+    
     document.body.appendChild(overlay);
+    
     overlay.style.display = 'flex';
     overlay.style.zIndex = '9999';
     document.body.classList.add('no-scroll');
@@ -152,7 +158,6 @@ document.querySelectorAll('.popup-trigger').forEach(button => {
       document.body.removeChild(overlay);
       document.body.classList.remove('no-scroll');
       overlay.classList.remove('overlay-active');
-
       $('.back-to-top').show();
     });
   });
