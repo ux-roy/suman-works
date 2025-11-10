@@ -1261,6 +1261,20 @@ iframe {
   margin-left: 0.7rem;
   transform: translateY(1px);
 }
+.resume-link a {
+  font-size: 12px;
+  color: var(--tertiary-color);
+  text-decoration: none;
+  padding: 0rem;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.resume-link a:hover {
+  text-decoration: underline;
+  border-color: var(--tertiary-color);
+  cursor: pointer;
+}
 /* Scrolling Upword 📌
 --------------------------------------------------------------*/ 
 .back-to-top {
