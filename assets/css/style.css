@@ -1146,6 +1146,12 @@ iframe {
 .form-submition textarea {
   padding: 14px;
 }
+.form-submition input.form-control {
+  border-radius: 4px;
+}
+.form-submition textarea.form-control {
+  border-radius: 4px;
+}
 .form-submition button[type="submit"] {
   background: var(--primary-color);
   border: 0;
