@@ -47,7 +47,7 @@ p {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 220px;
+  width: 205px;
   transition: all ease-in-out 0.5s;
   z-index: 9999;
   transition: all 0.5s;
@@ -55,7 +55,7 @@ p {
   background-image: linear-gradient(var(--gradient-start), var(--gradient-middle), var(--gradient-finish));
 }
 #main {
-  margin-left: 220px;
+  margin-left: 205px;
 }
 @media (max-width: 1199px) {
   #header {
@@ -212,9 +212,9 @@ p {
 .nav-menu a {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   color: var(--tertiary-color);
-  text-decoration: none;
+  text-align: left;
   padding: 0.8rem;
   margin: 0.5rem;
   transition: color 0.3s ease, background 0.5s ease-in-out;
@@ -242,7 +242,7 @@ p {
   fill: var(--tertiary-color);
   width: 30px;
   height: 30px;
-  margin-left: -0.5rem;
+  margin-left: -0.1rem;
   transition: all 0.5s ease;
 }
 .nav-menu .active .navbar-icons {
@@ -1130,7 +1130,7 @@ iframe {
 .address-details h4 {
   font-size: 18px;
   font-weight: 550;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   letter-spacing: 0.05rem;
 }
 .address-details p {
