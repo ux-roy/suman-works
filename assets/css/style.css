@@ -1292,7 +1292,7 @@ iframe {
   border-color: var(--tertiary-color);
   cursor: pointer;
 }
-/* Scrolling Upword 📌
+/* Scrolling Arrow 📌
 --------------------------------------------------------------*/ 
 .back-to-top {
   position: fixed;
