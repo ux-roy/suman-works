@@ -1092,9 +1092,7 @@ iframe {
   margin: auto;
   text-align: center;
   color: var(--primary-color);
-  transform: translateX(70%);
-  animation: bounce 3s infinite;
-  filter: drop-shadow(0 0 10px var(--filter-drop-shadow));
+  filter: drop-shadow(0 0 10px var(--filter-drop-shadow)); 
 }
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
