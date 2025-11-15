@@ -1030,8 +1030,8 @@ hr {
 }
 .overlay-content {
   position: relative;
-  width: 80%;
-  height: 85%;
+  width: 90%;
+  height: 90%;
   display: flex;
   background-color: var(--pure-white);
   border-radius: 8px;
