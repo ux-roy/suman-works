@@ -46,8 +46,9 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  width: 205px;
+  height: 100vh;
+  height: 100svh;
+  width: 200px;
   transition: all ease-in-out 0.5s;
   z-index: 9999;
   transition: all 0.5s;
@@ -55,7 +56,8 @@ p {
   background-image: linear-gradient(var(--gradient-start), var(--gradient-middle), var(--gradient-finish));
 }
 #main {
-  margin-left: 205px;
+  margin-left: 200px;
+  transition: margin-left 0.5s ease-in-out;
 }
 @media (max-width: 1199px) {
   #header {
@@ -64,6 +66,9 @@ p {
   #main {
     margin-left: 0;
   }
+}
+#header.mobile-active {
+  left: 0;
 }
 /* Mobile Hamburger 📌
 --------------------------------------------------------------*/
@@ -143,7 +148,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
+  height: 25vh;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
