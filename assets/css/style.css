@@ -149,8 +149,8 @@ p {
 }
 #logo-container .logo-svg {
   fill: var(--lighten-shade);
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 7rem;
+  height: 7rem;
   position: relative;
   padding: 1.5rem;
   transition: all 0.5s ease-in-out;
