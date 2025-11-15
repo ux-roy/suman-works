@@ -143,14 +143,14 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  height: 30vh;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
 #logo-container .logo-svg {
   fill: var(--lighten-shade);
-  width: 8rem;
-  height: 8rem;
+  width: 7.5rem;
+  height: 7.5rem;
   position: relative;
   padding: 1.5rem;
   transition: all 0.5s ease-in-out;
@@ -871,7 +871,9 @@ hr {
 }
 .portfolio-wrap .portfolio-links h6 {
   color: var(--background-color);
-    filter: drop-shadow(0 0 10px var(--filter-drop-shadow)); 
+  filter: drop-shadow(0 0 10px var(--filter-drop-shadow));
+  margin-top: 2rem;
+  font-size: 18px;
 }
 .portfolio-wrap:hover::before {
   top: 0;
@@ -897,6 +899,7 @@ hr {
 .portfolio-links a h1 {
   animation: pulse 1s infinite;
   cursor: pointer;
+  margin-top: 5rem;
 }
 @keyframes pulse {
   0%, 100% {
@@ -990,28 +993,6 @@ hr {
   visibility: visible;
   opacity: 1;
 }
-.popup-button {
-  margin-top: -5px;
-  margin-left: -15px;
-}
-.popup-trigger h5 {
-  font-size: 12px;
-  letter-spacing: 0.025rem;
-  margin: 0;
-}
-.popup-trigger {
-  color: var(--primary-color);
-  border: 0.1px solid var(--light-gray);
-  background-color: var(--background-color);
-  border-radius: 4px;
-  padding: 4px 6px;
-  transition: all 0.5s ease-in-out;
-  align-self: flex-start;
-}
-.popup-trigger:hover {
-  background-color: var(--darker-hover);
-  color: var(--pure-white);
-}
 /* Overlay Portfolio 📌
 --------------------------------------------------------------*/
 .overlay {
@@ -1031,7 +1012,7 @@ hr {
 .overlay-content {
   position: relative;
   width: 90%;
-  height: 90%;
+  height: 95%;
   display: flex;
   background-color: var(--pure-white);
   border-radius: 8px;
