@@ -866,6 +866,12 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.portfolio-wrap .portfolio-links h6 {
+  color: var(--background-color);
+    filter: drop-shadow(0 0 10px var(--filter-drop-shadow)); 
 }
 .portfolio-wrap:hover::before {
   top: 0;
@@ -891,9 +897,6 @@ hr {
 .portfolio-links a h1 {
   animation: pulse 1s infinite;
   cursor: pointer;
-}
-.portfolio-links a h1:hover {
-  animation-play-state: paused;
 }
 @keyframes pulse {
   0%, 100% {
@@ -925,7 +928,7 @@ hr {
   flex: 1;
 }
 .image-title h6 {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--primary-color);
   margin-top: 18px;
   font-weight: 500;
@@ -958,7 +961,6 @@ hr {
   width: 2rem;
   height: 2rem;
   cursor: pointer;
-  transform: scale(1.1);
   transition: all 0.5s ease-in-out;
   background: var(--primary-color);
   border-radius: 1rem;
@@ -969,7 +971,7 @@ hr {
 }
 .tooltip {
   visibility: hidden;
-  background: var(--transparent-darker-bg);
+  background: var(--gradient-finish);
   color: var(--lighten-shade);
   text-align: center;
   padding: 4px 8px;
@@ -1029,7 +1031,7 @@ hr {
 .overlay-content {
   position: relative;
   width: 80%;
-  height: 80%;
+  height: 85%;
   display: flex;
   background-color: var(--pure-white);
   border-radius: 8px;
@@ -1092,6 +1094,8 @@ iframe {
   margin: auto;
   text-align: center;
   color: var(--primary-color);
+  transform: translateX(70%);
+  animation: bounce 3s infinite;
   filter: drop-shadow(0 0 10px var(--filter-drop-shadow)); 
 }
 @keyframes bounce {
