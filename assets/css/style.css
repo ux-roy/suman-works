@@ -1208,7 +1208,7 @@ iframe {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0;
 }
 @media (max-width: 440px) {
