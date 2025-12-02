@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Artwork Layout</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 1rem;
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow: hidden;
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* Main container */
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      width: 100%;
+      height: auto;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Image styling */
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* Info box styling */
+    .info-box {
+      max-width: 300px;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
+      line-height: 1.45;
+    }
+
+    .info-box p {
+      margin: 0.5rem 0;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Artwork -->
+    <img src="Creative-Art_6.jpg" alt="My Low Tide">
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <p><span class="label">Title:</span> My Low Tide</p>
+      <p><span class="label">Time:</span> <br> 2015</p>
+      <p><span class="label">Medium:</span> <br> Acrylic on canvas</p>
+      <p><span class="label">Depiction:</span> <br>A golden figure curls inward, resting in a moment of emotional low tide. The background feels textured and heavy, echoing that quiet ache we all experience during difficult phases. Yet the warm color of the figure suggests something important — this is not the end of the journey. It’s a pause, a breath, a gathering of strength. The piece gently reminds us that lows are temporary, and even in our quietest moments, a small light continues to glow within.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

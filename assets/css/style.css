@@ -876,8 +876,13 @@ hr {
 .portfolio-wrap .portfolio-links h6 {
   color: var(--background-color);
   filter: drop-shadow(0 0 10px var(--filter-drop-shadow));
-  margin-top: 2rem;
-  font-size: 18px;
+  margin-top: 0.5rem;
+  font-size: 14px;
+  letter-spacing: 0.05rem;
+  border: var(--background-color) solid 1px;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
 .portfolio-wrap:hover::before {
   top: 0;

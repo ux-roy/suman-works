@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Artwork Layout</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 1rem;
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow: hidden;
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* Main container */
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      width: 100%;
+      height: auto;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Image styling */
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* Info box styling */
+    .info-box {
+      max-width: 300px;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
+      line-height: 1.45;
+    }
+
+    .info-box p {
+      margin: 0.5rem 0;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Artwork -->
+    <img src="Creative-Art_1.jpg" alt="Sei Nauka Ghate">
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <p><span class="label">Title:</span> Sei Nauka Ghate</p>
+      <p><span class="label">Time:</span> <br> 2007</p>
+      <p><span class="label">Medium:</span> <br> Watercolor on paper</p>
+      <p><span class="label">Depiction:</span> <br> A quiet river holds a small world of resting boats, each one carrying stories of places they’ve been and places they’re yet to go. The calm water feels like a gentle pause after a long day — a reminder that even journeys need moments of stillness. This painting invites the viewer to slow down, breathe, and find peace in the simple act of waiting.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

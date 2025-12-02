@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Artwork Layout</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 1rem;
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow: hidden;
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* Main container */
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      width: 100%;
+      height: auto;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Image styling */
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* Info box styling */
+    .info-box {
+      max-width: 300px;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
+      line-height: 1.45;
+    }
+
+    .info-box p {
+      margin: 0.5rem 0;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Artwork -->
+    <img src="Creative-Art_5.jpg" alt="The Word Father">
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <p><span class="label">Title:</span> The Word Father</p>
+      <p><span class="label">Time:</span> <br> 2018</p>
+      <p><span class="label">Medium:</span> <br> Oil on canvas</p>
+      <p><span class="label">Depiction:</span> <br>A weathered face rises from a shadowed background, shaped with strong strokes that feel almost carved. The expression holds a mix of firmness and sadness, like someone who has carried responsibilities for many years. You can sense stories behind those eyes — struggles endured, wisdom earned, love shown in ways that weren’t always spoken aloud. This painting becomes a tribute to the silent pillars in our lives, the ones who stand strong even when life feels heavy.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

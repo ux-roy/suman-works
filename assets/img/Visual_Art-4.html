@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Artwork Layout</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 1rem;
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow: hidden;
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* Main container */
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      width: 100%;
+      height: auto;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Image styling */
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* Info box styling */
+    .info-box {
+      max-width: 300px;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
+      line-height: 1.45;
+    }
+
+    .info-box p {
+      margin: 0.5rem 0;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Artwork -->
+    <img src="Creative-Art_4.jpg" alt="Me Time Thinker">
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <p><span class="label">Title:</span> Me Time Thinker</p>
+      <p><span class="label">Time:</span> <br> 2015</p>
+      <p><span class="label">Medium:</span> <br> Acrylic on canvas</p>
+      <p><span class="label">Depiction:</span> <br>A lone figure glows softly in a swirl of darker tones, as if their thoughts are lighting them from within. They sit in a moment that feels deeply personal — the kind of inner conversation we only have with ourselves. This piece celebrates the quiet strength that comes from pausing, reflecting, and listening to your own heart. It’s a reminder that solitude isn’t emptiness; it’s a space where healing and clarity begin.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
