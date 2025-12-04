@@ -18,11 +18,10 @@
     .container {
       display: flex;
       flex-direction: row;
-      gap: 1rem;
       width: 100%;
-      height: auto;
+      height: 90vh;
       align-items: flex-start;
-      justify-content: center;
+      gap: 1rem;
     }
     /* Mobile Design */
     @media (max-width: 768px) {
@@ -40,30 +39,26 @@
     /* Image Style */
     img {
       max-width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: contain;
       border-radius: 8px;
     }
     /* Info Box */
     .info-box {
-      max-width: 300px;
-      padding: 0.8rem;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      border-radius: 10px;
-      line-height: 1.45;
+      width: 40%;
+      max-width: none;
+      height: 100%;
+      line-height: 1.5;
       overflow-y: auto;
     }
     .info-box::-webkit-scrollbar {
       width: 6px;
     }
     .info-box::-webkit-scrollbar-thumb {
-      background: none;
       border-radius: 4px;
     }
     /* Font Texts */
     .info-box p {
-      margin: 0.5rem 0;
       font-size: 16px;
     }
     .label {
@@ -80,10 +75,10 @@
 
     <!-- Info Box -->
     <div class="info-box">
-      <p><span class="label">Title:</span> Couple's POV</p>
+      <p><span class="label">Title:</span> <br> Couple's POV</p>
       <p><span class="label">Time:</span> <br> 2010</p>
       <p><span class="label">Medium:</span> <br> Mix-Media on plywood</p>
-      <p><span class="label">Depiction:</span> <br>Two figures bend toward each other like reflections trying to meet. Their bodies are simple, but their emotions feel complex — the kind of closeness where love, doubt, comfort, and unspoken words all mix together. The monochrome palette strips everything down to pure feeling. This artwork captures the delicate dance of relationships: trying to understand, trying to be understood, and learning to stay connected even when it’s hard.</p>
+      <p><span class="label">Depiction:</span> <br>Two simple figures lean toward each other like reflections trying to meet. Even with few details, their emotions feel deep. The black-and-white style highlights the quiet tension of connection — trying to understand each other and stay close, even when it’s hard.</p>
     </div>
 
   </div>

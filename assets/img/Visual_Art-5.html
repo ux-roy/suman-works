@@ -18,11 +18,10 @@
     .container {
       display: flex;
       flex-direction: row;
-      gap: 1rem;
       width: 100%;
-      height: auto;
+      height: 90vh;
       align-items: flex-start;
-      justify-content: center;
+      gap: 1rem;
     }
     /* Mobile Design */
     @media (max-width: 768px) {
@@ -40,30 +39,26 @@
     /* Image Style */
     img {
       max-width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: contain;
       border-radius: 8px;
     }
     /* Info Box */
     .info-box {
-      max-width: 300px;
-      padding: 0.8rem;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      border-radius: 10px;
-      line-height: 1.45;
+      width: 40%;
+      max-width: none;
+      height: 100%;
+      line-height: 1.5;
       overflow-y: auto;
     }
     .info-box::-webkit-scrollbar {
       width: 6px;
     }
     .info-box::-webkit-scrollbar-thumb {
-      background: none;
       border-radius: 4px;
     }
     /* Font Texts */
     .info-box p {
-      margin: 0.5rem 0;
       font-size: 16px;
     }
     .label {
@@ -80,10 +75,10 @@
 
     <!-- Info Box -->
     <div class="info-box">
-      <p><span class="label">Title:</span> The Word Father</p>
+      <p><span class="label">Title:</span> <br> The Word Father</p>
       <p><span class="label">Time:</span> <br> 2018</p>
       <p><span class="label">Medium:</span> <br> Oil on canvas</p>
-      <p><span class="label">Depiction:</span> <br>A weathered face rises from a shadowed background, shaped with strong strokes that feel almost carved. The expression holds a mix of firmness and sadness, like someone who has carried responsibilities for many years. You can sense stories behind those eyes — struggles endured, wisdom earned, love shown in ways that weren’t always spoken aloud. This painting becomes a tribute to the silent pillars in our lives, the ones who stand strong even when life feels heavy.</p>
+      <p><span class="label">Depiction:</span> <br>A strong, weathered face emerges from the shadows, shaped with bold strokes. The expression feels firm yet sad, like someone who has carried life’s weight for years. The eyes hint at quiet struggles and unspoken care, turning the painting into a tribute to silent strength.</p>
     </div>
 
   </div>

@@ -18,11 +18,10 @@
     .container {
       display: flex;
       flex-direction: row;
-      gap: 1rem;
       width: 100%;
-      height: auto;
+      height: 90vh;
       align-items: flex-start;
-      justify-content: center;
+      gap: 1rem;
     }
     /* Mobile Design */
     @media (max-width: 768px) {
@@ -40,30 +39,26 @@
     /* Image Style */
     img {
       max-width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: contain;
       border-radius: 8px;
     }
     /* Info Box */
     .info-box {
-      max-width: 300px;
-      padding: 0.8rem;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      border-radius: 10px;
-      line-height: 1.45;
+      width: 40%;
+      max-width: none;
+      height: 100%;
+      line-height: 1.5;
       overflow-y: auto;
     }
     .info-box::-webkit-scrollbar {
       width: 6px;
     }
     .info-box::-webkit-scrollbar-thumb {
-      background: none;
       border-radius: 4px;
     }
     /* Font Texts */
     .info-box p {
-      margin: 0.5rem 0;
       font-size: 16px;
     }
     .label {
@@ -80,7 +75,7 @@
 
     <!-- Info Box -->
     <div class="info-box">
-      <p><span class="label">Title:</span> Sei Nauka Ghate</p>
+      <p><span class="label">Title:</span> <br> Sei Nauka Ghate</p>
       <p><span class="label">Time:</span> <br> 2007</p>
       <p><span class="label">Medium:</span> <br> Watercolor on paper</p>
       <p><span class="label">Depiction:</span> <br> A quiet river holds a small world of resting boats, each one carrying stories of places they’ve been and places they’re yet to go. The calm water feels like a gentle pause after a long day — a reminder that even journeys need moments of stillness. This painting invites the viewer to slow down, breathe, and find peace in the simple act of waiting.</p>

@@ -18,11 +18,10 @@
     .container {
       display: flex;
       flex-direction: row;
-      gap: 1rem;
       width: 100%;
-      height: auto;
+      height: 90vh;
       align-items: flex-start;
-      justify-content: center;
+      gap: 1rem;
     }
     /* Mobile Design */
     @media (max-width: 768px) {
@@ -40,30 +39,26 @@
     /* Image Style */
     img {
       max-width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: contain;
       border-radius: 8px;
     }
     /* Info Box */
     .info-box {
-      max-width: 300px;
-      padding: 0.8rem;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      border-radius: 10px;
-      line-height: 1.45;
+      width: 40%;
+      max-width: none;
+      height: 100%;
+      line-height: 1.5;
       overflow-y: auto;
     }
     .info-box::-webkit-scrollbar {
       width: 6px;
     }
     .info-box::-webkit-scrollbar-thumb {
-      background: none;
       border-radius: 4px;
     }
     /* Font Texts */
     .info-box p {
-      margin: 0.5rem 0;
       font-size: 16px;
     }
     .label {
@@ -80,10 +75,10 @@
 
     <!-- Info Box -->
     <div class="info-box">
-      <p><span class="label">Title:</span> My Low Tide</p>
+      <p><span class="label">Title:</span> <br> My Low Tide</p>
       <p><span class="label">Time:</span> <br> 2015</p>
       <p><span class="label">Medium:</span> <br> Acrylic on canvas</p>
-      <p><span class="label">Depiction:</span> <br>A golden figure curls inward, resting in a moment of emotional low tide. The background feels textured and heavy, echoing that quiet ache we all experience during difficult phases. Yet the warm color of the figure suggests something important — this is not the end of the journey. It’s a pause, a breath, a gathering of strength. The piece gently reminds us that lows are temporary, and even in our quietest moments, a small light continues to glow within.</p>
+      <p><span class="label">Depiction:</span> <br>A golden figure curls inward in a quiet moment of sadness. The heavy background reflects a difficult phase, but the warm color shows hope. It’s a pause, a breath, a gathering of strength. It reminds us that low moments are only pauses, not the end.</p>
     </div>
 
   </div>

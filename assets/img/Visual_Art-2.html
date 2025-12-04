@@ -18,11 +18,10 @@
     .container {
       display: flex;
       flex-direction: row;
-      gap: 1rem;
       width: 100%;
-      height: auto;
+      height: 90vh;
       align-items: flex-start;
-      justify-content: center;
+      gap: 1rem;
     }
     /* Mobile Design */
     @media (max-width: 768px) {
@@ -40,30 +39,26 @@
     /* Image Style */
     img {
       max-width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: contain;
       border-radius: 8px;
     }
     /* Info Box */
     .info-box {
-      max-width: 300px;
-      padding: 0.8rem;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      border-radius: 10px;
-      line-height: 1.45;
+      width: 40%;
+      max-width: none;
+      height: 100%;
+      line-height: 1.5;
       overflow-y: auto;
     }
     .info-box::-webkit-scrollbar {
       width: 6px;
     }
     .info-box::-webkit-scrollbar-thumb {
-      background: none;
       border-radius: 4px;
     }
     /* Font Texts */
     .info-box p {
-      margin: 0.5rem 0;
       font-size: 16px;
     }
     .label {
@@ -80,10 +75,10 @@
 
     <!-- Info Box -->
     <div class="info-box">
-      <p><span class="label">Title:</span> The Golden Cage</p>
+      <p><span class="label">Title:</span> <br> The Golden Cage</p>
       <p><span class="label">Time:</span> <br> 2008</p>
       <p><span class="label">Medium:</span> <br> Acrylic on canvas</p>
-      <p><span class="label">Depiction:</span> <br>A beautiful path opens up under soft sunlight, framed by tall trees and distant houses. It feels inviting, almost dreamy — but the bright gate at the center blocks the way forward. This contrast creates an emotional pull: beauty that feels close, yet unreachable. The scene reflects how life sometimes shows us wonderful things, but timing or circumstances ask us to hold back. It’s a painting about longing, limits, and the quiet hope that gates eventually open.</p>
+      <p><span class="label">Depiction:</span> <br>A quiet path glows in soft sunlight, framed by tall trees and distant houses. It feels warm and inviting, yet a bright gate blocks the way. The contrast creates a feeling of beauty just out of reach. The scene reflects how life sometimes asks us to wait, holding onto a quiet hope that the gate will one day open.</p>
     </div>
 
   </div>
