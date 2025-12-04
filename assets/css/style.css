@@ -1021,10 +1021,9 @@ hr {
 .overlay-content {
   position: relative;
   width: 80%;
-  height: 90%;
+  height: 80%;
   display: flex;
   background-color: var(--pure-white);
-  border-radius: 8px;
   box-shadow: 0 4px 8px var(--transparent-darker-bg);
   overflow: hidden;
 }
