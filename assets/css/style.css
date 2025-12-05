@@ -4,7 +4,7 @@
 :root {
   --pure-white: #ffffff;
   --light-gray: #D3D3D3;
-  --primary-color: #1379a8;;
+  --primary-color: #1379a8;
   --secondary-color: #014b6e;
   --tertiary-color: #6f7180;
   --background-color: #f5f8fd;
@@ -1020,8 +1020,9 @@ hr {
 }
 .overlay-content {
   position: relative;
-  width: 80%;
-  height: 80%;
+  width: 80vw;              
+  max-width: 1600px;  
+  aspect-ratio: 16 / 9;
   display: flex;
   background-color: var(--pure-white);
   box-shadow: 0 4px 8px var(--transparent-darker-bg);

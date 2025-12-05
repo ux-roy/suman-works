@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stylish Slides</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slideshow-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1920px;
+      aspect-ratio: 16 / 9;
+      background: black;
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      opacity: 0;
+      transform: scale(0.98);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    img.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* 🔽 YOUR PAGE CONTROL STYLING */
+    .PageControl {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 4px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      z-index: 20;
+    }
+
+    .nav-btn {
+      position: static;
+      padding: 6px 8px;
+      font-size: 12px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background: #1379a8;
+    }
+
+    .counter {
+      background: transparent;
+      color: white;
+      padding: 0 6px;
+      font-size: 12px;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      background: #000;
+    }
+
+    .nav-btn:disabled:hover {
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="slideshow-wrapper" id="slideshow">
+    <img id="slide" src="1.jpg" class="show" alt="Slide">
+
+    <!-- ✅ Your Styled Controls -->
+    <div class="PageControl">
+      <button class="nav-btn" id="prev">◀</button>
+      <div class="counter" id="counter">1 / 15</div>
+      <button class="nav-btn" id="next">▶</button>
+    </div>
+  </div>
+
+  <script>
+    const totalSlides = 15;
+    let currentSlide = 1;
+
+    const img = document.getElementById("slide");
+    const counter = document.getElementById("counter");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+    const slideshow = document.getElementById("slideshow");
+
+    function updateSlide() {
+      img.classList.remove("show");
+
+      setTimeout(() => {
+        img.src = `${currentSlide}.jpg`;
+        counter.textContent = `${currentSlide} / ${totalSlides}`;
+        img.classList.add("show");
+
+        prevBtn.disabled = currentSlide === 1;
+        nextBtn.disabled = currentSlide === totalSlides;
+      }, 150);
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+
+    // ✅ Keyboard Navigation
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    });
+
+    // ✅ Click Anywhere → Next
+    slideshow.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("nav-btn")) {
+        nextSlide();
+      }
+    });
+
+    // ✅ Mobile Swipe Support
+    let startX = 0;
+
+    slideshow.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    slideshow.addEventListener("touchend", (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) nextSlide();
+        else prevSlide();
+      }
+    });
+
+    // ✅ Initialize disabled state
+    updateSlide();
+  </script>
+
+</body>
+</html>
