@@ -1026,6 +1026,7 @@ hr {
   background-color: var(--pure-white);
   box-shadow: 0 4px 8px var(--transparent-darker-bg);
   overflow: hidden;
+  border-radius: 8px;
 }
 .iframe-container {
   width: 100%;
