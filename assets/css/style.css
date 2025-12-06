@@ -1044,7 +1044,7 @@ hr {
 @media (max-width: 768px) {
   .overlay-content {
     width: 90vw;
-    height: 90vh;
+    height: 80vh;
     max-width: none;
     max-height: none;
     aspect-ratio: auto;
