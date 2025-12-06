@@ -1041,6 +1041,18 @@ hr {
   overflow: hidden;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .overlay-content {
+    width: 90vw;
+    height: 90vh;
+    max-width: none;
+    max-height: none;
+    aspect-ratio: auto;
+  }
+  .iframe-container {
+    height: 100%;
+  }
+}
 .close-btn {
   position: absolute;
   top: 16px;
