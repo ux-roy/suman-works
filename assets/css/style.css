@@ -1021,7 +1021,7 @@ hr {
 .overlay-content {
   position: relative;
   width: 90vw;              
-  max-width: 1600px;  
+  max-width: 1600px;
   aspect-ratio: 16 / 9;
   display: flex;
   background-color: var(--pure-white);
