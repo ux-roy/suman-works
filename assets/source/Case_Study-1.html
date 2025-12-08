@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seamless Slide Deck</title>
+
+  <style>
+    .pdf-wrapper {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #000;
+    }
+
+    #pdfViewer {
+      flex: 1;
+      width: 100%;
+    }
+
+    .pdf-controls {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: rgba(0,0,0,0.85);
+      color: white;
+      user-select: none;
+    }
+
+    .pdf-controls button {
+      padding: 8px 18px;
+      border: none;
+      background: white;
+      cursor: pointer;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+
+    .pdf-controls button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .pdf-controls button:hover:not(:disabled) {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="pdf-wrapper">
+    <iframe
+      id="pdfViewer"
+      src="../pdf/Case-Study-1.pdf#page=1"
+      frameborder="0"
+    ></iframe>
+
+    <div class="pdf-controls">
+      <button id="prevPage">← Previous</button>
+      <span id="pageIndicator">1 / 12</span>
+      <button id="nextPage">Next →</button>
+    </div>
+  </div>
+
+  <script>
+    const totalPages = 12; // ✅ Set your real PDF page count here
+    let currentPage = 1;
+
+    const pdf = document.getElementById("pdfViewer");
+    const prevBtn = document.getElementById("prevPage");
+    const nextBtn = document.getElementById("nextPage");
+    const indicator = document.getElementById("pageIndicator");
+
+    function updatePDF() {
+      // ✅ cache-buster added so iframe always refreshes
+      const timeStamp = new Date().getTime();
+      pdf.src = `../pdf/Case-Study-1.pdf#page=${currentPage}&t=${timeStamp}`;
+
+      indicator.textContent = `${currentPage} / ${totalPages}`;
+
+      // ✅ auto-disable at edges
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = currentPage === totalPages;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        updatePDF();
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        updatePDF();
+      }
+    });
+
+    // ✅ Keyboard navigation (presentation mode)
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" && currentPage < totalPages) {
+        currentPage++;
+        updatePDF();
+      }
+
+      if (e.key === "ArrowLeft" && currentPage > 1) {
+        currentPage--;
+        updatePDF();
+      }
+    });
+
+    // ✅ Initialize once
+    updatePDF();
+  </script>
+
+</body>
+</html>
