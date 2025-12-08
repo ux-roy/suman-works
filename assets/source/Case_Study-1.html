@@ -42,21 +42,29 @@
       align-items: center;
       background: rgba(0,0,0,0.5);
       padding: 4px;
-      border-radius: 40px;
+      border-radius: 24px;
     }
     .nav-btn {
-      position: static;
-      padding: 6px 8px;
-      font-size: 12px;
-      border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      font-size: 16px;
+      line-height: 2;
+      font-weight: 100;
+      font-family: system-ui, sans-serif;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: #000;
+      color: #fff;
       cursor: pointer;
-      background: rgb(0, 0, 0);
-      color: white;
       transition: all 0.2s ease;
     }
     .nav-btn:hover {
-      background: #1379a8;
+      background: #222;
+      border-color: rgba(255, 255, 255, 0.35);
+      transform: scale(1.05);
     }
     .counter {
       color: #fff;
@@ -85,94 +93,94 @@
     <canvas id="pdfCanvas"></canvas>
 
     <div class="controls">
-      <button id="prev" class="nav-btn">←</button>
+      <button id="prev" class="nav-btn">◀</button>
       <div class="counter" id="counter">1 / 1</div>
-      <button id="next" class="nav-btn">→</button>
+      <button id="next" class="nav-btn">▶</button>
     </div>
 
     <button id="ctaBtn">Click or Tap to View Prototype Link</button>
   </div>
 
-<script>
-  pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
 
-  const pdfURL = "../pdf/SKR_Case-Study-Retail.pdf";
+    const pdfURL = "../pdf/SKR_Case-Study-Retail.pdf";
 
-  let pdfDoc = null;
-  let pageNum = 1;
-  let totalPages = 0;
+    let pdfDoc = null;
+    let pageNum = 1;
+    let totalPages = 0;
 
-  const canvas = document.getElementById("pdfCanvas");
-  const ctx = canvas.getContext("2d");
+    const canvas = document.getElementById("pdfCanvas");
+    const ctx = canvas.getContext("2d");
 
-  const viewer = document.getElementById("viewer");
-  const counter = document.getElementById("counter");
-  const ctaBtn = document.getElementById("ctaBtn");
-  const prev = document.getElementById("prev");
-  const next = document.getElementById("next");
+    const viewer = document.getElementById("viewer");
+    const counter = document.getElementById("counter");
+    const ctaBtn = document.getElementById("ctaBtn");
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
 
-  function renderPage(num) {
-    pdfDoc.getPage(num).then(page => {
-      const scale = 1.5;
-      const viewport = page.getViewport({ scale });
+    function renderPage(num) {
+      pdfDoc.getPage(num).then(page => {
+        const scale = 1.5;
+        const viewport = page.getViewport({ scale });
 
-      canvas.width = viewport.width;
-      canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
 
-      page.render({ canvasContext: ctx, viewport });
+        page.render({ canvasContext: ctx, viewport });
 
-      counter.innerText = `${pageNum} / ${totalPages}`;
+        counter.innerText = `${pageNum} / ${totalPages}`;
 
-      ctaBtn.style.display = (pageNum === totalPages) ? "block" : "none";
+        ctaBtn.style.display = (pageNum === totalPages) ? "block" : "none";
+      });
+    }
+
+    pdfjsLib.getDocument(pdfURL).promise.then(pdf => {
+      pdfDoc = pdf;
+      totalPages = pdf.numPages;
+      renderPage(pageNum);
+    }).catch(err => {
+      alert("PDF NOT LOADING — Check file name or path");
+      console.error(err);
     });
-  }
 
-  pdfjsLib.getDocument(pdfURL).promise.then(pdf => {
-    pdfDoc = pdf;
-    totalPages = pdf.numPages;
-    renderPage(pageNum);
-  }).catch(err => {
-    alert("PDF NOT LOADING — Check file name or path");
-    console.error(err);
-  });
+    next.onclick = () => {
+      if (pageNum < totalPages) pageNum++;
+      renderPage(pageNum);
+    };
 
-  next.onclick = () => {
-    if (pageNum < totalPages) pageNum++;
-    renderPage(pageNum);
-  };
+    prev.onclick = () => {
+      if (pageNum > 1) pageNum--;
+      renderPage(pageNum);
+    };
 
-  prev.onclick = () => {
-    if (pageNum > 1) pageNum--;
-    renderPage(pageNum);
-  };
+    // ✅ OPEN FIGMA IN A NEW TAB
+    ctaBtn.onclick = () => {
+      window.open(
+        "https://www.figma.com/proto/UHxCsV5dWSlgMpvadU4Fw4/Case-Study-1--Retail-?page-id=301%3A9386&node-id=477-12397&p=f&viewport=259%2C172%2C0.04&t=Gt6W7WbQzUyeOZk8-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=477%3A12397", 
+        "_blank"
+      );
+    };
 
-  // ✅ OPEN FIGMA IN A NEW TAB
-  ctaBtn.onclick = () => {
-    window.open(
-      "https://www.figma.com/proto/UHxCsV5dWSlgMpvadU4Fw4/Case-Study-1--Retail-?page-id=301%3A9386&node-id=477-12397&p=f&viewport=259%2C172%2C0.04&t=Gt6W7WbQzUyeOZk8-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=477%3A12397", 
-      "_blank"
-    );
-  };
+    document.addEventListener("keydown", e => {
+      if (e.key === "ArrowRight") next.click();
+      if (e.key === "ArrowLeft") prev.click();
+    });
 
-  document.addEventListener("keydown", e => {
-    if (e.key === "ArrowRight") next.click();
-    if (e.key === "ArrowLeft") prev.click();
-  });
+    let startX = 0;
 
-  let startX = 0;
+    viewer.addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+    });
 
-  viewer.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-  });
+    viewer.addEventListener("touchend", e => {
+      const endX = e.changedTouches[0].clientX;
 
-  viewer.addEventListener("touchend", e => {
-    const endX = e.changedTouches[0].clientX;
-
-    if (endX - startX > 50) prev.click();
-    if (startX - endX > 50) next.click();
-  });
-</script>
+      if (endX - startX > 50) prev.click();
+      if (startX - endX > 50) next.click();
+    });
+  </script>
 
 </body>
 </html>
