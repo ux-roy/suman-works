@@ -460,9 +460,8 @@ hr {
 /* Profile Depiction 📌
 --------------------------------------------------------------*/
 #profile-pic {
-  border: 1px solid var(--light-gray);
   border-radius: 8px;
-  background-color: var(--background-color);
+  filter: grayscale(50%);
 }
 .profile-depiction .content ul {
   list-style: none;
